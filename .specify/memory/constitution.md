@@ -1,55 +1,65 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version Change: N/A (initial creation) -> 1.0.0 (initial creation)
+Modified Principles:
+  - PRINCIPLE_1: N/A -> Spec-Driven Development (SDD)
+  - PRINCIPLE_2: N/A -> Documentation Excellence with Docusaurus
+  - PRINCIPLE_3: N/A -> Integrated RAG Chatbot for Enhanced Learning
+  - PRINCIPLE_4: N/A -> Modular Agent-Based Architecture
+  - PRINCIPLE_5: N/A -> Clarity, Consistency, and Accuracy
+Added Sections:
+  - Technology Stack
+  - Development Workflow
+Removed Sections: None
+Templates Requiring Updates:
+  - .specify/templates/plan-template.md: ⚠ pending
+  - .specify/templates/spec-template.md: ⚠ pending
+  - .specify/templates/tasks-template.md: ⚠ pending
+  - .specify/templates/commands/*.md: ⚠ pending
+  - README.md: ⚠ pending
+  - docs/quickstart.md: ⚠ pending
+Follow-up TODOs: Ensure dependent templates and documentation are updated to reflect new principles.
+-->
+# Physical AI and Humanoid Robotics Book Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-Driven Development (SDD)
+The development of the book's content, features, and agents MUST be guided by a clear and comprehensive specification. SpecKit Plus will be utilized to define requirements, plans, and tasks, ensuring a structured and predictable development process.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Documentation Excellence with Docusaurus
+The book's content will be published using Docusaurus, ensuring high-quality, readable, and easily navigable documentation. All content MUST adhere to Docusaurus best practices for structure, markdown formatting, and accessibility, providing an optimal reading experience.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Integrated RAG Chatbot for Enhanced Learning
+An integrated Retrieval-Augmented Generation (RAG) chatbot MUST be developed and embedded within the published book to enhance user learning. This chatbot, utilizing OpenAI Agents/ChatKit SDKs, FastAPI, Neon Serverless Postgres, and Qdrant Cloud Free Tier, will answer user questions about the book's content, including providing answers based on user-selected text. The chatbot MUST prioritize factual accuracy and only use information from the book itself.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Modular Agent-Based Architecture
+The book writing and content generation process will leverage a modular, agent-based architecture. Specialized agents (e.g., Outline Architect, Chapter Drafter, Math Explainer) will handle distinct tasks, orchestrated by a Main Orchestrator Agent. Each agent MUST have a clearly defined role and interface, promoting reusability and maintainability.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Clarity, Consistency, and Accuracy
+All content within the book MUST prioritize clarity, consistency, and factual accuracy. Technical jargon will be explained, terminology and notation will be consistent across all chapters, and content will be regularly reviewed for correctness. The Clarity Editor Agent and Consistency Guardian Agent will enforce these standards rigorously.
 
-### [PRINCIPLE_6_NAME]
+## Technology Stack
 
+The following key technologies will be utilized:
+*   **SpecKit Plus**: For spec-driven development, planning, and task management.
+*   **Docusaurus**: As the primary framework for publishing the book's content.
+*   **RAG Chatbot Development**:
+    *   **OpenAI Agents/ChatKit SDKs**: For building conversational AI capabilities.
+    *   **FastAPI**: For developing the chatbot's API backend.
+    *   **Neon Serverless Postgres**: As the primary database for storing chatbot-related data.
+    *   **Qdrant Cloud Free Tier**: For vector database functionalities, enabling efficient retrieval for RAG.
 
-[PRINCIPLE__DESCRIPTION]
+## Development Workflow
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+The development workflow will be iterative and agent-driven:
+*   The Main Orchestrator Agent will coordinate the overall book writing process.
+*   Specialized agents will execute specific tasks (e.g., content drafting, editing, coding examples).
+*   Content will be regularly reviewed and refined to meet quality standards.
+*   The RAG chatbot will be developed and integrated incrementally.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This Constitution serves as the foundational governance document. All development, content creation, and tool integration MUST comply with these principles. Amendments require thorough documentation, review, and approval by relevant stakeholders. Regular compliance reviews will be conducted to ensure ongoing adherence.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-06 | **Last Amended**: 2025-12-06
