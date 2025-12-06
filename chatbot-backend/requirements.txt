@@ -1,5 +1,0 @@
-fastapi
-openai
-qdrant-client
-psycopg2-binary
-uvicorn

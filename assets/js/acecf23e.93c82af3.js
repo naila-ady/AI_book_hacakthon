@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkai_huamnoid_book=globalThis.webpackChunkai_huamnoid_book||[]).push([[903],{1912:o=>{o.exports=JSON.parse('{"blogBasePath":"/AI_book_hacakthon/blog","blogTitle":"Blog","authorsListPath":"/AI_book_hacakthon/blog/authors"}')}}]);

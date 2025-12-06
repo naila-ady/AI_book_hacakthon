@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkai_huamnoid_book=globalThis.webpackChunkai_huamnoid_book||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"welcome","permalink":"/AI_book_hacakthon/blog/welcome","unlisted":false,"date":"2025-12-06T21:48:21.000Z"}]}')}}]);
