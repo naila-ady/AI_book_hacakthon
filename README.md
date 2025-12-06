@@ -1,38 +1,41 @@
-📘 AI Book Hackathon – Skills & Agents
+# Website
 
-A modular AI system for writing the Physical AI & Humanoid Robotics book.
-Skills = reusable guidance.
-Agents = autonomous helpers that draft, edit, and structure chapters.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-📂 Structure
-.claude/              → AI config
-agent/                → writing & structure agents
-skills/               → reusable writing + robotics skills
-AI_humanoid_book/     → main book content
+## Installation
 
-🛠️ Skills
+```bash
+yarn
+```
 
-Chapter Outline Skill: clear chapter TOC & sections.
+## Local Development
 
-Content Type Recognition: detects request type (chapter, summary, exercises).
+```bash
+yarn start
+```
 
-Robotics Guidance Skill: guidance on sensors, control, locomotion, simulation, Physical AI.
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-🤖 Agents
+## Build
 
-outline-architect-agent: builds chapter structure.
+```bash
+yarn build
+```
 
-chapter-drafter-agent: writes full drafts.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-clarity-editor-agent: improves readability.
+## Deployment
 
-consistency-guardian-agent: keeps style & terminology uniform.
+Using SSH:
 
-orchestrator_agent: coordinates all agents in the right order.
+```bash
+USE_SSH=true yarn deploy
+```
 
-Images:
-images in assets folder
+Not using SSH:
 
-🎯 Goal
+```bash
+GIT_USER=<Your GitHub username> yarn deploy
+```
 
-Whenever you ask for content, all agents work together to generate stable, structured, and high-quality book material.
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
