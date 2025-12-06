@@ -21,7 +21,8 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Physical AI & Humanoid Robotics Video Tutorial 
+            🎥      CLICK HERE TO WATCH THE VIDEO ⏱️
           </Link>
         </div>
       </div>

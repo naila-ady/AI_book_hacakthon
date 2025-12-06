@@ -11,32 +11,31 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Read-Aloud Agent',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
+       Highlight any section of the book and let the Read-Aloud Agent speak it for you,
+       so you can listen to Physical AI concepts instead of only reading them. </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'AI Quiz & Practice Agents',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Dedicated quiz agents generate chapter-specific questions and practice tasks,
+        helping you actively test what you learned instead of just reading.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Interactive Book Chatbot',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+       A custom chatbot trained on the book content lets you ask follow-up questions,
+       clarify concepts, and explore Physical AI topics in your own words..
       </>
     ),
   },
