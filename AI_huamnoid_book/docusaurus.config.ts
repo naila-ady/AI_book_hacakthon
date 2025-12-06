@@ -75,10 +75,10 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'AI Humanoid Book',
       logo: {
-        alt: 'My Site Logo',
-        src: 'assets/img/logo.jpg',
+        alt: 'AI logo',
+        src: 'img/logo.jpg',
       },
       items: [
         {
