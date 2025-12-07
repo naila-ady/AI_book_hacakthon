@@ -14,7 +14,8 @@
             <guid>https://naila-ady.github.io/AI_book_hacakthon/blog/welcome</guid>
             <pubDate>Sat, 06 Dec 2025 21:48:21 GMT</pubDate>
             <description><![CDATA[welcome to my first blog]]></description>
-            <content:encoded><![CDATA[<p>welcome to my first blog</p>]]></content:encoded>
+            <content:encoded><![CDATA[<p>welcome to my first blog<br>
+<!-- -->hello from naila adnan</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
