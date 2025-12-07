@@ -174,6 +174,9 @@ const config: Config = {
   organizationName: 'naila-ady',
   projectName: 'AI_book_hacakthon',
 
+  deploymentBranch: "gh-pages",
+  trailingSlash: false,
+
   onBrokenLinks: 'throw',
 
   i18n: {
