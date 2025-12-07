@@ -1,5 +1,5 @@
 fastapi
-openai
+cohere
 qdrant-client
 psycopg2-binary
 uvicorn

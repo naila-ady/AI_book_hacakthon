@@ -1,26 +1,30 @@
+import sys
 import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
+
 import glob
 from qdrant_client import QdrantClient, models
-from openai import OpenAI
+import cohere
 
-from chatbot_backend.app.config import Config
-from chatbot_backend.app.utils.content_parser import parse_markdown_file, chunk_content
+from ..config import Config
+from ..utils.content_parser import parse_markdown_file, chunk_content
 
 # Initialize clients
 client_qdrant = QdrantClient(host=Config.QDRANT_URL, api_key=Config.QDRANT_API_KEY)
-client_openai = OpenAI(api_key=Config.OPENAI_API_KEY)
+client_cohere = cohere.Client(api_key=Config.COHERE_API_KEY)
 
 COLLECTION_NAME = "book_content"
 
 def get_embedding(text: str) -> list[float]:
     """
-    Generates an embedding for the given text using OpenAI.
+    Generates an embedding for the given text using Cohere.
     """
-    response = client_openai.embeddings.create(
-        input=text,
-        model="text-embedding-ada-002"
+    response = client_cohere.embed(
+        texts=[text],
+        model="embed-english-v3.0",
+        input_type="search_document"
     )
-    return response.data[0].embedding
+    return response.embeddings[0]
 
 def upload_to_qdrant(chunks: list[str], metadata: dict):
     """
@@ -49,7 +53,7 @@ def upload_to_qdrant(chunks: list[str], metadata: dict):
     except Exception:
         client_qdrant.create_collection(
             collection_name=COLLECTION_NAME,
-            vectors_config=models.VectorParams(size=1536, distance=models.Distance.COSINE),
+            vectors_config=models.VectorParams(size=1024, distance=models.Distance.COSINE),
         )
 
     client_qdrant.upsert(collection_name=COLLECTION_NAME, points=points, wait=True)
