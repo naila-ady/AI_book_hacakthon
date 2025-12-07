@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>PHYSICAL AI &amp; HUMANOID ROBOTICS Blog</title>
+        <link>https://naila-ady.github.io/AI_book_hacakthon/blog</link>
+        <description>PHYSICAL AI &amp; HUMANOID ROBOTICS Blog</description>
+        <lastBuildDate>Sat, 06 Dec 2025 21:48:21 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[welcome]]></title>
+            <link>https://naila-ady.github.io/AI_book_hacakthon/blog/welcome</link>
+            <guid>https://naila-ady.github.io/AI_book_hacakthon/blog/welcome</guid>
+            <pubDate>Sat, 06 Dec 2025 21:48:21 GMT</pubDate>
+            <description><![CDATA[welcome to my first blog]]></description>
+            <content:encoded><![CDATA[<p>welcome to my first blog<br>
+<!-- -->hello from naila adnan</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

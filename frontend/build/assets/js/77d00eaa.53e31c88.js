@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkai_huamnoid_book=globalThis.webpackChunkai_huamnoid_book||[]).push([[626],{5717:o=>{o.exports=JSON.parse('{"metadata":{"permalink":"/AI_book_hacakthon/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
