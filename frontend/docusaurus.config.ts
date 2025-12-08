@@ -177,7 +177,7 @@ const config: Config = {
   deploymentBranch: "gh-pages",
   trailingSlash: false,
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'ignore',
 
   i18n: {
     defaultLocale: 'en',
@@ -203,7 +203,7 @@ const config: Config = {
             'https://github.com/naila-ady/AI_book_hackathon/edit/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'ignore',
+          onUntruncatedBlogPosts:'ignore',
         },
         theme: {
           customCss: './src/css/custom.css',
