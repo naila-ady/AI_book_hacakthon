@@ -200,7 +200,7 @@ const config: Config = {
             xslt: true,
           },
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/naila-ady/AI_book_hackathon/edit/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'ignore',
