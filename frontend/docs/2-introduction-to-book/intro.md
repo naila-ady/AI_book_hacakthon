@@ -1,3 +1,6 @@
+---
+slug: /intro
+---
 
 ####  Introduction to PhysicalAI and Humanoid Robotics
 PhysicalAI and humanoid robotics sit at the frontier where code stops living only on screens and starts shaping real bodies, movements, and behaviors in the physical world. This book, “PhysicalAI and Humanoid Robotics,” is a practical and visionary guide for developers, students, and makers who want to build intelligent machines that share our spaces, understand our intentions, and collaborate with us safely and naturally.
@@ -19,4 +22,3 @@ PhysicalAI brings these trends together, showing how to merge modern AI techniqu
 This book is written for software developers, roboticists, AI practitioners, and curious builders who want to move from theory and simulation into real hardware.  It assumes basic familiarity with programming and mathematics, but it does not require a narrow background in any single engineering discipline; instead, it gradually connects mechanics, control, perception, and learning into one coherent picture.
 
 Whether your goal is to prototype your first biped robot, design autonomous behaviors for an existing platform, or understand how embodied AI will reshape future industries, this book provides both conceptual foundations and practical patterns.  PhysicalAI and humanoid robotics are still young fields, and readers are invited not just to study what exists today, but to help define what these systems can and should become in the years ahead.
-

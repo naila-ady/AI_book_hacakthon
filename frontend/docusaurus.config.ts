@@ -254,7 +254,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/2-introduction-to-book/intro',
+              to: '/docs/intro',
             },
           ],
         },
