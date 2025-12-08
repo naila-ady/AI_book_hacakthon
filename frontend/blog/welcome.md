@@ -1,8 +1,12 @@
 ---
 slug: welcome
 title: Welcome to My First Blog!
-authors: [naila]
-tags: [hello, docusaurus]
+description: Introduction to my blog about AI, robotics, and technology
+authors:
+  - key: naila
+tags:
+  - hello
+  - docusaurus
 ---
 
 Welcome to my very first blog post! I'm Naila Adnan, and I'm thrilled to embark on this journey of sharing my thoughts, projects, and discoveries with you.

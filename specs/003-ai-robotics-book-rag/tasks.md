@@ -13,7 +13,7 @@
 
 ## Phase 2: Foundational - Core Infrastructure
 
-- [ ] T007 Set up GitHub Pages deployment workflow for `AI_huamnoid_book/` but first ask 
+- [ ] T007 Set up GitHub Pages deployment workflow for `AI_huamnoid_book/` but first ask if user refuse skip it.
 
 - [ ] T009 Configure Qdrant Cloud Free Tier connection in `chatbot-backend/app/config.py`
 - [ ] T010 Implement basic health check endpoint for FastAPI in `chatbot-backend/app/main.py`
