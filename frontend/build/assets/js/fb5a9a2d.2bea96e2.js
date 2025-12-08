@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkai_book_hackathon=self.webpackChunkai_book_hackathon||[]).push([[1733],{8778:a=>{a.exports=JSON.parse('{"tags":[{"label":"hello","permalink":"/AI_book_hacakthon/blog/tags/hello","count":1},{"label":"docusaurus","permalink":"/AI_book_hacakthon/blog/tags/docusaurus","count":1}]}')}}]);
