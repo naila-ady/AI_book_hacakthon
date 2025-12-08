@@ -59,7 +59,7 @@
 //           // Useful options to enforce blogging best practices
 //           onInlineTags: 'warn',
 //           onInlineAuthors: 'warn',
-//           onUntruncatedBlogPosts: 'warn',
+//           onUntruncatedBlogPosts: 'ignore',
 //         },
 //         theme: {
 //           customCss: './src/css/custom.css',
@@ -203,7 +203,7 @@ const config: Config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onUntruncatedBlogPosts: 'ignore',
         },
         theme: {
           customCss: './src/css/custom.css',
