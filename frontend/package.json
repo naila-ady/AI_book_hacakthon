@@ -1,0 +1,26 @@
+{
+    "name": "ai-book-hackathon",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+      "docusaurus": "docusaurus",
+      "start": "docusaurus start",
+      "build": "docusaurus build",
+      "swizzle": "docusaurus swizzle",
+      "deploy": "docusaurus deploy",
+      "serve": "docusaurus serve"
+    },
+    "dependencies": {
+      "@docusaurus/core": "^3.0.0",
+      "@docusaurus/preset-classic": "^3.0.0",
+      "clsx": "^2.0.0",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+      "typescript": "^5.0.0",
+      "@types/react": "^18.0.0",
+      "@types/react-dom": "^18.0.0"
+    }
+  }
+  

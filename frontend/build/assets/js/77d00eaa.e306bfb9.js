@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkai_book_hackathon=self.webpackChunkai_book_hackathon||[]).push([[626],{5717:a=>{a.exports=JSON.parse('{"metadata":{"permalink":"/AI_book_hacakthon/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
