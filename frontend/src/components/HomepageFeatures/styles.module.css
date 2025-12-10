@@ -1,4 +1,4 @@
-.features {
+/* .features {
   display: flex;
   align-items: center;
   padding: 2rem 0;
@@ -8,4 +8,46 @@
 .featureSvg {
   height: 200px;
   width: 200px;
+} */
+/* ===================== Features Section ===================== */
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;   /* space items evenly */
+  padding: 2rem 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #0D0D0D, #1a1a1a); /* dark background */
+  color: #ff9f0d; /* accent text */
+  flex-wrap: wrap; /* responsive on smaller screens */
+  gap: 2rem;
+}
+
+/* ===================== Feature SVGs ===================== */
+.featureSvg {
+  height: 200px;
+  width: 200px;
+  fill: #ff9f0d; /* apply orange accent color to SVGs */
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.featureSvg:hover {
+  transform: scale(1.1);
+  fill: #ffb733; /* slightly brighter on hover */
+}
+
+/* ===================== Feature Titles & Text ===================== */
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #ff9f0d;
+  text-align: center;
+}
+
+.featureText {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0.5rem;
+  max-width: 220px;
 }

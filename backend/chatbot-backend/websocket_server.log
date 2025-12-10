@@ -519,3 +519,275 @@ Traceback (most recent call last):
     ...<3 lines>...
     )
 cohere.error.CohereAPIError: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+2025-12-11 01:42:19,667 - INFO - RAGService initialized and collection ready.
+2025-12-11 01:42:19,702 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 01:42:27,926 - INFO - Client connected ('127.0.0.1', 63663)
+2025-12-11 01:42:32,051 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:42:34,628 - ERROR - WebSocket Error: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 244, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 232, in generate_answer
+            response = self.cohere_client.chat(
+                       ~~~~~~~~~~~~~~~~~~~~~~~^
+        model="command-xlarge",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+        message=prompt,
+        ^^^^^^^^^^^^^^^
+        max_tokens=500
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 384, in chat
+    response = self._request(cohere.CHAT_URL, json=json_body, stream=stream)
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 945, in _request
+    self._check_response(json_response, response.headers, response.status_code)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 887, in _check_response
+    raise CohereAPIError(
+    ...<3 lines>...
+    )
+cohere.error.CohereAPIError: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+2025-12-11 01:43:44,882 - INFO - Client connected ('127.0.0.1', 63688)
+2025-12-11 01:43:49,675 - INFO - Client disconnected: ('127.0.0.1', 63688)
+2025-12-11 01:43:50,450 - INFO - Client connected ('127.0.0.1', 63694)
+2025-12-11 01:44:00,465 - INFO - Sent keep-alive
+2025-12-11 01:44:10,480 - INFO - Sent keep-alive
+2025-12-11 01:44:20,486 - INFO - Sent keep-alive
+2025-12-11 01:44:30,494 - INFO - Sent keep-alive
+2025-12-11 01:44:40,497 - INFO - Sent keep-alive
+2025-12-11 01:44:50,503 - INFO - Sent keep-alive
+2025-12-11 01:45:00,507 - INFO - Sent keep-alive
+2025-12-11 01:45:10,530 - INFO - Sent keep-alive
+2025-12-11 01:45:20,537 - INFO - Sent keep-alive
+2025-12-11 01:45:30,540 - INFO - Sent keep-alive
+2025-12-11 01:45:40,552 - INFO - Sent keep-alive
+2025-12-11 01:45:50,566 - INFO - Sent keep-alive
+2025-12-11 01:45:58,446 - INFO - Client disconnected: ('127.0.0.1', 63694)
+2025-12-11 01:45:59,127 - INFO - Client connected ('127.0.0.1', 63728)
+2025-12-11 01:46:09,130 - INFO - Sent keep-alive
+2025-12-11 01:46:18,736 - INFO - Client disconnected: ('127.0.0.1', 63728)
+2025-12-11 01:46:19,634 - INFO - Client connected ('127.0.0.1', 63741)
+2025-12-11 01:46:29,650 - INFO - Sent keep-alive
+2025-12-11 01:46:38,519 - INFO - Client disconnected: ('127.0.0.1', 63741)
+2025-12-11 01:46:39,378 - INFO - Client connected ('127.0.0.1', 63752)
+2025-12-11 01:46:49,395 - INFO - Sent keep-alive
+2025-12-11 01:46:59,397 - INFO - Sent keep-alive
+2025-12-11 01:47:09,413 - INFO - Sent keep-alive
+2025-12-11 01:47:19,423 - INFO - Sent keep-alive
+2025-12-11 01:47:29,425 - INFO - Sent keep-alive
+2025-12-11 01:47:39,438 - INFO - Sent keep-alive
+2025-12-11 01:47:42,334 - INFO - Client disconnected: ('127.0.0.1', 63752)
+2025-12-11 01:47:43,212 - INFO - Client connected ('127.0.0.1', 63788)
+2025-12-11 01:47:53,214 - INFO - Sent keep-alive
+2025-12-11 01:48:03,229 - INFO - Sent keep-alive
+2025-12-11 01:48:03,347 - INFO - Client disconnected: ('127.0.0.1', 63788)
+2025-12-11 01:48:04,206 - INFO - Client connected ('127.0.0.1', 63808)
+2025-12-11 01:48:14,222 - INFO - Sent keep-alive
+2025-12-11 01:48:24,225 - INFO - Sent keep-alive
+2025-12-11 01:48:34,238 - INFO - Sent keep-alive
+2025-12-11 01:48:44,244 - INFO - Sent keep-alive
+2025-12-11 01:48:54,258 - INFO - Sent keep-alive
+2025-12-11 01:49:04,271 - INFO - Sent keep-alive
+2025-12-11 01:49:14,275 - INFO - Sent keep-alive
+2025-12-11 01:49:24,293 - INFO - Sent keep-alive
+2025-12-11 01:49:34,295 - INFO - Sent keep-alive
+2025-12-11 01:49:44,302 - INFO - Sent keep-alive
+2025-12-11 01:49:54,312 - INFO - Sent keep-alive
+2025-12-11 01:50:04,328 - INFO - Sent keep-alive
+2025-12-11 01:50:14,340 - INFO - Sent keep-alive
+2025-12-11 01:50:24,342 - INFO - Sent keep-alive
+2025-12-11 01:50:34,353 - INFO - Sent keep-alive
+2025-12-11 01:50:44,363 - INFO - Sent keep-alive
+2025-12-11 01:50:54,364 - INFO - Sent keep-alive
+2025-12-11 01:51:04,379 - INFO - Sent keep-alive
+2025-12-11 01:51:14,381 - INFO - Sent keep-alive
+2025-12-11 01:51:24,395 - INFO - Sent keep-alive
+2025-12-11 01:51:34,411 - INFO - Sent keep-alive
+2025-12-11 01:51:44,421 - INFO - Sent keep-alive
+2025-12-11 01:51:54,436 - INFO - Sent keep-alive
+2025-12-11 01:51:54,567 - INFO - Client disconnected: ('127.0.0.1', 63808)
+2025-12-11 01:51:55,535 - INFO - Client connected ('127.0.0.1', 63904)
+2025-12-11 01:52:00,373 - INFO - Client connected ('127.0.0.1', 63913)
+2025-12-11 01:52:05,571 - INFO - Sent keep-alive
+2025-12-11 01:52:10,382 - INFO - Sent keep-alive
+2025-12-11 01:52:15,586 - INFO - Sent keep-alive
+2025-12-11 01:52:20,394 - INFO - Sent keep-alive
+2025-12-11 01:52:25,595 - INFO - Sent keep-alive
+2025-12-11 01:52:30,401 - INFO - Sent keep-alive
+2025-12-11 01:52:35,598 - INFO - Sent keep-alive
+2025-12-11 01:52:40,411 - INFO - Sent keep-alive
+2025-12-11 01:52:45,613 - INFO - Sent keep-alive
+2025-12-11 01:52:50,428 - INFO - Sent keep-alive
+2025-12-11 01:52:55,625 - INFO - Sent keep-alive
+2025-12-11 01:53:00,445 - INFO - Sent keep-alive
+2025-12-11 01:53:05,639 - INFO - Sent keep-alive
+2025-12-11 01:53:10,453 - INFO - Sent keep-alive
+2025-12-11 01:53:15,640 - INFO - Sent keep-alive
+2025-12-11 01:53:20,456 - INFO - Sent keep-alive
+2025-12-11 01:53:25,643 - INFO - Sent keep-alive
+2025-12-11 01:53:30,459 - INFO - Sent keep-alive
+2025-12-11 01:53:35,653 - INFO - Sent keep-alive
+2025-12-11 01:53:40,494 - INFO - Sent keep-alive
+2025-12-11 01:53:43,656 - INFO - Client disconnected: ('127.0.0.1', 63904)
+2025-12-11 01:53:44,121 - INFO - Client connected ('127.0.0.1', 63954)
+2025-12-11 01:53:50,507 - INFO - Sent keep-alive
+2025-12-11 01:53:54,133 - INFO - Sent keep-alive
+2025-12-11 01:54:00,515 - INFO - Sent keep-alive
+2025-12-11 01:54:04,148 - INFO - Sent keep-alive
+2025-12-11 01:54:10,522 - INFO - Sent keep-alive
+2025-12-11 01:54:14,163 - INFO - Sent keep-alive
+2025-12-11 01:54:20,533 - INFO - Sent keep-alive
+2025-12-11 01:54:24,177 - INFO - Sent keep-alive
+2025-12-11 01:54:30,542 - INFO - Sent keep-alive
+2025-12-11 01:54:34,191 - INFO - Sent keep-alive
+2025-12-11 01:54:40,554 - INFO - Sent keep-alive
+2025-12-11 01:54:44,203 - INFO - Sent keep-alive
+2025-12-11 01:54:50,560 - INFO - Sent keep-alive
+2025-12-11 01:54:54,228 - INFO - Sent keep-alive
+2025-12-11 01:55:00,562 - INFO - Sent keep-alive
+2025-12-11 01:55:04,233 - INFO - Sent keep-alive
+2025-12-11 01:55:10,577 - INFO - Sent keep-alive
+2025-12-11 01:55:14,236 - INFO - Sent keep-alive
+2025-12-11 01:55:20,579 - INFO - Sent keep-alive
+2025-12-11 01:55:24,252 - INFO - Sent keep-alive
+2025-12-11 01:55:30,581 - INFO - Sent keep-alive
+2025-12-11 01:55:34,264 - INFO - Sent keep-alive
+2025-12-11 01:55:40,596 - INFO - Sent keep-alive
+2025-12-11 01:55:44,279 - INFO - Sent keep-alive
+2025-12-11 01:55:50,601 - INFO - Sent keep-alive
+2025-12-11 01:55:54,292 - INFO - Sent keep-alive
+2025-12-11 01:56:00,610 - INFO - Sent keep-alive
+2025-12-11 01:56:04,301 - INFO - Sent keep-alive
+2025-12-11 01:56:10,625 - INFO - Sent keep-alive
+2025-12-11 01:56:14,304 - INFO - Sent keep-alive
+2025-12-11 01:56:20,637 - INFO - Sent keep-alive
+2025-12-11 01:56:24,316 - INFO - Sent keep-alive
+2025-12-11 01:56:30,647 - INFO - Sent keep-alive
+2025-12-11 01:56:34,327 - INFO - Sent keep-alive
+2025-12-11 01:56:40,650 - INFO - Sent keep-alive
+2025-12-11 01:56:44,333 - INFO - Sent keep-alive
+2025-12-11 01:56:50,665 - INFO - Sent keep-alive
+2025-12-11 01:56:54,345 - INFO - Sent keep-alive
+2025-12-11 01:57:00,668 - INFO - Sent keep-alive
+2025-12-11 01:57:04,346 - INFO - Sent keep-alive
+2025-12-11 01:57:10,672 - INFO - Sent keep-alive
+2025-12-11 01:57:14,358 - INFO - Sent keep-alive
+2025-12-11 01:57:20,674 - INFO - Sent keep-alive
+2025-12-11 01:57:24,374 - INFO - Sent keep-alive
+2025-12-11 01:57:30,706 - INFO - Sent keep-alive
+2025-12-11 01:57:34,386 - INFO - Sent keep-alive
+2025-12-11 01:57:40,754 - INFO - Sent keep-alive
+2025-12-11 01:57:44,387 - INFO - Sent keep-alive
+2025-12-11 01:57:50,776 - INFO - Sent keep-alive
+2025-12-11 01:57:54,403 - INFO - Sent keep-alive
+2025-12-11 01:58:00,789 - INFO - Sent keep-alive
+2025-12-11 01:58:04,405 - INFO - Sent keep-alive
+2025-12-11 01:58:10,799 - INFO - Sent keep-alive
+2025-12-11 01:58:14,408 - INFO - Sent keep-alive
+2025-12-11 01:58:20,808 - INFO - Sent keep-alive
+2025-12-11 01:58:24,410 - INFO - Sent keep-alive
+2025-12-11 01:58:30,819 - INFO - Sent keep-alive
+2025-12-11 01:58:30,909 - INFO - Client disconnected: ('127.0.0.1', 63954)
+2025-12-11 01:58:31,858 - INFO - Client connected ('127.0.0.1', 64027)
+2025-12-11 01:58:40,827 - INFO - Sent keep-alive
+2025-12-11 01:58:41,876 - INFO - Sent keep-alive
+2025-12-11 01:58:49,633 - INFO - Received: {"type":"message","content":"HI"}
+2025-12-11 01:58:52,556 - ERROR - WebSocket Error: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 244, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 232, in generate_answer
+            response = self.cohere_client.chat(
+                       ~~~~~~~~~~~~~~~~~~~~~~~^
+        model="command-xlarge",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+        message=prompt,
+        ^^^^^^^^^^^^^^^
+        max_tokens=500
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 384, in chat
+    response = self._request(cohere.CHAT_URL, json=json_body, stream=stream)
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 945, in _request
+    self._check_response(json_response, response.headers, response.status_code)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 887, in _check_response
+    raise CohereAPIError(
+    ...<3 lines>...
+    )
+cohere.error.CohereAPIError: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+2025-12-11 01:58:52,567 - INFO - Sent keep-alive
+2025-12-11 01:59:02,571 - INFO - Sent keep-alive
+2025-12-11 01:59:12,575 - INFO - Sent keep-alive
+2025-12-11 01:59:22,584 - INFO - Sent keep-alive
+2025-12-11 01:59:32,589 - INFO - Sent keep-alive
+2025-12-11 01:59:42,606 - INFO - Sent keep-alive
+2025-12-11 01:59:52,617 - INFO - Sent keep-alive
+2025-12-11 02:00:00,972 - INFO - Client connected ('127.0.0.1', 64052)
+2025-12-11 02:00:02,624 - INFO - Sent keep-alive
+2025-12-11 02:00:03,305 - INFO - Client disconnected: ('127.0.0.1', 64052)
+2025-12-11 02:00:03,307 - INFO - Client connected ('127.0.0.1', 64053)
+2025-12-11 02:00:12,625 - INFO - Sent keep-alive
+2025-12-11 02:00:13,308 - INFO - Sent keep-alive
+2025-12-11 02:00:22,632 - INFO - Sent keep-alive
+2025-12-11 02:00:23,318 - INFO - Sent keep-alive
+2025-12-11 02:00:32,638 - INFO - Sent keep-alive
+2025-12-11 02:00:33,328 - INFO - Sent keep-alive
+2025-12-11 02:00:42,641 - INFO - Sent keep-alive
+2025-12-11 02:00:43,336 - INFO - Sent keep-alive
+2025-12-11 02:00:52,643 - INFO - Sent keep-alive
+2025-12-11 02:00:53,344 - INFO - Sent keep-alive
+2025-12-11 02:01:02,656 - INFO - Sent keep-alive
+2025-12-11 02:01:03,358 - INFO - Sent keep-alive
+2025-12-11 02:01:12,662 - INFO - Sent keep-alive
+2025-12-11 02:01:13,373 - INFO - Sent keep-alive
+2025-12-11 02:01:22,676 - INFO - Sent keep-alive
+2025-12-11 02:01:23,379 - INFO - Sent keep-alive
+2025-12-11 02:01:32,692 - INFO - Sent keep-alive
+2025-12-11 02:01:33,393 - INFO - Sent keep-alive
+2025-12-11 02:01:42,705 - INFO - Sent keep-alive
+2025-12-11 02:01:43,404 - INFO - Sent keep-alive
+2025-12-11 02:01:50,592 - INFO - Client disconnected: ('127.0.0.1', 64053)
+2025-12-11 02:01:52,721 - INFO - Sent keep-alive
+2025-12-11 02:01:53,182 - INFO - Client connected ('127.0.0.1', 64076)
+2025-12-11 02:02:02,728 - INFO - Sent keep-alive
+2025-12-11 02:02:02,908 - INFO - Client disconnected: ('127.0.0.1', 64076)
+2025-12-11 02:02:03,772 - INFO - Client connected ('127.0.0.1', 64096)
+2025-12-11 02:02:12,734 - INFO - Sent keep-alive
+2025-12-11 02:02:13,789 - INFO - Sent keep-alive
+2025-12-11 02:02:22,745 - INFO - Sent keep-alive
+2025-12-11 02:02:23,797 - INFO - Sent keep-alive
+2025-12-11 02:02:32,749 - INFO - Sent keep-alive
+2025-12-11 02:02:33,812 - INFO - Sent keep-alive
+2025-12-11 02:02:42,750 - INFO - Sent keep-alive
+2025-12-11 02:02:43,828 - INFO - Sent keep-alive
+2025-12-11 02:02:52,754 - INFO - Sent keep-alive
+2025-12-11 02:02:53,844 - INFO - Sent keep-alive
+2025-12-11 02:03:02,756 - INFO - Sent keep-alive
+2025-12-11 02:03:03,846 - INFO - Sent keep-alive
+2025-12-11 02:03:12,762 - INFO - Sent keep-alive
+2025-12-11 02:03:13,861 - INFO - Sent keep-alive
+2025-12-11 02:03:22,766 - INFO - Sent keep-alive
+2025-12-11 02:03:23,870 - INFO - Sent keep-alive
+2025-12-11 02:03:32,781 - INFO - Sent keep-alive
+2025-12-11 02:03:33,884 - INFO - Sent keep-alive
+2025-12-11 02:03:42,783 - INFO - Sent keep-alive
+2025-12-11 02:03:43,900 - INFO - Sent keep-alive
+2025-12-11 02:03:52,798 - INFO - Sent keep-alive
+2025-12-11 02:03:53,915 - INFO - Sent keep-alive
+2025-12-11 02:04:02,811 - INFO - Sent keep-alive
+2025-12-11 02:04:03,928 - INFO - Sent keep-alive
+2025-12-11 02:04:12,813 - INFO - Sent keep-alive
+2025-12-11 02:04:13,931 - INFO - Sent keep-alive
+2025-12-11 02:04:22,826 - INFO - Sent keep-alive
+2025-12-11 02:04:23,943 - INFO - Sent keep-alive
+2025-12-11 02:04:32,830 - INFO - Sent keep-alive
+2025-12-11 02:04:33,956 - INFO - Sent keep-alive

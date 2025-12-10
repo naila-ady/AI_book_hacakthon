@@ -1,4 +1,4 @@
-.searchContainer {
+/* .searchContainer {
   position: relative;
   margin-left: 10px;
 }
@@ -31,4 +31,62 @@
 
 .searchResults li:hover {
   background-color: var(--ifm-hover-background-color);
+} */
+
+/* ===================== Search Container ===================== */
+.searchContainer {
+  position: relative;
+  margin-left: 10px;
+}
+
+/* ===================== Search Input ===================== */
+.searchInput {
+  border: 1px solid #ff9f0d;          /* orange border */
+  border-radius: 8px;
+  padding: 5px 10px;
+  width: 200px;
+  background-color: #0D0D0D;          /* dark background */
+  color: #ff9f0d;                     /* orange text */
+  transition: border 0.2s ease, background-color 0.2s ease;
+}
+
+.searchInput::placeholder {
+  color: #ff9f0d99;                   /* lighter orange placeholder */
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #ffb733;              /* bright orange on focus */
+  background-color: #1a1a1a;
+}
+
+/* ===================== Search Results Dropdown ===================== */
+.searchResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #0D0D0D;          /* dark background */
+  border: 1px solid #ff9f0d;          /* orange border */
+  border-radius: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================== Search Result Items ===================== */
+.searchResults li {
+  padding: 8px 10px;
+  cursor: pointer;
+  color: #ff9f0d;                     /* orange text */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.searchResults li:hover {
+  background-color: #ff9f0d;          /* orange background on hover */
+  color: #0D0D0D;                     /* dark text for contrast */
 }

@@ -1,42 +1,39 @@
-
-/* LIGHT MODE */
+LIGHT MODE
 :root {
-  /* Primary family (gold/bronze tone you used) */
-  --ifm-color-primary: #736426b4;
-  --ifm-color-primary-dark: #5a4d1f;
-  --ifm-color-primary-darker: #453918;
-  --ifm-color-primary-light: #8b7a30;
-  --ifm-color-primary-lighter: #a49244;
-
+  /* Primary colors */
+  --primary-color: #5a2d82;      /* deep purple */
+  --primary-color-light: #7a4ebf; /* lighter purple */
+  --accent-color: #f2c94c;       /* golden accent */
+  
   --ifm-background-color: #ffffff;
   --ifm-text-color: #1A1D23;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(115, 100, 38, 0.12);
+  --docusaurus-highlighted-code-line-bg: rgba(90, 45, 130, 0.1);
 }
 
 /* NAVBAR */
 .navbar {
-  background: linear-gradient(90deg, #410f74, #5b168f) !important;
-  box-shadow: 0 2px 6px rgba(124, 201, 66, 0.25);
+  background: var(--primary-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .navbar__brand,
 .navbar__link {
-  color: #f9f5ff !important;
+  color: #ffffff !important;
 }
 
 .navbar__link--active {
-  color: #ffe38f !important;
+  color: var(--accent-color) !important;
 }
 
-/* HERO SECTION – neutral background, single text color */
+/* HERO SECTION */
 .heroBanner {
-  background: #f5f0ff;          /* very light lilac, no mustard */
+  background: #f7f5ff;  /* soft light background */
   color: #1A1D23;
 }
 
 .hero__title {
-  color: #1A1D23;
+  color: var(--primary-color);
 }
 
 .hero__subtitle {
@@ -45,77 +42,195 @@
 
 /* PRIMARY BUTTON */
 .button--primary {
-  background: #410557;
+  background: var(--primary-color);
   color: #ffffff;
   border-radius: 6px;
-  border: 1px solid #f3d0ff33;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(90, 45, 130, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .button--primary:hover {
-  background: #5a0779;
+  background: var(--primary-color-light);
   transform: translateY(-1px);
 }
 
 /* CODE BLOCKS */
 .codeBlockContainer {
   border-radius: 8px;
-  border: 1px solid rgba(115, 100, 38, 0.22);
+  border: 1px solid rgba(90, 45, 130, 0.2);
 }
 
 /* DARK MODE */
 [data-theme='dark'] {
-  --ifm-background-color: #210001;
-  --ifm-color-primary: #6123b2;
-  --ifm-color-primary-dark: #3c1974;
-  --ifm-color-primary-light: #f2d47c;
+  --primary-color: #7a4ebf;       /* lighter purple for dark mode */
+  --primary-color-light: #9c6fe0;
+  --accent-color: #f2c94c;
+  --ifm-background-color: #1b0a2c;
   --ifm-text-color: #f5f3ff;
-  --docusaurus-highlighted-code-line-bg: rgba(217, 180, 90, 0.14);
+  --docusaurus-highlighted-code-line-bg: rgba(186, 115, 225, 0.15);
 }
 
 /* Dark navbar */
 [data-theme='dark'] .navbar {
-  background: linear-gradient(90deg, #410f74, #78139d) !important;
+  background: var(--primary-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 [data-theme='dark'] .navbar__brand,
 [data-theme='dark'] .navbar__link {
-  color: #f9f5ff !important;
+  color: #ffffff !important;
 }
 
 [data-theme='dark'] .navbar__link--active {
-  color: #f2d47c !important;
+  color: var(--accent-color) !important;
 }
 
-/* Dark hero – slightly darker but same family */
+/* Dark hero */
 [data-theme='dark'] .heroBanner {
-  background: #230433;
+  background: #2b0f3e;
   color: #f5f3ff;
 }
 
 [data-theme='dark'] .hero__title {
-  color: #ffffff;
+  color: var(--primary-color-light);
 }
 
 [data-theme='dark'] .hero__subtitle {
   color: #e5e7eb;
 }
 
-/* Dark cards / docs content */
+/* Dark cards / docs */
 [data-theme='dark'] .theme-doc-markdown,
 [data-theme='dark'] .card {
-  background: #5b0884;
+  background: #3e0f5c;
   border-radius: 10px;
-  border: 1px solid rgba(242, 212, 124, 0.16);
+  border: 1px solid rgba(242, 201, 92, 0.2);
 }
 
 /* Dark primary button */
 [data-theme='dark'] .button--primary {
-  background: #4b0d62;
-  border-color: rgba(242, 212, 124, 0.3);
+  background: var(--primary-color);
+  border-color: rgba(242, 201, 92, 0.3);
 }
 
 [data-theme='dark'] .button--primary:hover {
-  background: #69178a;
+  background: var(--primary-color-light);
+}
+/* ===================== LIGHT MODE ===================== */
+:root {
+  --primary-color: #ff9f0d;      /* orange/gold accent */
+  --primary-color-light: #ffb733; /* lighter accent for hover */
+  --background-color: #ffffff;
+  --text-color: #0D0D0D;         /* dark text */
+  --code-bg: rgba(255, 159, 13, 0.1);
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--primary-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: flex !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar__brand,
+.navbar__link {
+  color: #ffffff !important;
+}
+
+.navbar__link--active {
+  color: #0D0D0D !important; /* active link contrast */
+}
+
+/* HERO SECTION */
+.heroBanner {
+  background: #fff7ed;  /* soft warm background */
+  color: var(--text-color);
+}
+
+.hero__title {
+  color: var(--primary-color);
+}
+
+.hero__subtitle {
+  color: #4b4b4b;
+}
+
+/* PRIMARY BUTTON */
+.button--primary {
+  background: var(--primary-color);
+  color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 159, 13, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button--primary:hover {
+  background: var(--primary-color-light);
+  transform: translateY(-1px);
+}
+
+/* CODE BLOCKS */
+.codeBlockContainer {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 159, 13, 0.2);
+  background: var(--code-bg);
+}
+
+/* ===================== DARK MODE ===================== */
+[data-theme='dark'] {
+  --primary-color: #ff9f0d;
+  --primary-color-light: #ffb733;
+  --background-color: #0D0D0D;
+  --text-color: #ffffff;
+  --code-bg: rgba(255, 159, 13, 0.15);
+}
+
+/* Dark navbar */
+[data-theme='dark'] .navbar {
+  background: #0D0D0D;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme='dark'] .navbar__brand,
+[data-theme='dark'] .navbar__link {
+  color: var(--primary-color) !important;
+}
+
+[data-theme='dark'] .navbar__link--active {
+  color: #ffffff !important;
+}
+
+/* Dark hero */
+[data-theme='dark'] .heroBanner {
+  background: #1a1a1a;
+  color: var(--text-color);
+}
+
+[data-theme='dark'] .hero__title {
+  color: var(--primary-color);
+}
+
+[data-theme='dark'] .hero__subtitle {
+  color: #e5e5e5;
+}
+
+/* Dark cards / docs */
+[data-theme='dark'] .theme-doc-markdown,
+[data-theme='dark'] .card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 159, 13, 0.2);
+}
+
+/* Dark primary button */
+[data-theme='dark'] .button--primary {
+  background: var(--primary-color);
+  border-color: rgba(255, 159, 13, 0.3);
+}
+
+[data-theme='dark'] .button--primary:hover {
+  background: var(--primary-color-light);
 }
