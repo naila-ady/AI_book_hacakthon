@@ -1,19 +1,176 @@
 
-import cohere as cohere_module
-from qdrant_client import QdrantClient, models
-from qdrant_client.models import VectorParams, Distance, ScoredPoint
-from typing import List, Optional, Dict, Any, Tuple
+# # import cohere as cohere_module
+# # from qdrant_client import QdrantClient, models
+# # from qdrant_client.models import VectorParams, Distance, ScoredPoint
+# # from typing import List, Optional, Dict, Any, Tuple
 
-from app.config import Config
+# # from app.config import Config
+
+# # class RAGService:
+# #     def __init__(self):
+# #         if not Config.QDRANT_URL or not Config.COHERE_API_KEY:
+# #             raise ValueError("QDRANT_URL and COHERE_API_KEY must be set in environment.")
+        
+# #         self.qdrant_client = QdrantClient(url=Config.QDRANT_URL, api_key=Config.QDRANT_API_KEY)
+# #         self.cohere_client = cohere_module.Client(api_key=Config.COHERE_API_KEY)
+# #         self.collection_name = Config.QDRANT_COLLECTION or "book_content"
+
+# #     def initialize_collection(self):
+# #         try:
+# #             self.qdrant_client.get_collection(collection_name=self.collection_name)
+# #         except Exception:
+# #             self.qdrant_client.create_collection(
+# #                 collection_name=self.collection_name,
+# #                 vectors_config=VectorParams(size=1024, distance=Distance.COSINE)
+# #             )
+# #             print(f"Created collection '{self.collection_name}'.")
+
+# #     def get_embedding(self, text: str, input_type: str) -> List[float]:
+# #         response = self.cohere_client.embed(
+# #             texts=[text],
+# #             model="embed-english-v3.0",
+# #             input_type=input_type
+# #         )
+# #         return response.embeddings[0]
+
+# #     def search_and_retrieve_chunks(self, query: str, selected_text: Optional[str] = None, top_k: int = 5) -> List[Dict[str, Any]]:
+# #         search_query = f"{selected_text}\n\n{query}" if selected_text else query
+# #         query_embedding = self.get_embedding(search_query, "search_query")
+        
+# #         search_results = self.qdrant_client.query_points(
+# #             collection_name=self.collection_name,
+# #             query=query_embedding,
+# #             limit=top_k,
+# #             with_payload=True
+# #         )
+# #         return [hit.payload for hit in search_results.points if hit.payload]
+
+# #     def generate_answer(self, question: str, context_chunks: List[Dict[str, Any]]) -> Tuple[str, List[Dict[str, Any]]]:
+# #         if not context_chunks:
+# #             return "I don't have enough information to answer that question based on the book's content.", []
+
+# #         documents = [
+# #             {
+# #                 "title": chunk.get("title", "Unknown Title"),
+# #                 "snippet": chunk.get("content", ""),
+# #                 "source": chunk.get("source", "Unknown Source")
+# #             } for chunk in context_chunks
+# #         ]
+        
+# #         response = self.cohere_client.chat(
+# #             message=question,
+# #             documents=documents,
+# #             preamble="You are a helpful assistant for the 'Physical AI and Humanoid Robotics' book. Answer questions based only on the provided document snippets. Cite the source file for your answer."
+# #         )
+        
+# #         return response.text, response.documents or []
+
+# #     def query(self, query: str, selected_text: Optional[str] = None) -> Dict[str, Any]:
+# #         retrieved_chunks = self.search_and_retrieve_chunks(query, selected_text)
+# #         answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+        
+# #         sources = [doc['source'] for doc in cited_documents if 'source' in doc]
+        
+# #         return {
+# #             "answer": answer,
+# #             "sources": list(set(sources)) # Return unique source files
+# #         }
+# import cohere as cohere_module
+# from qdrant_client import QdrantClient
+# from qdrant_client.models import VectorParams, Distance
+# from typing import List, Optional, Dict, Any, Tuple
+# from app.config import Config
+
+
+# class RAGService:
+#     def __init__(self):
+#         if not Config.QDRANT_URL or not Config.COHERE_API_KEY:
+#             raise ValueError("QDRANT_URL and COHERE_API_KEY must be set in environment.")
+
+#         self.qdrant_client = QdrantClient(url=Config.QDRANT_URL, api_key=Config.QDRANT_API_KEY)
+#         self.cohere_client = cohere_module.Client(api_key=Config.COHERE_API_KEY)
+#         self.collection_name = Config.QDRANT_COLLECTION or "bookn"
+
+#     def initialize_collection(self):
+#         try:
+#             self.qdrant_client.get_collection(collection_name=self.collection_name)
+#         except Exception:
+#             self.qdrant_client.create_collection(
+#                 collection_name=self.collection_name,
+#                 vectors_config=VectorParams(size=1024, distance=Distance.COSINE)
+#             )
+#             print(f"Created collection '{self.collection_name}'.")
+
+#     def get_embedding(self, text: str, input_type: str) -> List[float]:
+#         response = self.cohere_client.embed(
+#             texts=[text],
+#             model="embed-english-v3.0",
+#             input_type=input_type
+#         )
+#         return response.embeddings[0]
+
+#     def search_and_retrieve_chunks(self, query: str, selected_text: Optional[str] = None, top_k: int = 5) -> List[Dict[str, Any]]:
+#         search_query = f"{selected_text}\n\n{query}" if selected_text else query
+#         query_embedding = self.get_embedding(search_query, "search_query")
+
+#         search_results = self.qdrant_client.query_points(
+#             collection_name=self.collection_name,
+#             query=query_embedding,
+#             limit=top_k,
+#             with_payload=True
+#         )
+#         return [hit.payload for hit in search_results.points if hit.payload]
+
+#     def generate_answer(self, question: str, context_chunks: List[Dict[str, Any]]) -> Tuple[str, List[Dict[str, Any]]]:
+#         if not context_chunks:
+#             return "I don't have enough information to answer that question based on the book's content.", []
+
+#         documents = [
+#             {
+#                 "title": chunk.get("title", "Unknown Title"),
+#                 "snippet": chunk.get("content", ""),
+#                 "source": chunk.get("source", "Unknown Source")
+#             } for chunk in context_chunks
+#         ]
+
+#         response = self.cohere_client.chat(
+#             message=question,
+#             documents=documents,
+#             preamble="You are a helpful assistant for the 'Physical AI and Humanoid Robotics' book. Answer questions based only on the provided document snippets. Cite the source file for your answer."
+#         )
+
+#         return response.text, response.documents or []
+
+#     def query(self, query: str, selected_text: Optional[str] = None) -> Dict[str, Any]:
+#         retrieved_chunks = self.search_and_retrieve_chunks(query, selected_text)
+#         answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+#         sources = [doc['source'] for doc in cited_documents if 'source' in doc]
+#         return {
+#             "answer": answer,
+#             "sources": list(set(sources))
+#         }
+# app/services/rag_service.py
+import os
+from typing import List, Dict, Any, Tuple
+import cohere
+from qdrant_client import QdrantClient
+from qdrant_client.models import VectorParams, Distance
+from dotenv import load_dotenv
+
+load_dotenv()  # Load .env
 
 class RAGService:
-    def __init__(self):
-        if not Config.QDRANT_URL or not Config.COHERE_API_KEY:
-            raise ValueError("QDRANT_URL and COHERE_API_KEY must be set in environment.")
-        
-        self.qdrant_client = QdrantClient(url=Config.QDRANT_URL, api_key=Config.QDRANT_API_KEY)
-        self.cohere_client = cohere_module.Client(api_key=Config.COHERE_API_KEY)
-        self.collection_name = Config.QDRANT_COLLECTION or "book_content"
+    def __init__(self, collection_name: str = "bookn"):
+        COHERE_API_KEY = os.getenv("COHERE_API_KEY")
+        QDRANT_URL = os.getenv("QDRANT_URL")
+        QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+
+        if not COHERE_API_KEY or not QDRANT_URL:
+            raise ValueError("Cohere API key and Qdrant URL must be set.")
+
+        self.cohere_client = cohere.Client(api_key=COHERE_API_KEY)
+        self.qdrant_client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
+        self.collection_name = collection_name
 
     def initialize_collection(self):
         try:
@@ -23,55 +180,67 @@ class RAGService:
                 collection_name=self.collection_name,
                 vectors_config=VectorParams(size=1024, distance=Distance.COSINE)
             )
-            print(f"Created collection '{self.collection_name}'.")
+            print(f"Created collection {self.collection_name}")
 
-    def get_embedding(self, text: str, input_type: str) -> List[float]:
-        response = self.cohere_client.embed(
+    def get_embedding(self, text: str) -> List[float]:
+        resp = self.cohere_client.embed(
             texts=[text],
             model="embed-english-v3.0",
-            input_type=input_type
+            input_type="search_document"
         )
-        return response.embeddings[0]
+        return resp.embeddings[0]
 
-    def search_and_retrieve_chunks(self, query: str, selected_text: Optional[str] = None, top_k: int = 5) -> List[Dict[str, Any]]:
-        search_query = f"{selected_text}\n\n{query}" if selected_text else query
-        query_embedding = self.get_embedding(search_query, "search_query")
-        
-        search_results = self.qdrant_client.query_points(
+    def search_and_retrieve_chunks(
+        self,
+        query: str,
+        top_k: int = 5
+    ) -> List[Dict[str, Any]]:
+        query_embedding = self.get_embedding(query)
+        results = self.qdrant_client.query_points(
             collection_name=self.collection_name,
             query=query_embedding,
             limit=top_k,
             with_payload=True
         )
-        return [hit.payload for hit in search_results.points if hit.payload]
+        return [hit.payload for hit in results.points if hit.payload]
 
-    def generate_answer(self, question: str, context_chunks: List[Dict[str, Any]]) -> Tuple[str, List[Dict[str, Any]]]:
+    def generate_answer(
+        self,
+        question: str,
+        context_chunks: List[Dict[str, Any]]
+    ) -> Tuple[str, List[Dict[str, Any]]]:
         if not context_chunks:
-            return "I don't have enough information to answer that question based on the book's content.", []
+            return "I don't have enough information to answer that question.", []
 
-        documents = [
-            {
-                "title": chunk.get("title", "Unknown Title"),
-                "snippet": chunk.get("content", ""),
-                "source": chunk.get("source", "Unknown Source")
-            } for chunk in context_chunks
-        ]
-        
+        # Build the prompt manually (combine content and instructions)
+        prompt = "You are a helpful assistant for the 'Physical AI and Humanoid Robotics' book.\n"
+        prompt += "Answer questions using only the following book snippets. Cite the source file.\n\n"
+
+        for chunk in context_chunks:
+            content = chunk.get("content", "")
+            source = chunk.get("file_path", "Unknown Source")
+            prompt += f"Content from {source}:\n{content}\n\n"
+
+        prompt += f"Question: {question}\nAnswer:"
+
+        # Cohere chat only takes 'message' now
+        # response = self.cohere_client.chat(
+        #     model="xlarge",
+        #     message=prompt,
+        #     max_tokens=500
+        # )
         response = self.cohere_client.chat(
-            message=question,
-            documents=documents,
-            preamble="You are a helpful assistant for the 'Physical AI and Humanoid Robotics' book. Answer questions based only on the provided document snippets. Cite the source file for your answer."
-        )
-        
-        return response.text, response.documents or []
+    model="command-xlarge",
+    message=prompt,
+    max_tokens=500
+)
 
-    def query(self, query: str, selected_text: Optional[str] = None) -> Dict[str, Any]:
-        retrieved_chunks = self.search_and_retrieve_chunks(query, selected_text)
+
+        answer = response.text.strip()
+        return answer, context_chunks
+
+    def query(self, query: str) -> Dict[str, Any]:
+        retrieved_chunks = self.search_and_retrieve_chunks(query)
         answer, cited_documents = self.generate_answer(query, retrieved_chunks)
-        
-        sources = [doc['source'] for doc in cited_documents if 'source' in doc]
-        
-        return {
-            "answer": answer,
-            "sources": list(set(sources)) # Return unique source files
-        }
+        sources = [doc.get("file_path", "Unknown") for doc in cited_documents]
+        return {"answer": answer, "sources": list(set(sources))}

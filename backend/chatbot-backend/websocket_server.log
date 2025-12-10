@@ -1,0 +1,521 @@
+2025-12-11 00:19:37,052 - __main__ - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 00:28:30,465 - INFO - WebSocket server running on ws://127.0.0.1:8001
+2025-12-11 00:33:21,277 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 00:35:25,626 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 00:35:46,413 - INFO - Client connected ('127.0.0.1', 62024)
+2025-12-11 00:35:50,794 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 00:36:00,804 - INFO - Sent keep-alive
+2025-12-11 00:36:10,814 - INFO - Sent keep-alive
+2025-12-11 00:36:20,831 - INFO - Sent keep-alive
+2025-12-11 00:36:30,842 - INFO - Sent keep-alive
+2025-12-11 00:36:40,856 - INFO - Sent keep-alive
+2025-12-11 00:36:50,859 - INFO - Sent keep-alive
+2025-12-11 00:37:00,868 - INFO - Sent keep-alive
+2025-12-11 00:37:10,880 - INFO - Sent keep-alive
+2025-12-11 00:37:20,883 - INFO - Sent keep-alive
+2025-12-11 00:37:30,896 - INFO - Sent keep-alive
+2025-12-11 00:37:40,906 - INFO - Sent keep-alive
+2025-12-11 00:37:50,916 - INFO - Sent keep-alive
+2025-12-11 00:38:00,929 - INFO - Sent keep-alive
+2025-12-11 00:38:10,945 - INFO - Sent keep-alive
+2025-12-11 00:38:20,960 - INFO - Sent keep-alive
+2025-12-11 00:38:30,967 - INFO - Sent keep-alive
+2025-12-11 00:38:40,978 - INFO - Sent keep-alive
+2025-12-11 00:38:46,957 - INFO - Client disconnected: ('127.0.0.1', 62024)
+2025-12-11 00:38:48,039 - INFO - Client connected ('127.0.0.1', 62062)
+2025-12-11 00:38:55,242 - INFO - Client disconnected: ('127.0.0.1', 62062)
+2025-12-11 00:38:56,046 - INFO - Client connected ('127.0.0.1', 62074)
+2025-12-11 00:38:59,501 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 00:39:09,515 - INFO - Sent keep-alive
+2025-12-11 00:39:10,569 - INFO - Received: {"type":"message","content":"what are u doing"}
+2025-12-11 00:39:20,579 - INFO - Sent keep-alive
+2025-12-11 00:39:30,594 - INFO - Sent keep-alive
+2025-12-11 00:39:40,600 - INFO - Sent keep-alive
+2025-12-11 00:39:50,602 - INFO - Sent keep-alive
+2025-12-11 00:40:00,609 - INFO - Sent keep-alive
+2025-12-11 00:40:10,614 - INFO - Sent keep-alive
+2025-12-11 00:40:20,619 - INFO - Sent keep-alive
+2025-12-11 00:40:30,632 - INFO - Sent keep-alive
+2025-12-11 00:40:40,642 - INFO - Sent keep-alive
+2025-12-11 00:40:50,657 - INFO - Sent keep-alive
+2025-12-11 00:41:00,682 - INFO - Sent keep-alive
+2025-12-11 00:41:10,697 - INFO - Sent keep-alive
+2025-12-11 00:41:20,713 - INFO - Sent keep-alive
+2025-12-11 00:41:30,730 - INFO - Sent keep-alive
+2025-12-11 00:41:40,732 - INFO - Sent keep-alive
+2025-12-11 00:41:50,739 - INFO - Sent keep-alive
+2025-12-11 00:42:00,741 - INFO - Sent keep-alive
+2025-12-11 00:42:10,754 - INFO - Sent keep-alive
+2025-12-11 00:42:20,756 - INFO - Sent keep-alive
+2025-12-11 00:42:30,765 - INFO - Sent keep-alive
+2025-12-11 00:42:40,777 - INFO - Sent keep-alive
+2025-12-11 00:42:50,784 - INFO - Sent keep-alive
+2025-12-11 00:43:00,788 - INFO - Sent keep-alive
+2025-12-11 00:43:10,797 - INFO - Sent keep-alive
+2025-12-11 00:43:20,813 - INFO - Sent keep-alive
+2025-12-11 00:43:30,814 - INFO - Sent keep-alive
+2025-12-11 00:43:40,825 - INFO - Sent keep-alive
+2025-12-11 00:43:50,835 - INFO - Sent keep-alive
+2025-12-11 00:44:00,837 - INFO - Sent keep-alive
+2025-12-11 00:44:10,844 - INFO - Sent keep-alive
+2025-12-11 00:44:20,853 - INFO - Sent keep-alive
+2025-12-11 00:44:30,867 - INFO - Sent keep-alive
+2025-12-11 00:44:40,873 - INFO - Sent keep-alive
+2025-12-11 00:44:50,878 - INFO - Sent keep-alive
+2025-12-11 00:45:00,883 - INFO - Sent keep-alive
+2025-12-11 00:45:10,897 - INFO - Sent keep-alive
+2025-12-11 00:45:20,902 - INFO - Sent keep-alive
+2025-12-11 00:45:30,915 - INFO - Sent keep-alive
+2025-12-11 00:45:40,918 - INFO - Sent keep-alive
+2025-12-11 00:45:50,923 - INFO - Sent keep-alive
+2025-12-11 00:46:00,926 - INFO - Sent keep-alive
+2025-12-11 00:46:10,938 - INFO - Sent keep-alive
+2025-12-11 00:46:20,945 - INFO - Sent keep-alive
+2025-12-11 00:46:30,948 - INFO - Sent keep-alive
+2025-12-11 00:46:40,961 - INFO - Sent keep-alive
+2025-12-11 00:46:50,966 - INFO - Sent keep-alive
+2025-12-11 00:46:54,513 - INFO - Client disconnected: ('127.0.0.1', 62074)
+2025-12-11 00:46:55,590 - INFO - Client connected ('127.0.0.1', 62213)
+2025-12-11 00:46:58,976 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 00:47:08,982 - INFO - Sent keep-alive
+2025-12-11 00:47:18,993 - INFO - Sent keep-alive
+2025-12-11 00:47:29,005 - INFO - Sent keep-alive
+2025-12-11 00:47:39,018 - INFO - Sent keep-alive
+2025-12-11 00:47:49,024 - INFO - Sent keep-alive
+2025-12-11 00:47:59,038 - INFO - Sent keep-alive
+2025-12-11 00:48:09,041 - INFO - Sent keep-alive
+2025-12-11 00:48:19,042 - INFO - Sent keep-alive
+2025-12-11 00:48:29,054 - INFO - Sent keep-alive
+2025-12-11 00:48:39,066 - INFO - Sent keep-alive
+2025-12-11 00:48:49,069 - INFO - Sent keep-alive
+2025-12-11 00:48:59,078 - INFO - Sent keep-alive
+2025-12-11 00:49:09,094 - INFO - Sent keep-alive
+2025-12-11 00:49:19,108 - INFO - Sent keep-alive
+2025-12-11 00:49:20,149 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 00:49:30,151 - INFO - Sent keep-alive
+2025-12-11 00:49:34,377 - INFO - Received: {"type":"message","content":"what is physical ai"}
+2025-12-11 00:49:44,384 - INFO - Sent keep-alive
+2025-12-11 00:49:54,385 - INFO - Sent keep-alive
+2025-12-11 00:50:04,402 - INFO - Sent keep-alive
+2025-12-11 00:50:14,406 - INFO - Sent keep-alive
+2025-12-11 00:50:24,414 - INFO - Sent keep-alive
+2025-12-11 00:50:34,431 - INFO - Sent keep-alive
+2025-12-11 00:50:44,445 - INFO - Sent keep-alive
+2025-12-11 00:50:54,454 - INFO - Sent keep-alive
+2025-12-11 00:51:04,459 - INFO - Sent keep-alive
+2025-12-11 00:51:14,471 - INFO - Sent keep-alive
+2025-12-11 00:51:24,475 - INFO - Sent keep-alive
+2025-12-11 00:51:34,484 - INFO - Sent keep-alive
+2025-12-11 00:51:44,498 - INFO - Sent keep-alive
+2025-12-11 00:51:54,504 - INFO - Sent keep-alive
+2025-12-11 00:52:04,509 - INFO - Sent keep-alive
+2025-12-11 00:52:08,561 - INFO - Client disconnected: ('127.0.0.1', 62213)
+2025-12-11 00:52:11,322 - INFO - Client connected ('127.0.0.1', 62325)
+2025-12-11 00:52:21,323 - INFO - Sent keep-alive
+2025-12-11 00:52:24,668 - INFO - Client disconnected: ('127.0.0.1', 62325)
+2025-12-11 00:52:25,494 - INFO - Client connected ('127.0.0.1', 62336)
+2025-12-11 00:52:29,466 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 00:52:39,469 - INFO - Sent keep-alive
+2025-12-11 00:52:49,475 - INFO - Sent keep-alive
+2025-12-11 00:52:50,917 - INFO - Received: {"type":"message","content":"what is AI"}
+2025-12-11 00:53:00,932 - INFO - Sent keep-alive
+2025-12-11 00:53:10,947 - INFO - Sent keep-alive
+2025-12-11 00:53:20,960 - INFO - Sent keep-alive
+2025-12-11 00:53:30,975 - INFO - Sent keep-alive
+2025-12-11 00:53:40,986 - INFO - Sent keep-alive
+2025-12-11 00:53:50,989 - INFO - Sent keep-alive
+2025-12-11 00:54:00,994 - INFO - Sent keep-alive
+2025-12-11 00:54:11,005 - INFO - Sent keep-alive
+2025-12-11 00:54:21,007 - INFO - Sent keep-alive
+2025-12-11 00:54:31,014 - INFO - Sent keep-alive
+2025-12-11 00:54:41,024 - INFO - Sent keep-alive
+2025-12-11 00:54:51,027 - INFO - Sent keep-alive
+2025-12-11 00:55:01,042 - INFO - Sent keep-alive
+2025-12-11 00:55:11,046 - INFO - Sent keep-alive
+2025-12-11 00:55:21,048 - INFO - Sent keep-alive
+2025-12-11 00:55:31,057 - INFO - Sent keep-alive
+2025-12-11 00:55:41,067 - INFO - Sent keep-alive
+2025-12-11 00:55:43,179 - INFO - Client disconnected: ('127.0.0.1', 62336)
+2025-12-11 00:55:44,107 - INFO - Client connected ('127.0.0.1', 62398)
+2025-12-11 00:55:47,811 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 00:55:54,475 - INFO - Received: {"type":"message","content":"what is ai"}
+2025-12-11 00:56:04,479 - INFO - Sent keep-alive
+2025-12-11 00:56:14,492 - INFO - Sent keep-alive
+2025-12-11 00:56:24,502 - INFO - Sent keep-alive
+2025-12-11 00:56:34,510 - INFO - Sent keep-alive
+2025-12-11 00:56:44,526 - INFO - Sent keep-alive
+2025-12-11 00:56:54,538 - INFO - Sent keep-alive
+2025-12-11 00:57:04,544 - INFO - Sent keep-alive
+2025-12-11 00:57:14,549 - INFO - Sent keep-alive
+2025-12-11 00:57:24,564 - INFO - Sent keep-alive
+2025-12-11 00:57:34,579 - INFO - Sent keep-alive
+2025-12-11 00:57:44,591 - INFO - Sent keep-alive
+2025-12-11 00:57:54,593 - INFO - Sent keep-alive
+2025-12-11 00:58:04,594 - INFO - Sent keep-alive
+2025-12-11 00:58:14,603 - INFO - Sent keep-alive
+2025-12-11 00:58:24,620 - INFO - Sent keep-alive
+2025-12-11 00:58:34,623 - INFO - Sent keep-alive
+2025-12-11 00:58:44,627 - INFO - Sent keep-alive
+2025-12-11 00:58:54,631 - INFO - Sent keep-alive
+2025-12-11 00:59:04,635 - INFO - Sent keep-alive
+2025-12-11 00:59:14,645 - INFO - Sent keep-alive
+2025-12-11 00:59:24,646 - INFO - Sent keep-alive
+2025-12-11 00:59:34,653 - INFO - Sent keep-alive
+2025-12-11 00:59:44,664 - INFO - Sent keep-alive
+2025-12-11 00:59:54,667 - INFO - Sent keep-alive
+2025-12-11 01:00:04,682 - INFO - Sent keep-alive
+2025-12-11 01:00:14,694 - INFO - Sent keep-alive
+2025-12-11 01:00:24,695 - INFO - Sent keep-alive
+2025-12-11 01:00:34,717 - INFO - Sent keep-alive
+2025-12-11 01:00:44,727 - INFO - Sent keep-alive
+2025-12-11 01:00:54,731 - INFO - Sent keep-alive
+2025-12-11 01:01:04,734 - INFO - Sent keep-alive
+2025-12-11 01:01:14,742 - INFO - Sent keep-alive
+2025-12-11 01:01:24,751 - INFO - Sent keep-alive
+2025-12-11 01:01:34,758 - INFO - Sent keep-alive
+2025-12-11 01:01:44,788 - INFO - Sent keep-alive
+2025-12-11 01:01:54,825 - INFO - Sent keep-alive
+2025-12-11 01:02:04,840 - INFO - Sent keep-alive
+2025-12-11 01:02:14,853 - INFO - Sent keep-alive
+2025-12-11 01:02:24,868 - INFO - Sent keep-alive
+2025-12-11 01:02:34,872 - INFO - Sent keep-alive
+2025-12-11 01:02:44,891 - INFO - Sent keep-alive
+2025-12-11 01:02:54,895 - INFO - Sent keep-alive
+2025-12-11 01:03:04,907 - INFO - Sent keep-alive
+2025-12-11 01:03:14,912 - INFO - Sent keep-alive
+2025-12-11 01:03:24,914 - INFO - Sent keep-alive
+2025-12-11 01:03:34,937 - INFO - Sent keep-alive
+2025-12-11 01:03:44,952 - INFO - Sent keep-alive
+2025-12-11 01:03:54,964 - INFO - Sent keep-alive
+2025-12-11 01:04:04,974 - INFO - Sent keep-alive
+2025-12-11 01:04:15,006 - INFO - Sent keep-alive
+2025-12-11 01:04:25,013 - INFO - Sent keep-alive
+2025-12-11 01:04:35,016 - INFO - Sent keep-alive
+2025-12-11 01:04:45,032 - INFO - Sent keep-alive
+2025-12-11 01:04:55,038 - INFO - Sent keep-alive
+2025-12-11 01:05:05,041 - INFO - Sent keep-alive
+2025-12-11 01:05:15,054 - INFO - Sent keep-alive
+2025-12-11 01:05:25,065 - INFO - Sent keep-alive
+2025-12-11 01:05:35,084 - INFO - Sent keep-alive
+2025-12-11 01:05:45,097 - INFO - Sent keep-alive
+2025-12-11 01:05:55,110 - INFO - Sent keep-alive
+2025-12-11 01:06:05,112 - INFO - Sent keep-alive
+2025-12-11 01:06:15,189 - INFO - Sent keep-alive
+2025-12-11 01:06:25,191 - INFO - Sent keep-alive
+2025-12-11 01:06:35,200 - INFO - Sent keep-alive
+2025-12-11 01:06:43,192 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:06:47,266 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:06:57,271 - INFO - Sent keep-alive
+2025-12-11 01:07:07,280 - INFO - Sent keep-alive
+2025-12-11 01:07:17,297 - INFO - Sent keep-alive
+2025-12-11 01:07:27,298 - INFO - Sent keep-alive
+2025-12-11 01:07:37,306 - INFO - Sent keep-alive
+2025-12-11 01:07:47,314 - INFO - Sent keep-alive
+2025-12-11 01:07:57,322 - INFO - Sent keep-alive
+2025-12-11 01:08:07,329 - INFO - Sent keep-alive
+2025-12-11 01:08:17,336 - INFO - Sent keep-alive
+2025-12-11 01:08:27,340 - INFO - Sent keep-alive
+2025-12-11 01:08:37,354 - INFO - Sent keep-alive
+2025-12-11 01:08:47,357 - INFO - Sent keep-alive
+2025-12-11 01:08:57,364 - INFO - Sent keep-alive
+2025-12-11 01:09:03,909 - INFO - Client disconnected: ('127.0.0.1', 62398)
+2025-12-11 01:09:04,850 - INFO - Client connected ('127.0.0.1', 62730)
+2025-12-11 01:09:08,474 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:09:16,648 - INFO - Received: {"type":"message","content":"what is AI"}
+2025-12-11 01:09:26,653 - INFO - Sent keep-alive
+2025-12-11 01:09:36,654 - INFO - Sent keep-alive
+2025-12-11 01:09:46,665 - INFO - Sent keep-alive
+2025-12-11 01:09:56,670 - INFO - Sent keep-alive
+2025-12-11 01:10:06,679 - INFO - Sent keep-alive
+2025-12-11 01:10:16,699 - INFO - Sent keep-alive
+2025-12-11 01:10:26,702 - INFO - Sent keep-alive
+2025-12-11 01:10:36,705 - INFO - Sent keep-alive
+2025-12-11 01:10:46,708 - INFO - Sent keep-alive
+2025-12-11 01:10:56,709 - INFO - Sent keep-alive
+2025-12-11 01:11:06,712 - INFO - Sent keep-alive
+2025-12-11 01:11:16,723 - INFO - Sent keep-alive
+2025-12-11 01:11:26,726 - INFO - Sent keep-alive
+2025-12-11 01:11:36,737 - INFO - Sent keep-alive
+2025-12-11 01:11:46,747 - INFO - Sent keep-alive
+2025-12-11 01:11:56,756 - INFO - Sent keep-alive
+2025-12-11 01:12:06,773 - INFO - Sent keep-alive
+2025-12-11 01:12:16,789 - INFO - Sent keep-alive
+2025-12-11 01:12:26,802 - INFO - Sent keep-alive
+2025-12-11 01:12:36,818 - INFO - Sent keep-alive
+2025-12-11 01:12:46,828 - INFO - Sent keep-alive
+2025-12-11 01:12:56,831 - INFO - Sent keep-alive
+2025-12-11 01:13:06,845 - INFO - Sent keep-alive
+2025-12-11 01:13:16,861 - INFO - Sent keep-alive
+2025-12-11 01:13:22,231 - INFO - Client disconnected: ('127.0.0.1', 62730)
+2025-12-11 01:13:23,260 - INFO - Client connected ('127.0.0.1', 62835)
+2025-12-11 01:13:33,299 - INFO - Sent keep-alive
+2025-12-11 01:13:34,644 - INFO - Received: {"type":"message","content":"what is physical ai"}
+2025-12-11 01:13:44,664 - INFO - Sent keep-alive
+2025-12-11 01:13:54,671 - INFO - Sent keep-alive
+2025-12-11 01:14:04,684 - INFO - Sent keep-alive
+2025-12-11 01:14:14,696 - INFO - Sent keep-alive
+2025-12-11 01:14:24,709 - INFO - Sent keep-alive
+2025-12-11 01:14:34,712 - INFO - Sent keep-alive
+2025-12-11 01:14:44,713 - INFO - Sent keep-alive
+2025-12-11 01:14:54,726 - INFO - Sent keep-alive
+2025-12-11 01:15:02,919 - INFO - Client disconnected: ('127.0.0.1', 62835)
+2025-12-11 01:15:03,799 - INFO - Client connected ('127.0.0.1', 62863)
+2025-12-11 01:15:06,768 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:15:20,559 - INFO - RAGService initialized and collection ready.
+2025-12-11 01:15:20,600 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 01:15:29,710 - INFO - Client connected ('127.0.0.1', 62880)
+2025-12-11 01:15:32,564 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:15:34,091 - ERROR - WebSocket Error: Client.chat() got an unexpected keyword argument 'preamble'
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 146, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 136, in generate_answer
+    response = self.cohere_client.chat(
+        message=question,
+        documents=documents,
+        preamble="You are a helpful assistant for the 'Physical AI and Humanoid Robotics' book. Answer questions based only on the provided document snippets. Cite the source file for your answer."
+    )
+TypeError: Client.chat() got an unexpected keyword argument 'preamble'
+2025-12-11 01:16:18,282 - INFO - Client connected ('127.0.0.1', 62898)
+2025-12-11 01:16:28,302 - INFO - Sent keep-alive
+2025-12-11 01:16:30,930 - INFO - Received: {"type":"message","content":"what is physiical ai"}
+2025-12-11 01:16:32,301 - ERROR - WebSocket Error: Client.chat() got an unexpected keyword argument 'preamble'
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 146, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 136, in generate_answer
+    response = self.cohere_client.chat(
+        message=question,
+        documents=documents,
+        preamble="You are a helpful assistant for the 'Physical AI and Humanoid Robotics' book. Answer questions based only on the provided document snippets. Cite the source file for your answer."
+    )
+TypeError: Client.chat() got an unexpected keyword argument 'preamble'
+2025-12-11 01:18:57,599 - INFO - Client connected ('127.0.0.1', 62958)
+2025-12-11 01:19:01,025 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:19:02,602 - ERROR - WebSocket Error: Client.chat() got an unexpected keyword argument 'preamble'
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 146, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 136, in generate_answer
+    response = self.cohere_client.chat(
+        message=question,
+        documents=documents,
+        preamble="You are a helpful assistant for the 'Physical AI and Humanoid Robotics' book. Answer questions based only on the provided document snippets. Cite the source file for your answer."
+    )
+TypeError: Client.chat() got an unexpected keyword argument 'preamble'
+2025-12-11 01:19:27,794 - INFO - RAGService initialized and collection ready.
+2025-12-11 01:19:27,824 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 01:20:28,217 - INFO - Client connected ('127.0.0.1', 62990)
+2025-12-11 01:20:32,502 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:20:34,868 - ERROR - WebSocket Error: Client.chat() got an unexpected keyword argument 'preamble'
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 146, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 136, in generate_answer
+    response = self.cohere_client.chat(
+        message=question,
+        documents=documents,
+        preamble="You are a helpful assistant for the 'Physical AI and Humanoid Robotics' book. Answer questions based only on the provided document snippets. Cite the source file for your answer."
+    )
+TypeError: Client.chat() got an unexpected keyword argument 'preamble'
+2025-12-11 01:24:09,079 - INFO - RAGService initialized and collection ready.
+2025-12-11 01:24:09,108 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 01:24:18,923 - INFO - Client connected ('127.0.0.1', 63100)
+2025-12-11 01:24:28,946 - INFO - Sent keep-alive
+2025-12-11 01:24:29,619 - INFO - Received: {"type":"message","content":"what is physical AI"}
+2025-12-11 01:24:31,564 - ERROR - WebSocket Error: Client.chat() got an unexpected keyword argument 'messages'. Did you mean 'message'?
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 243, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 228, in generate_answer
+    response = self.cohere_client.chat(
+        model="xlarge",
+    ...<5 lines>...
+        max_tokens=500
+    )
+TypeError: Client.chat() got an unexpected keyword argument 'messages'. Did you mean 'message'?
+2025-12-11 01:28:10,833 - INFO - RAGService initialized and collection ready.
+2025-12-11 01:28:10,870 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 01:28:25,204 - INFO - Client connected ('127.0.0.1', 63216)
+2025-12-11 01:28:30,371 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:28:31,666 - ERROR - WebSocket Error: Client.chat() got an unexpected keyword argument 'preamble'
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 146, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 136, in generate_answer
+    response = self.cohere_client.chat(
+        message=question,
+        documents=documents,
+        preamble="You are a helpful assistant for the 'Physical AI and Humanoid Robotics' book. Answer questions based only on the provided document snippets. Cite the source file for your answer."
+    )
+TypeError: Client.chat() got an unexpected keyword argument 'preamble'
+2025-12-11 01:31:20,623 - INFO - RAGService initialized and collection ready.
+2025-12-11 01:31:20,653 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 01:31:31,575 - INFO - Client connected ('127.0.0.1', 63285)
+2025-12-11 01:31:41,159 - INFO - Received: {"type":"message","content":"what is physical ai"}
+2025-12-11 01:31:42,793 - ERROR - WebSocket Error: model 'xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 238, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 227, in generate_answer
+    response = self.cohere_client.chat(
+        model="xlarge",
+        message=prompt,
+        max_tokens=500
+    )
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 384, in chat
+    response = self._request(cohere.CHAT_URL, json=json_body, stream=stream)
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 945, in _request
+    self._check_response(json_response, response.headers, response.status_code)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 887, in _check_response
+    raise CohereAPIError(
+    ...<3 lines>...
+    )
+cohere.error.CohereAPIError: model 'xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+2025-12-11 01:35:16,469 - INFO - RAGService initialized and collection ready.
+2025-12-11 01:35:16,500 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-11 01:35:24,045 - INFO - Client connected ('127.0.0.1', 63480)
+2025-12-11 01:35:34,058 - INFO - Sent keep-alive
+2025-12-11 01:35:35,026 - INFO - Received: {"type":"message","content":"what i sphysical AI"}
+2025-12-11 01:35:36,600 - ERROR - WebSocket Error: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 244, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 232, in generate_answer
+            response = self.cohere_client.chat(
+                       ~~~~~~~~~~~~~~~~~~~~~~~^
+        model="command-xlarge",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+        message=prompt,
+        ^^^^^^^^^^^^^^^
+        max_tokens=500
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 384, in chat
+    response = self._request(cohere.CHAT_URL, json=json_body, stream=stream)
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 945, in _request
+    self._check_response(json_response, response.headers, response.status_code)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 887, in _check_response
+    raise CohereAPIError(
+    ...<3 lines>...
+    )
+cohere.error.CohereAPIError: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+2025-12-11 01:37:11,780 - INFO - Client connected ('127.0.0.1', 63512)
+2025-12-11 01:37:14,304 - INFO - Client disconnected: ('127.0.0.1', 63512)
+2025-12-11 01:37:14,305 - INFO - Client connected ('127.0.0.1', 63518)
+2025-12-11 01:37:18,855 - INFO - Client disconnected: ('127.0.0.1', 63518)
+2025-12-11 01:37:19,625 - INFO - Client connected ('127.0.0.1', 63524)
+2025-12-11 01:37:29,134 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:37:30,910 - ERROR - WebSocket Error: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 244, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 232, in generate_answer
+            response = self.cohere_client.chat(
+                       ~~~~~~~~~~~~~~~~~~~~~~~^
+        model="command-xlarge",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+        message=prompt,
+        ^^^^^^^^^^^^^^^
+        max_tokens=500
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 384, in chat
+    response = self._request(cohere.CHAT_URL, json=json_body, stream=stream)
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 945, in _request
+    self._check_response(json_response, response.headers, response.status_code)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 887, in _check_response
+    raise CohereAPIError(
+    ...<3 lines>...
+    )
+cohere.error.CohereAPIError: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+2025-12-11 01:38:31,358 - INFO - Client connected ('127.0.0.1', 63541)
+2025-12-11 01:38:33,431 - INFO - Client disconnected: ('127.0.0.1', 63541)
+2025-12-11 01:38:33,432 - INFO - Client connected ('127.0.0.1', 63544)
+2025-12-11 01:38:43,439 - INFO - Sent keep-alive
+2025-12-11 01:38:53,447 - INFO - Sent keep-alive
+2025-12-11 01:39:03,459 - INFO - Sent keep-alive
+2025-12-11 01:39:10,378 - INFO - Client disconnected: ('127.0.0.1', 63544)
+2025-12-11 01:39:10,381 - INFO - Client connected ('127.0.0.1', 63557)
+2025-12-11 01:39:11,827 - INFO - Client disconnected: ('127.0.0.1', 63557)
+2025-12-11 01:39:11,830 - INFO - Client connected ('127.0.0.1', 63558)
+2025-12-11 01:39:16,581 - INFO - Client disconnected: ('127.0.0.1', 63558)
+2025-12-11 01:39:17,513 - INFO - Client connected ('127.0.0.1', 63568)
+2025-12-11 01:39:27,524 - INFO - Sent keep-alive
+2025-12-11 01:39:37,544 - INFO - Sent keep-alive
+2025-12-11 01:39:47,545 - INFO - Sent keep-alive
+2025-12-11 01:39:57,547 - INFO - Sent keep-alive
+2025-12-11 01:40:07,560 - INFO - Sent keep-alive
+2025-12-11 01:40:17,568 - INFO - Sent keep-alive
+2025-12-11 01:40:27,572 - INFO - Sent keep-alive
+2025-12-11 01:40:37,582 - INFO - Sent keep-alive
+2025-12-11 01:40:47,595 - INFO - Sent keep-alive
+2025-12-11 01:40:57,599 - INFO - Sent keep-alive
+2025-12-11 01:41:07,612 - INFO - Sent keep-alive
+2025-12-11 01:41:10,293 - INFO - Client disconnected: ('127.0.0.1', 63568)
+2025-12-11 01:41:10,297 - INFO - Client connected ('127.0.0.1', 63592)
+2025-12-11 01:41:12,118 - INFO - Client disconnected: ('127.0.0.1', 63592)
+2025-12-11 01:41:12,120 - INFO - Client connected ('127.0.0.1', 63593)
+2025-12-11 01:41:18,852 - INFO - Client disconnected: ('127.0.0.1', 63593)
+2025-12-11 01:41:19,673 - INFO - Client connected ('127.0.0.1', 63605)
+2025-12-11 01:41:28,921 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-11 01:41:30,715 - ERROR - WebSocket Error: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 182, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 244, in query
+    answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 232, in generate_answer
+            response = self.cohere_client.chat(
+                       ~~~~~~~~~~~~~~~~~~~~~~~^
+        model="command-xlarge",
+        ^^^^^^^^^^^^^^^^^^^^^^^
+        message=prompt,
+        ^^^^^^^^^^^^^^^
+        max_tokens=500
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 384, in chat
+    response = self._request(cohere.CHAT_URL, json=json_body, stream=stream)
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 945, in _request
+    self._check_response(json_response, response.headers, response.status_code)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\computer lab\AppData\Roaming\Python\Python313\site-packages\cohere\client.py", line 887, in _check_response
+    raise CohereAPIError(
+    ...<3 lines>...
+    )
+cohere.error.CohereAPIError: model 'command-xlarge' not found, make sure the correct model ID was used and that you have access to the model.
