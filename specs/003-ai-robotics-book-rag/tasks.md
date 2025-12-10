@@ -7,7 +7,7 @@
 - [ ] T001 Create Docusaurus project `AI_huamnoid_book/`
 - [ ] T002 Configure `AI_huamnoid_book/docusaurus.config.ts` for GitHub Pages deployment
 - [ ] T003 Initialize `chatbot-backend/` directory
-- [ ] T004 Create `chatbot-backend/requirements.txt` with initial Python dependencies (FastAPI, OpenAI SDKs, Qdrant client, Neon Postgres client)
+- [ ] T004 Create `chatbot-backend/requirements.txt` with initial Python dependencies (FastAPI, Cohere SDKs, Qdrant client, Neon Postgres client)
 - [ ] T005 Create base FastAPI application file `chatbot-backend/app/main.py`
 - [ ] T006 Add placeholder content for `research.md`, `data-model.md`, `quickstart.md`, and `contracts/` directory in `specs/1-ai-robotics-book-rag/`
 
@@ -18,7 +18,7 @@
 - [ ] T009 Configure Qdrant Cloud Free Tier connection in `chatbot-backend/app/config.py`
 - [ ] T010 Implement basic health check endpoint for FastAPI in `chatbot-backend/app/main.py`
 - [ ] T011 Develop utility to parse Docusaurus markdown content into a format suitable for vector embedding in `chatbot-backend/app/utils/content_parser.py`
-- [ ] T012 Implement script to generate vector embeddings of book content using OpenAI embeddings API and upload to Qdrant in `chatbot-backend/app/scripts/embed_content.py`
+- [ ] T012 Implement script to generate vector embeddings of book content using Cohere embeddings API and upload to Qdrant in `chatbot-backend/app/scripts/embed_content.py`
 
 ## Phase 3: User Story 1 - Read Book Content (Priority: P1)
 

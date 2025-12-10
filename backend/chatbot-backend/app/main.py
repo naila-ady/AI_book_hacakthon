@@ -1,41 +1,47 @@
 
-from fastapi import FastAPI
+print("---- Loading main.py ----")
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.responses import JSONResponse
+
 from app.config import Config
 from app.services.rag_service import RAGService
+from app.api import chatbot as chatbot_api
+from app.dependencies import get_rag_service
 
-app = FastAPI()
-rag_service: RAGService | None = None
+# --- FastAPI App Initialization ---
+app = FastAPI(title="AI Robotics Book Chatbot API")
 
-@app.get("/")
+# --- API Routers ---
+app.include_router(chatbot_api.router, prefix="/api/v1", tags=["chatbot"])
+
+# --- Core Routes ---
+@app.get("/", summary="Root endpoint", tags=["default"])
 def read_root():
-    return {"message": "Hello World"}
+    """Returns a welcome message."""
+    return {"message": "Welcome to the AI Robotics Book Chatbot API"}
 
-@app.on_event("startup")
-def startup_event():
-    global rag_service
-    # Initialize RAGService after FastAPI is up - failures here won't prevent import
-    try:
-        rag_service = RAGService()
-        # Try to initialize collection (safe, idempotent)
-        rag_service.initialize_collection()
-        if Config.DEBUG:
-            print("RAGService initialized successfully.")
-    except Exception as e:
-        # Log the failure but don't prevent the app from starting
-        print("Warning: RAGService failed to initialize on startup:", e)
-        rag_service = None
+@app.get("/health", summary="Health Check", tags=["default"])
+def health_check():
+    """Provides a basic health status of the API."""
+    return {"status": "ok", "message": "FastAPI backend is healthy"}
 
-@app.get("/qdrant-test")
-def qdrant_test():
+@app.get("/qdrant-test", summary="Test Qdrant Connection", tags=["testing"])
+def qdrant_test(rag_service: RAGService = Depends(get_rag_service)):
     """
-    Quick test endpoint to check Qdrant status from inside the running app.
+    Tests the connection to Qdrant and lists available collections.
+    This endpoint relies on the RAGService, so it also implicitly tests
+    the service's initialization.
     """
-    if rag_service is None:
-        return JSONResponse(status_code=503, content={"status":"error","details":"RAGService not initialized"})
+    if not rag_service:
+        raise HTTPException(status_code=503, detail="RAGService not initialized")
     try:
-        collections = rag_service.list_collections()
-        return {"status": "success", "collections": collections}
+        collections = rag_service.qdrant_client.get_collections()
+        collection_names = [c.name for c in collections.collections]
+        return {
+            "status": "success",
+            "qdrant_url": Config.QDRANT_URL,
+            "active_collection": rag_service.collection_name,
+            "available_collections": collection_names
+        }
     except Exception as e:
-        return JSONResponse(status_code=500, content={"status":"error","details": str(e)})
-
+        raise HTTPException(status_code=500, detail=f"Failed to connect to Qdrant: {str(e)}")

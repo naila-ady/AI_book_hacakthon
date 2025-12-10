@@ -90,8 +90,4 @@ def embed_book_content():
         content = parse_markdown_file(file_path)
         chunks = chunk_content(content)
         title = os.path.basename(file_path).replace(".md", "").replace("-", " ").title()
-        metadata = {"file_path": file_path, "title": title}
-        upload_to_qdrant(chunks, metadata)
-
-if __name__ == "__main__":
-    embed_book_content()
+    

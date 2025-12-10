@@ -1,4 +1,4 @@
 ---
-title: The Role of Simulation in Physical AI
+title: "The Role of Simulation in Physical AI"
 ---
 [NEEDS CONTENT]

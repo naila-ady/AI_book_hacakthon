@@ -1,5 +1,8 @@
-fastapi
-cohere
-qdrant-client
-psycopg2-binary
-uvicorn
+fastapi==0.104.1
+cohere==4.37
+qdrant-client==1.7.3
+psycopg2-binary==2.9.10
+uvicorn[standard]==0.24.0
+python-dotenv==1.0.0
+markdown-it-py==3.0.0
+mdit-py-plugins==0.4.0
