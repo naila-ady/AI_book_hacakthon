@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkai_book_hackathon=self.webpackChunkai_book_hackathon||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome to My First Blog!","permalink":"/AI_book_hacakthon/blog/welcome","unlisted":false,"date":"2025-12-06T21:48:21.000Z"}]}')}}]);

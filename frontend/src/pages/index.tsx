@@ -98,17 +98,14 @@ export default function Home(): ReactNode {
     <Layout
       title={` ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
-      wrapperProps={{
-        style: {
-          backgroundColor: '#0D0D0D', // main page background
-        },
-      }}
     >
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-        <Chatbot />
-      </main>
+      <div style={{ backgroundColor: '#0D0D0D', minHeight: '100vh' }}>
+        <HomepageHeader />
+        <main>
+          <HomepageFeatures />
+          <Chatbot />
+        </main>
+      </div>
     </Layout>
   );
 }

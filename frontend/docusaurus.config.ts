@@ -232,7 +232,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'BOOK OVERVIEW', position: 'left'},
         {
-          href: 'https://github.com/naila-ady/AI_book_hackathon.git',
+          href: 'https://naila-ady.github.io/AI_book_hacakthon/',
           label: 'GitHub',
           position: 'right',
         },
