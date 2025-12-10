@@ -12,7 +12,7 @@ LIGHT MODE
 }
 
 /* NAVBAR */
-.navbar {
+/* .navbar {
   background: var(--primary-color);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
@@ -24,7 +24,34 @@ LIGHT MODE
 
 .navbar__link--active {
   color: var(--accent-color) !important;
+} */
+
+[data-theme='light'] .navbar {
+  background-color: #ff9f0d !important; /* orange background */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+[data-theme='light'] .navbar__brand {
+  color: #0D0D0D !important; /* dark logo text */
+  font-weight: bold;
+}
+
+[data-theme='light'] .navbar__item,
+[data-theme='light'] .navbar__link {
+  color: #0D0D0D !important; /* dark links */
+}
+
+[data-theme='light'] .navbar__link:hover,
+[data-theme='light'] .navbar__item:hover {
+  color: #ffffff !important; /* white on hover */
+}
+
+[data-theme='light'] .navbar__link--active {
+  color: #ffffff !important; /* active link white */
+  font-weight: bold;}
 
 /* HERO SECTION */
 .heroBanner {
@@ -200,7 +227,7 @@ LIGHT MODE
 }
 
 [data-theme='dark'] .navbar__link--active {
-  color: #ffffff !important;
+  color: #ffffff ;
 }
 
 /* Dark hero */
