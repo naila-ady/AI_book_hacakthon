@@ -13,9 +13,10 @@ from app.dependencies import get_rag_service
 app = FastAPI(title="AI Robotics Book Chatbot API")
 
 # Add CORS middleware to allow requests from frontend
+# For production, replace ["*"] with specific frontend URLs like ["https://yourdomain.com"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=["*"],  # TODO: Replace with your actual frontend domain in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

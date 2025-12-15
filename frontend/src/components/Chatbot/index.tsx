@@ -27,8 +27,9 @@ const Chatbot = () => {
         backendUrl = 'http://127.0.0.1:8000'; // Local development
       } else {
         // For production deployment, update this to your actual backend URL
-        // Examples: your-heroku-app.herokuapp.com, your-vercel-backend.vercel.app, etc.
-        backendUrl = 'https://your-actual-backend-deployment.com'; // Replace with your deployed backend URL
+        // Examples: your-heroku-app.herokuapp.com, your-railway-app.up.railway.app, etc.
+        // This should match where you deploy your backend
+        backendUrl = process.env.REACT_APP_BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL || 'https://your-actual-backend-deployment.com';
       }
 
       const apiUrl = `${backendUrl}/api/v1/query`;
