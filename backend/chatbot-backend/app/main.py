@@ -2,6 +2,7 @@
 print("---- Loading main.py ----")
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import Config
 from app.services.rag_service import RAGService
@@ -10,6 +11,15 @@ from app.dependencies import get_rag_service
 
 # --- FastAPI App Initialization ---
 app = FastAPI(title="AI Robotics Book Chatbot API")
+
+# Add CORS middleware to allow requests from frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, replace with specific origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # --- API Routers ---
 app.include_router(chatbot_api.router, prefix="/api/v1", tags=["chatbot"])

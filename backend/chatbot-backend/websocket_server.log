@@ -1234,3 +1234,252 @@ cohere.error.CohereAPIError: model 'command-xlarge' not found, make sure the cor
 2025-12-11 02:31:22,109 - INFO - Sent keep-alive
 2025-12-11 02:31:23,123 - INFO - Sent keep-alive
 2025-12-11 02:31:25,834 - INFO - Sent keep-alive
+2025-12-11 02:31:31,002 - INFO - Client disconnected: ('127.0.0.1', 64463)
+2025-12-11 02:31:33,131 - INFO - Sent keep-alive
+2025-12-11 02:31:35,840 - INFO - Sent keep-alive
+2025-12-11 02:31:43,139 - INFO - Sent keep-alive
+2025-12-11 02:31:45,850 - INFO - Sent keep-alive
+2025-12-11 02:31:53,144 - INFO - Sent keep-alive
+2025-12-11 02:31:55,858 - INFO - Sent keep-alive
+2025-12-11 02:32:03,152 - INFO - Sent keep-alive
+2025-12-11 02:32:05,862 - INFO - Sent keep-alive
+2025-12-11 02:32:13,162 - INFO - Sent keep-alive
+2025-12-11 02:32:15,867 - INFO - Sent keep-alive
+2025-12-11 02:32:23,171 - INFO - Sent keep-alive
+2025-12-11 02:32:25,812 - INFO - Client disconnected: ('127.0.0.1', 64668)
+2025-12-11 02:32:27,252 - INFO - Client connected ('127.0.0.1', 64927)
+2025-12-11 02:32:33,177 - INFO - Sent keep-alive
+2025-12-11 02:32:37,254 - INFO - Sent keep-alive
+2025-12-11 02:32:43,184 - INFO - Sent keep-alive
+2025-12-11 02:32:46,655 - INFO - Client disconnected: ('127.0.0.1', 64822)
+2025-12-11 02:32:47,259 - INFO - Sent keep-alive
+2025-12-11 02:32:47,293 - INFO - Client connected ('127.0.0.1', 64949)
+2025-12-11 02:32:51,421 - INFO - Client disconnected: ('127.0.0.1', 64949)
+2025-12-11 02:32:57,274 - INFO - Sent keep-alive
+2025-12-11 02:33:01,454 - INFO - Client disconnected: ('127.0.0.1', 64927)
+2025-12-15 21:06:20,053 - INFO - RAGService initialized and collection ready.
+2025-12-15 21:06:20,112 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-15 21:07:02,539 - INFO - RAGService initialized and collection ready.
+2025-12-15 21:07:02,565 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-15 21:08:21,370 - INFO - RAGService initialized and collection ready.
+2025-12-15 21:08:21,406 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-15 21:09:39,051 - INFO - RAGService initialized and collection ready.
+2025-12-15 21:09:39,090 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-15 21:10:14,265 - INFO - Client connected ('127.0.0.1', 59550)
+2025-12-15 21:10:14,266 - INFO - Received: {"type": "message", "content": "Hello, how are you?"}
+2025-12-15 21:10:18,338 - ERROR - WebSocket Error: 'QdrantClient' object has no attribute 'query_points'
+Traceback (most recent call last):
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\chat_server.py", line 48, in handle_connection
+    response = rag_service.query(user_query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 254, in query
+    retrieved_chunks = self.search_and_retrieve_chunks(query)
+  File "C:\book_hackathon\AI_book_hacakthon\backend\chatbot-backend\app\services\rag_service.py", line 210, in search_and_retrieve_chunks
+    results = self.qdrant_client.query_points(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QdrantClient' object has no attribute 'query_points'
+2025-12-15 21:11:52,522 - INFO - RAGService initialized and collection ready.
+2025-12-15 21:11:52,561 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-15 21:12:23,787 - INFO - Client connected ('127.0.0.1', 59689)
+2025-12-15 21:12:23,788 - INFO - Received: {"type": "message", "content": "Hello, how are you?"}
+2025-12-15 21:12:29,331 - INFO - Client disconnected: ('127.0.0.1', 59689)
+2025-12-15 21:15:27,562 - INFO - RAGService initialized and collection ready.
+2025-12-15 21:15:27,625 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-15 21:16:46,920 - INFO - Client connected ('127.0.0.1', 60076)
+2025-12-15 21:16:46,921 - INFO - Received: {"type": "message", "content": "Hello, how are you?"}
+2025-12-15 21:16:53,800 - INFO - Client disconnected: ('127.0.0.1', 60076)
+2025-12-15 21:19:10,671 - INFO - RAGService initialized and collection ready.
+2025-12-15 21:19:10,830 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-15 21:20:24,155 - INFO - RAGService initialized and collection ready.
+2025-12-15 21:20:24,228 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-15 21:25:31,074 - INFO - RAGService initialized and collection ready.
+2025-12-15 21:25:31,101 - INFO - WebSocket server started on ws://127.0.0.1:8001
+2025-12-15 21:26:11,193 - INFO - Client connected ('127.0.0.1', 60679)
+2025-12-15 21:26:17,782 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-15 21:26:35,040 - INFO - Sent keep-alive
+2025-12-15 21:26:45,048 - INFO - Sent keep-alive
+2025-12-15 21:26:55,051 - INFO - Sent keep-alive
+2025-12-15 21:27:05,058 - INFO - Sent keep-alive
+2025-12-15 21:27:15,073 - INFO - Sent keep-alive
+2025-12-15 21:27:25,084 - INFO - Sent keep-alive
+2025-12-15 21:27:35,102 - INFO - Sent keep-alive
+2025-12-15 21:27:36,203 - INFO - Received: {"type":"message","content":"what is Physiacl AI"}
+2025-12-15 21:27:54,433 - INFO - Sent keep-alive
+2025-12-15 21:28:04,444 - INFO - Sent keep-alive
+2025-12-15 21:28:14,461 - INFO - Sent keep-alive
+2025-12-15 21:28:24,512 - INFO - Sent keep-alive
+2025-12-15 21:28:34,522 - INFO - Sent keep-alive
+2025-12-15 21:28:44,530 - INFO - Sent keep-alive
+2025-12-15 21:28:54,541 - INFO - Sent keep-alive
+2025-12-15 21:29:04,546 - INFO - Sent keep-alive
+2025-12-15 21:29:14,554 - INFO - Sent keep-alive
+2025-12-15 21:29:24,563 - INFO - Sent keep-alive
+2025-12-15 21:29:34,575 - INFO - Sent keep-alive
+2025-12-15 21:29:44,589 - INFO - Sent keep-alive
+2025-12-15 21:29:54,606 - INFO - Sent keep-alive
+2025-12-15 21:30:04,612 - INFO - Sent keep-alive
+2025-12-15 21:30:14,629 - INFO - Sent keep-alive
+2025-12-15 21:30:24,637 - INFO - Sent keep-alive
+2025-12-15 21:30:34,651 - INFO - Sent keep-alive
+2025-12-15 21:30:44,667 - INFO - Sent keep-alive
+2025-12-15 21:30:54,672 - INFO - Sent keep-alive
+2025-12-15 21:31:04,690 - INFO - Sent keep-alive
+2025-12-15 21:31:14,700 - INFO - Sent keep-alive
+2025-12-15 21:31:24,711 - INFO - Sent keep-alive
+2025-12-15 21:31:34,722 - INFO - Sent keep-alive
+2025-12-15 21:31:44,729 - INFO - Sent keep-alive
+2025-12-15 21:31:54,740 - INFO - Sent keep-alive
+2025-12-15 21:32:04,746 - INFO - Sent keep-alive
+2025-12-15 21:32:14,752 - INFO - Sent keep-alive
+2025-12-15 21:32:24,759 - INFO - Sent keep-alive
+2025-12-15 21:32:34,772 - INFO - Sent keep-alive
+2025-12-15 21:32:44,775 - INFO - Sent keep-alive
+2025-12-15 21:32:54,781 - INFO - Sent keep-alive
+2025-12-15 21:33:04,789 - INFO - Sent keep-alive
+2025-12-15 21:33:14,804 - INFO - Sent keep-alive
+2025-12-15 21:33:24,815 - INFO - Sent keep-alive
+2025-12-15 21:33:34,821 - INFO - Sent keep-alive
+2025-12-15 21:33:44,831 - INFO - Sent keep-alive
+2025-12-15 21:33:54,843 - INFO - Sent keep-alive
+2025-12-15 21:34:04,860 - INFO - Sent keep-alive
+2025-12-15 21:34:14,872 - INFO - Sent keep-alive
+2025-12-15 21:34:24,885 - INFO - Sent keep-alive
+2025-12-15 21:34:34,892 - INFO - Sent keep-alive
+2025-12-15 21:34:44,902 - INFO - Sent keep-alive
+2025-12-15 21:34:54,910 - INFO - Sent keep-alive
+2025-12-15 21:35:04,926 - INFO - Sent keep-alive
+2025-12-15 21:35:14,942 - INFO - Sent keep-alive
+2025-12-15 21:35:24,945 - INFO - Sent keep-alive
+2025-12-15 21:35:34,954 - INFO - Sent keep-alive
+2025-12-15 21:35:44,960 - INFO - Sent keep-alive
+2025-12-15 21:35:54,962 - INFO - Sent keep-alive
+2025-12-15 21:36:04,973 - INFO - Sent keep-alive
+2025-12-15 21:36:14,986 - INFO - Sent keep-alive
+2025-12-15 21:36:24,991 - INFO - Sent keep-alive
+2025-12-15 21:36:35,004 - INFO - Sent keep-alive
+2025-12-15 21:36:45,020 - INFO - Sent keep-alive
+2025-12-15 21:36:55,023 - INFO - Sent keep-alive
+2025-12-15 21:37:05,033 - INFO - Sent keep-alive
+2025-12-15 21:37:15,050 - INFO - Sent keep-alive
+2025-12-15 21:37:25,059 - INFO - Sent keep-alive
+2025-12-15 21:37:35,063 - INFO - Sent keep-alive
+2025-12-15 21:37:45,064 - INFO - Sent keep-alive
+2025-12-15 21:37:55,068 - INFO - Sent keep-alive
+2025-12-15 21:38:05,087 - INFO - Sent keep-alive
+2025-12-15 21:38:15,091 - INFO - Sent keep-alive
+2025-12-15 21:38:25,107 - INFO - Sent keep-alive
+2025-12-15 21:38:35,118 - INFO - Sent keep-alive
+2025-12-15 21:38:45,130 - INFO - Sent keep-alive
+2025-12-15 21:38:55,141 - INFO - Sent keep-alive
+2025-12-15 21:39:05,145 - INFO - Sent keep-alive
+2025-12-15 21:39:15,148 - INFO - Sent keep-alive
+2025-12-15 21:39:25,163 - INFO - Sent keep-alive
+2025-12-15 21:39:35,170 - INFO - Sent keep-alive
+2025-12-15 21:39:45,185 - INFO - Sent keep-alive
+2025-12-15 21:39:55,189 - INFO - Sent keep-alive
+2025-12-15 21:40:05,196 - INFO - Sent keep-alive
+2025-12-15 21:40:15,200 - INFO - Sent keep-alive
+2025-12-15 21:40:25,271 - INFO - Sent keep-alive
+2025-12-15 21:40:35,273 - INFO - Sent keep-alive
+2025-12-15 21:40:45,275 - INFO - Sent keep-alive
+2025-12-15 21:40:55,297 - INFO - Sent keep-alive
+2025-12-15 21:41:05,304 - INFO - Sent keep-alive
+2025-12-15 21:41:15,316 - INFO - Sent keep-alive
+2025-12-15 21:41:25,321 - INFO - Sent keep-alive
+2025-12-15 21:41:35,332 - INFO - Sent keep-alive
+2025-12-15 21:41:45,335 - INFO - Sent keep-alive
+2025-12-15 21:41:55,341 - INFO - Sent keep-alive
+2025-12-15 21:42:05,349 - INFO - Sent keep-alive
+2025-12-15 21:42:15,360 - INFO - Sent keep-alive
+2025-12-15 21:42:25,377 - INFO - Sent keep-alive
+2025-12-15 21:42:35,380 - INFO - Sent keep-alive
+2025-12-15 21:42:45,385 - INFO - Sent keep-alive
+2025-12-15 21:42:55,395 - INFO - Sent keep-alive
+2025-12-15 21:43:05,402 - INFO - Sent keep-alive
+2025-12-15 21:43:15,407 - INFO - Sent keep-alive
+2025-12-15 21:43:25,421 - INFO - Sent keep-alive
+2025-12-15 21:43:35,434 - INFO - Sent keep-alive
+2025-12-15 21:43:45,447 - INFO - Sent keep-alive
+2025-12-15 21:43:55,455 - INFO - Sent keep-alive
+2025-12-15 21:44:05,458 - INFO - Sent keep-alive
+2025-12-15 21:44:15,465 - INFO - Sent keep-alive
+2025-12-15 21:44:25,482 - INFO - Sent keep-alive
+2025-12-15 21:44:35,496 - INFO - Sent keep-alive
+2025-12-15 21:44:45,510 - INFO - Sent keep-alive
+2025-12-15 21:44:52,263 - INFO - Client disconnected: ('127.0.0.1', 60679)
+2025-12-15 23:54:23,538 - INFO - Client connected ('127.0.0.1', 64076)
+2025-12-15 23:54:33,584 - INFO - Sent keep-alive
+2025-12-15 23:54:41,676 - INFO - Client disconnected: ('127.0.0.1', 64076)
+2025-12-15 23:54:56,158 - INFO - Client connected ('127.0.0.1', 64112)
+2025-12-15 23:55:06,168 - INFO - Sent keep-alive
+2025-12-15 23:55:09,776 - INFO - Client disconnected: ('127.0.0.1', 64112)
+2025-12-15 23:55:09,785 - INFO - Client connected ('127.0.0.1', 64119)
+2025-12-15 23:55:19,796 - INFO - Sent keep-alive
+2025-12-15 23:55:29,807 - INFO - Sent keep-alive
+2025-12-15 23:55:39,821 - INFO - Sent keep-alive
+2025-12-15 23:55:49,832 - INFO - Sent keep-alive
+2025-12-15 23:55:59,863 - INFO - Sent keep-alive
+2025-12-15 23:56:09,896 - INFO - Sent keep-alive
+2025-12-15 23:56:11,957 - INFO - Client disconnected: ('127.0.0.1', 64119)
+2025-12-15 23:56:11,966 - INFO - Client connected ('127.0.0.1', 64168)
+2025-12-15 23:56:21,985 - INFO - Sent keep-alive
+2025-12-15 23:56:31,778 - INFO - Client disconnected: ('127.0.0.1', 64168)
+2025-12-15 23:56:31,786 - INFO - Client connected ('127.0.0.1', 64181)
+2025-12-15 23:56:41,801 - INFO - Sent keep-alive
+2025-12-15 23:56:43,316 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-15 23:57:00,169 - INFO - Sent keep-alive
+2025-12-15 23:57:10,176 - INFO - Sent keep-alive
+2025-12-15 23:57:20,190 - INFO - Sent keep-alive
+2025-12-15 23:57:30,202 - INFO - Sent keep-alive
+2025-12-15 23:57:40,218 - INFO - Sent keep-alive
+2025-12-15 23:57:50,235 - INFO - Sent keep-alive
+2025-12-15 23:58:00,234 - INFO - Client disconnected: ('127.0.0.1', 64181)
+2025-12-15 23:58:00,238 - INFO - Client connected ('127.0.0.1', 64223)
+2025-12-15 23:58:10,246 - INFO - Sent keep-alive
+2025-12-15 23:58:20,260 - INFO - Sent keep-alive
+2025-12-15 23:58:26,119 - INFO - Client disconnected: ('127.0.0.1', 64223)
+2025-12-15 23:58:26,123 - INFO - Client connected ('127.0.0.1', 64231)
+2025-12-15 23:58:36,132 - INFO - Sent keep-alive
+2025-12-15 23:58:46,148 - INFO - Sent keep-alive
+2025-12-15 23:58:48,850 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-15 23:59:06,547 - INFO - Sent keep-alive
+2025-12-15 23:59:11,155 - INFO - Client disconnected: ('127.0.0.1', 64231)
+2025-12-15 23:59:11,158 - INFO - Client connected ('127.0.0.1', 64259)
+2025-12-15 23:59:21,168 - INFO - Sent keep-alive
+2025-12-15 23:59:31,184 - INFO - Sent keep-alive
+2025-12-15 23:59:41,196 - INFO - Sent keep-alive
+2025-12-15 23:59:51,210 - INFO - Sent keep-alive
+2025-12-16 00:00:01,214 - INFO - Sent keep-alive
+2025-12-16 00:00:11,225 - INFO - Sent keep-alive
+2025-12-16 00:00:21,239 - INFO - Sent keep-alive
+2025-12-16 00:00:31,250 - INFO - Sent keep-alive
+2025-12-16 00:00:41,252 - INFO - Sent keep-alive
+2025-12-16 00:00:51,266 - INFO - Sent keep-alive
+2025-12-16 00:01:01,275 - INFO - Sent keep-alive
+2025-12-16 00:01:11,280 - INFO - Sent keep-alive
+2025-12-16 00:01:21,285 - INFO - Sent keep-alive
+2025-12-16 00:01:31,290 - INFO - Sent keep-alive
+2025-12-16 00:01:41,307 - INFO - Sent keep-alive
+2025-12-16 00:01:51,320 - INFO - Sent keep-alive
+2025-12-16 00:02:01,330 - INFO - Sent keep-alive
+2025-12-16 00:02:11,336 - INFO - Sent keep-alive
+2025-12-16 00:02:21,347 - INFO - Sent keep-alive
+2025-12-16 00:02:31,363 - INFO - Sent keep-alive
+2025-12-16 00:02:41,377 - INFO - Sent keep-alive
+2025-12-16 00:02:51,393 - INFO - Sent keep-alive
+2025-12-16 00:03:01,402 - INFO - Sent keep-alive
+2025-12-16 00:03:11,420 - INFO - Sent keep-alive
+2025-12-16 00:03:21,434 - INFO - Sent keep-alive
+2025-12-16 00:03:31,441 - INFO - Sent keep-alive
+2025-12-16 00:03:41,449 - INFO - Sent keep-alive
+2025-12-16 00:03:51,458 - INFO - Sent keep-alive
+2025-12-16 00:03:53,044 - INFO - Received: {"type":"message","content":"hi"}
+2025-12-16 00:04:10,153 - INFO - Sent keep-alive
+2025-12-16 00:04:20,160 - INFO - Sent keep-alive
+2025-12-16 00:04:30,171 - INFO - Sent keep-alive
+2025-12-16 00:04:40,176 - INFO - Sent keep-alive
+2025-12-16 00:04:50,207 - INFO - Sent keep-alive
+2025-12-16 00:05:00,216 - INFO - Sent keep-alive
+2025-12-16 00:05:10,234 - INFO - Sent keep-alive
+2025-12-16 00:05:18,051 - INFO - Client disconnected: ('127.0.0.1', 64259)
+2025-12-16 00:25:49,902 - INFO - Client connected ('127.0.0.1', 65051)
+2025-12-16 00:25:55,075 - INFO - Client disconnected: ('127.0.0.1', 65051)

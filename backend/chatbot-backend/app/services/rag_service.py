@@ -174,13 +174,24 @@ class RAGService:
 
     def initialize_collection(self):
         try:
+            # Try to get the collection first
             self.qdrant_client.get_collection(collection_name=self.collection_name)
-        except Exception:
-            self.qdrant_client.create_collection(
-                collection_name=self.collection_name,
-                vectors_config=VectorParams(size=1024, distance=Distance.COSINE)
-            )
-            print(f"Created collection {self.collection_name}")
+            print(f"Collection {self.collection_name} already exists.")
+        except Exception as e:
+            # If it doesn't exist, create it
+            try:
+                self.qdrant_client.create_collection(
+                    collection_name=self.collection_name,
+                    vectors_config=VectorParams(size=1024, distance=Distance.COSINE)
+                )
+                print(f"Created collection {self.collection_name}")
+            except Exception as create_error:
+                # If creation fails due to collection already existing, that's fine
+                if "already exists" in str(create_error):
+                    print(f"Collection {self.collection_name} already exists.")
+                else:
+                    print(f"Error creating collection: {create_error}")
+                    raise create_error
 
     def get_embedding(self, text: str) -> List[float]:
         resp = self.cohere_client.embed(
@@ -196,13 +207,27 @@ class RAGService:
         top_k: int = 5
     ) -> List[Dict[str, Any]]:
         query_embedding = self.get_embedding(query)
-        results = self.qdrant_client.query_points(
-            collection_name=self.collection_name,
-            query=query_embedding,
-            limit=top_k,
-            with_payload=True
-        )
-        return [hit.payload for hit in results.points if hit.payload]
+        # Use the correct method name for the Qdrant client version
+        # Try the newer method first, fall back to older method if needed
+        try:
+            # For newer versions of qdrant-client
+            results = self.qdrant_client.query_points(
+                collection_name=self.collection_name,
+                query=query_embedding,
+                limit=top_k,
+                with_payload=True
+            )
+            # Convert results to the expected format
+            return [hit.payload for hit in results.points if hit.payload]
+        except AttributeError:
+            # For older versions of qdrant-client
+            results = self.qdrant_client.search(
+                collection_name=self.collection_name,
+                query_vector=query_embedding,
+                limit=top_k,
+                with_payload=True
+            )
+            return [hit.payload for hit in results if hit.payload]
 
     def generate_answer(
         self,
@@ -223,24 +248,30 @@ class RAGService:
 
         prompt += f"Question: {question}\nAnswer:"
 
-        # Cohere chat only takes 'message' now
-        # response = self.cohere_client.chat(
-        #     model="xlarge",
-        #     message=prompt,
-        #     max_tokens=500
-        # )
-        response = self.cohere_client.chat(
-    model="command-xlarge",
-    message=prompt,
-    max_tokens=500
-)
+        try:
+            # Use the correct Cohere API call without specifying a deprecated model
+            response = self.cohere_client.chat(
+                message=prompt,
+                max_tokens=500
+            )
+            answer = response.text.strip()
+        except Exception as e:
+            # Fallback response if Cohere API fails
+            import logging
+            logger = logging.getLogger(__name__)
+            logger.error(f"Cohere API error: {e}")
+            answer = f"Sorry, I encountered an error processing your request: {str(e)}"
 
-
-        answer = response.text.strip()
         return answer, context_chunks
 
-    def query(self, query: str) -> Dict[str, Any]:
-        retrieved_chunks = self.search_and_retrieve_chunks(query)
-        answer, cited_documents = self.generate_answer(query, retrieved_chunks)
+    def query(self, query: str, selected_text: str = None) -> Dict[str, Any]:
+        # If selected_text is provided, incorporate it into the search query
+        if selected_text:
+            search_query = f"{selected_text}\n\n{query}"
+        else:
+            search_query = query
+
+        retrieved_chunks = self.search_and_retrieve_chunks(search_query)
+        answer, cited_documents = self.generate_answer(query, retrieved_chunks)  # Use original query for answer generation
         sources = [doc.get("file_path", "Unknown") for doc in cited_documents]
         return {"answer": answer, "sources": list(set(sources))}

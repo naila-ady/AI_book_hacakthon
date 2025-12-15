@@ -77,6 +77,48 @@
   border-bottom-left-radius: 0;
 }
 
+.system {
+  align-self: center;
+  background-color: #444;
+  color: #ccc;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  max-width: 90%;
+}
+
+/* Status indicator styles */
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background-color: #0D0D0D;
+  color: #ff9f0d;
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.statusReady {
+  background-color: #4CAF50; /* Green for ready */
+}
+
+.statusThinking {
+  background-color: #FFC107; /* Yellow for thinking */
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
 /* ===================== Input Area ===================== */
 .chatbotInput {
   display: flex;

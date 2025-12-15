@@ -1,190 +1,137 @@
-// import React, { useState, useEffect, useRef } from 'react';
-// import styles from './styles.module.css';
-
-// const Chatbot = () => {
-//   const [messages, setMessages] = useState([]);
-//   const [input, setInput] = useState('');
-//   const [isConnected, setIsConnected] = useState(false);
-//   const websocket = useRef<WebSocket | null>(null);
-//   const messagesEndRef = useRef<HTMLDivElement | null>(null);
-
-//   // Scroll to bottom when messages update
-//   useEffect(() => {
-//     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-//   }, [messages]);
-
-//   const connectToWebSocket = () => {
-//     const wsUrl = 'ws://127.0.0.1:8001';
-
-//     if (websocket.current && websocket.current.readyState === WebSocket.OPEN) return;
-
-//     const ws = new WebSocket(wsUrl);
-
-//     ws.onopen = () => {
-//       console.log('WebSocket connected successfully.');
-//       setIsConnected(true);
-//       setMessages(prev => [...prev, { text: 'Connected to AI assistant.', sender: 'system' }]);
-//     };
-
-//     ws.onmessage = (event) => {
-//       const message = JSON.parse(event.data);
-
-//       if (message.type === 'response') {
-//         setMessages(prev => [...prev, { text: message.message, sender: 'ai' }]);
-//       } else if (message.type === 'keep-alive') {
-//         // Ignore keep-alive messages
-//         return;
-//       } else if (message.type === 'error') {
-//         setMessages(prev => [...prev, { text: `Error: ${message.message}`, sender: 'system' }]);
-//       }
-//     };
-
-//     ws.onclose = () => {
-//       console.log('WebSocket disconnected.');
-//       setIsConnected(false);
-//       setMessages(prev => [...prev, { text: 'Disconnected from AI assistant.', sender: 'system' }]);
-//       websocket.current = null;
-//     };
-
-//     ws.onerror = (error) => {
-//       console.error('WebSocket error:', error);
-//       setIsConnected(false);
-//       setMessages(prev => [...prev, { text: 'Connection error.', sender: 'system' }]);
-//     };
-
-//     websocket.current = ws;
-//   };
-
-//   useEffect(() => {
-//     connectToWebSocket();
-
-//     return () => {
-//       websocket.current?.close();
-//     };
-//   }, []);
-
-//   const handleSend = () => {
-//     if (input.trim() && websocket.current && websocket.current.readyState === WebSocket.OPEN) {
-//       websocket.current.send(JSON.stringify({ type: 'message', content: input }));
-//       setMessages(prev => [...prev, { text: input, sender: 'user' }]);
-//       setInput('');
-//     } else if (!isConnected) {
-//       setMessages(prev => [...prev, { text: 'Not connected. Please connect first.', sender: 'system' }]);
-//     }
-//   };
-
-//   const handleDelete = () => setMessages([]);
-
-//   const handleConnect = () => {
-//     if (!websocket.current || websocket.current.readyState === WebSocket.CLOSED) {
-//       connectToWebSocket();
-//     }
-//   };
-
-//   return (
-//     <div className={styles.chatbotContainer}>
-//       <div className={styles.chatbotHeader}>
-//         <button onClick={handleDelete} className={styles.headerButton}>Delete Chat</button>
-//         <button 
-//           onClick={handleConnect} 
-//           className={`${styles.headerButton} ${isConnected ? styles.connected : ''}`}
-//         >
-//           {isConnected ? 'AI Assistant: Connected' : 'AI Assistant: Disconnected'}
-//         </button>
-//       </div>
-
-//       <div className={styles.chatbotMessages}>
-//         {messages.map((msg, index) => (
-//           <div key={index} className={`${styles.message} ${styles[msg.sender]}`}>
-//             {msg.text}
-//           </div>
-//         ))}
-//         <div ref={messagesEndRef} />
-//       </div>
-
-//       <div className={styles.chatbotInput}>
-//         <input
-//           type="text"
-//           value={input}
-//           onChange={(e) => setInput(e.target.value)}
-//           onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-//           placeholder={isConnected ? "Type your message..." : "Connect to the AI to chat"}
-//           disabled={!isConnected}
-//         />
-//         <button onClick={handleSend} disabled={!isConnected}>Send</button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Chatbot;
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './styles.module.css';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [isConnected, setIsConnected] = useState(false);
-  const websocket = useRef<WebSocket | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const connectToWebSocket = () => {
-    const wsUrl = 'ws://127.0.0.1:8001';
-    if (websocket.current && websocket.current.readyState === WebSocket.OPEN) return;
+  // Using HTTP instead of WebSocket for better compatibility across environments
+  const sendMessage = async (message: string) => {
+    setIsLoading(true);
+    try {
+      // Determine API URL based on environment using a more flexible approach
+      // Check if we're in browser and use appropriate URL
+      const isLocalhost = typeof window !== 'undefined' &&
+        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
-    const ws = new WebSocket(wsUrl);
-
-    ws.onopen = () => {
-      setIsConnected(true);
-      setMessages(prev => [...prev, { text: 'Connected to AI assistant.', sender: 'system' }]);
-    };
-
-    ws.onmessage = (event) => {
-      const message = JSON.parse(event.data);
-      if (message.type === 'response') {
-        const text = message.message;
-        const sources = message.sources?.join(', ');
-        setMessages(prev => [...prev, { text: `${text}\n\nSources: ${sources}`, sender: 'ai' }]);
+      // Define the backend URL - in production, this needs to be updated to your actual backend URL
+      // For local development, use local backend; for production, use deployed backend
+      let backendUrl;
+      if (isLocalhost) {
+        backendUrl = 'http://127.0.0.1:8000'; // Local development
+      } else {
+        // For production deployment, update this to your actual backend URL
+        // Examples: your-heroku-app.herokuapp.com, your-vercel-backend.vercel.app, etc.
+        backendUrl = 'https://your-actual-backend-deployment.com'; // Replace with your deployed backend URL
       }
-    };
 
-    ws.onclose = () => setIsConnected(false);
-    ws.onerror = () => setIsConnected(false);
+      const apiUrl = `${backendUrl}/api/v1/query`;
 
-    websocket.current = ws;
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: message }), // Backend expects 'query' field, not 'message'
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      // Add the AI response to messages
+      const text = data.answer || data.response || data.message || 'No response received';
+      const sources = data.sources?.join(', ') || 'None';
+      setMessages(prev => [...prev,
+        { text: input, sender: 'user' },
+        { text: `${text}\n\nSources: ${sources}`, sender: 'ai' }
+      ]);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      // Provide more user-friendly error messages
+      if (error.message.includes('Failed to fetch') || error.message.includes('ERR_CONNECTION_REFUSED')) {
+        setMessages(prev => [...prev, {
+          text: 'Error: Unable to connect to the backend server. Please make sure:\n1. The backend server is running\n2. The backend URL is correctly configured\n3. The server is accessible from your network',
+          sender: 'system'
+        }]);
+      } else {
+        setMessages(prev => [...prev, { text: `Error: ${error.message || 'Failed to send message'}`, sender: 'system' }]);
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  useEffect(() => {
-    connectToWebSocket();
-    return () => { websocket.current?.close(); };
-  }, []);
-
   const handleSend = () => {
-    if (input.trim() && websocket.current?.readyState === WebSocket.OPEN) {
-      websocket.current.send(JSON.stringify({ type: 'message', content: input }));
+    if (input.trim() && !isLoading) {
+      // Add user message immediately
       setMessages(prev => [...prev, { text: input, sender: 'user' }]);
+      sendMessage(input);
       setInput('');
+    }
+  };
+
+  // Check if backend is available
+  const checkBackendStatus = async () => {
+    try {
+      // Determine API URL based on environment
+      const isLocalhost = typeof window !== 'undefined' &&
+        (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+      let backendUrl;
+      if (isLocalhost) {
+        backendUrl = 'http://127.0.0.1:8000'; // Local development
+      } else {
+        // For production deployment, update this to your actual backend URL
+        backendUrl = 'https://your-actual-backend-deployment.com'; // Replace with your deployed backend URL
+      }
+
+      const healthUrl = `${backendUrl}/health`;
+      const response = await fetch(healthUrl);
+      return response.ok;
+    } catch (error) {
+      return false;
     }
   };
 
   const handleDelete = () => setMessages([]);
 
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
+
   return (
     <div className={styles.chatbotContainer}>
       <div className={styles.chatbotHeader}>
         <button onClick={handleDelete} className={styles.headerButton}>Delete Chat</button>
+        <div className={styles.statusIndicator}>
+          <span className={`${styles.statusDot} ${isLoading ? styles.statusThinking : styles.statusReady}`}></span>
+          {isLoading ? 'AI Assistant: Thinking...' : 'AI Assistant: Ready'}
+        </div>
       </div>
 
       <div className={styles.chatbotMessages}>
         {messages.map((msg, index) => (
-          <div key={index} className={`${styles.message} ${styles[msg.sender]}`}>
+          <div key={index} className={`${styles.message} ${msg.sender === 'ai' ? styles.bot : msg.sender === 'user' ? styles.user : styles.system}`}>
             {msg.text}
           </div>
         ))}
+        {isLoading && (
+          <div className={`${styles.message} ${styles.bot}`}>
+            Thinking...
+          </div>
+        )}
         <div ref={messagesEndRef} />
       </div>
 
@@ -193,11 +140,11 @@ const Chatbot = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-          placeholder={isConnected ? "Type your message..." : "Connecting..."}
-          disabled={!isConnected}
+          onKeyPress={handleKeyPress}
+          placeholder="Type your message..."
+          disabled={isLoading}
         />
-        <button onClick={handleSend} disabled={!isConnected}>Send</button>
+        <button onClick={handleSend} disabled={isLoading || !input.trim()}>Send</button>
       </div>
     </div>
   );
