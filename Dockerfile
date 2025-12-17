@@ -1,11 +1,18 @@
 FROM python:3.11-slim
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential curl gnupg libpq-dev gcc postgresql-client && \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        curl \
+        gnupg \
+        libpq-dev \
+        gcc \
+        postgresql-client && \
     rm -rf /var/lib/apt/lists/*
 
 # Set working directory
@@ -15,13 +22,18 @@ WORKDIR /app
 COPY . .
 
 # Change to the backend directory
-WORKDIR /app/backend/chatbot-backend
+WORKDIR /backend/chatbot-backend
 
 # Install Python dependencies
-RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Expose port
 EXPOSE 8000
 
+# Create a startup script
+RUN echo '#!/bin/bash\nexec uvicorn app.main:app --host=0.0.0.0 --port=${PORT:-8000}' > /start.sh
+RUN chmod +x /start.sh
+
 # Run the application
-CMD ["python", "-c", "import uvicorn; uvicorn.run('app.main:app', host='0.0.0.0', port=int(__import__('os').get('PORT', 8000)))"]
+CMD ["/start.sh"]
