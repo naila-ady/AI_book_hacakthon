@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./chatbot-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - QDRANT_URL=${QDRANT_URL}
+      - QDRANT_API_KEY=${QDRANT_API_KEY}
+      - COHERE_API_KEY=${COHERE_API_KEY}
+      - DATABASE_URL=${DATABASE_URL}
+      - QDRANT_COLLECTION=${QDRANT_COLLECTION:-bookn}
+    volumes:
+      - ./backend/chatbot-backend:/app
+    restart: unless-stopped
