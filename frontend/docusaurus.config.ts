@@ -168,8 +168,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://naila-ady.github.io',
-  baseUrl: '/AI_book_hacakthon/',
+  url: 'https://aibookhacakthon.vercel.app', // Replace with your actual Vercel deployment URL after deployment
+  baseUrl: '/',
 
   organizationName: 'naila-ady',
   projectName: 'AI_book_hacakthon',

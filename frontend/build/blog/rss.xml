@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>PHYSICAL AI &amp; HUMANOID ROBOTICS Blog</title>
-        <link>https://naila-ady.github.io/AI_book_hacakthon/blog</link>
+        <link>https://aibookhacakthon.vercel.app/blog</link>
         <description>PHYSICAL AI &amp; HUMANOID ROBOTICS Blog</description>
         <lastBuildDate>Sat, 06 Dec 2025 21:48:21 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>en</language>
         <item>
             <title><![CDATA[Welcome to My First Blog!]]></title>
-            <link>https://naila-ady.github.io/AI_book_hacakthon/blog/welcome</link>
-            <guid>https://naila-ady.github.io/AI_book_hacakthon/blog/welcome</guid>
+            <link>https://aibookhacakthon.vercel.app/blog/welcome</link>
+            <guid>https://aibookhacakthon.vercel.app/blog/welcome</guid>
             <pubDate>Sat, 06 Dec 2025 21:48:21 GMT</pubDate>
             <description><![CDATA[Introduction to my blog about AI, robotics, and technology]]></description>
             <content:encoded><![CDATA[<p>Welcome to my very first blog post! I'm Naila Adnan, and I'm thrilled to embark on this journey of sharing my thoughts, projects, and discoveries with you.</p>

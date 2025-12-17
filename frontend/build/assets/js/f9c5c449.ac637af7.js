@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkai_book_hackathon=self.webpackChunkai_book_hackathon||[]).push([[5596],{9996:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"Dedication","slug":"/category/dedication","permalink":"/docs/category/dedication","sidebar":"tutorialSidebar","navigation":{"next":{"title":"Dedication","permalink":"/docs/dedication/dedication"}}}}')}}]);
