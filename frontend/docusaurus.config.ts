@@ -247,7 +247,7 @@ const config: Config = {
     },
 
     footer: {
-      style: 'light',
+      style: 'dark',
       links: [
         {
           title: 'Docs',
@@ -284,7 +284,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/naila-ady',
+              href: 'https://github.com/naila-ady/AI_book_hacakthon.git',
             },
           ],
         },
