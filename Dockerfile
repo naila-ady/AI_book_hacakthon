@@ -8,9 +8,6 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 # Set work directory
 WORKDIR /app
 
-# Copy backend directory to the container
-COPY backend/chatbot-backend/ .
-
 # Install system dependencies required for psycopg2-binary and other packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -28,6 +25,9 @@ COPY backend/chatbot-backend/requirements.txt .
 # Upgrade pip and install dependencies
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application
+COPY backend/chatbot-backend/ .
 
 # Expose port
 EXPOSE $PORT 8000 8001
