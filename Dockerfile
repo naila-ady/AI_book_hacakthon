@@ -22,7 +22,7 @@ WORKDIR /app
 COPY . .
 
 # Change to the backend directory
-WORKDIR /backend/chatbot-backend
+WORKDIR /app/backend/chatbot-backend
 
 # Install Python dependencies
 RUN pip install --upgrade pip && \
