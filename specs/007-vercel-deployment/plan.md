@@ -3,29 +3,30 @@
 ## Architecture Decision: Hybrid Deployment Approach
 
 ### Decision
-Use a hybrid deployment approach where the frontend is deployed to Vercel while the backend WebSocket server is deployed to an alternative platform that supports long-running processes.
+Use a hybrid deployment approach where the Docusaurus frontend is deployed to Vercel while the FastAPI backend is deployed to Railway for API-based communication.
 
 ### Rationale
-- Vercel Serverless Functions have timeout limitations (max 60s for Pro accounts, 10s for Hobby)
-- WebSocket servers require persistent connections that exceed these timeouts
-- Qdrant vector database needs to remain accessible for RAG operations
-- Cohere API integration requires server-side API keys for security
+- Docusaurus frontend benefits from Vercel's CDN and static site optimization
+- FastAPI backend with Qdrant and Cohere integration requires server-side environment for API keys
+- API-based communication is more reliable than WebSocket for RAG operations
+- Proper separation of concerns with sensitive data handled server-side only
 
 ### Alternatives Considered
-1. **Full Vercel deployment**: Not feasible due to WebSocket timeout limitations
+1. **Full Vercel deployment**: Not feasible due to server-side dependency requirements
 2. **Frontend-only Vercel deployment**: Possible but requires backend to remain on separate infrastructure
-3. **Migration to HTTP-based API**: Would require significant changes to current WebSocket implementation
+3. **Monolithic deployment**: Would complicate scaling and maintenance
 
 ### Chosen Approach: Hybrid Deployment
-- Deploy frontend to Vercel for optimal static asset delivery
-- Deploy backend to platform supporting long-running processes (e.g., Railway, Heroku, DigitalOcean)
+- Deploy Docusaurus frontend to Vercel for optimal static asset delivery
+- Deploy FastAPI backend to Railway as containerized application
+- Communication via REST API calls instead of WebSocket
 
 ## Frontend Deployment Plan
 
 ### 1. Frontend Preparation
-- [ ] Update frontend to use environment variables for WebSocket URL
+- [ ] Update frontend to use environment variables for backend API URL
 - [ ] Ensure all sensitive data is properly handled on the backend
-- [ ] Optimize build configuration for Vercel deployment
+- [ ] Optimize Docusaurus build configuration for Vercel deployment
 - [ ] Add Vercel-specific configuration files if needed
 
 ### 2. Vercel Configuration
@@ -40,31 +41,31 @@ Use a hybrid deployment approach where the frontend is deployed to Vercel while 
 - [ ] Deploy frontend application
 - [ ] Verify deployment and functionality
 
-## Backend Deployment Plan
+## Backend Deployment Plan (on Railway)
 
 ### 1. Backend Preparation
-- [ ] Containerize the Python WebSocket server (Dockerfile)
+- [ ] Containerize the FastAPI application (Dockerfile)
 - [ ] Ensure proper environment variable handling
 - [ ] Update logging configuration for production
 - [ ] Optimize for production deployment
 
-### 2. Alternative Platform Selection
-- [ ] Evaluate Railway, Heroku, or DigitalOcean for backend deployment
-- [ ] Consider cost, scalability, and ease of deployment
-- [ ] Set up account on chosen platform
+### 2. Railway Platform Setup
+- [ ] Set up Railway account
+- [ ] Prepare for containerized deployment
+- [ ] Configure build and runtime settings
 
 ### 3. Backend Deployment Process
-- [ ] Deploy WebSocket server to chosen platform
+- [ ] Deploy FastAPI application to Railway
 - [ ] Configure environment variables for backend
 - [ ] Set up monitoring and logging
-- [ ] Ensure secure connection handling
+- [ ] Ensure secure API communication
 
 ## Integration Plan
 
 ### 1. Environment Configuration
-- [ ] Configure frontend to connect to deployed backend WebSocket URL
-- [ ] Set up secure protocols (wss://) for production
-- [ ] Test WebSocket connection between deployed frontend and backend
+- [ ] Configure frontend to connect to deployed backend API URL
+- [ ] Set up secure protocols (https://) for production
+- [ ] Test API communication between deployed frontend and backend
 
 ### 2. Testing and Validation
 - [ ] Perform end-to-end testing of chatbot functionality
@@ -80,14 +81,14 @@ Use a hybrid deployment approach where the frontend is deployed to Vercel while 
 
 ## Risk Mitigation
 - **Backend downtime**: Implement connection retry logic in frontend
-- **WebSocket connection failures**: Provide user-friendly error messages
+- **API communication failures**: Provide user-friendly error messages
 - **Environment misconfiguration**: Thorough testing in staging environment
 - **Security vulnerabilities**: Proper environment variable handling and API key protection
 
 ## Success Criteria
 - [ ] Frontend successfully deployed on Vercel
-- [ ] Backend WebSocket server operational on alternative platform
-- [ ] Successful WebSocket communication between frontend and backend
+- [ ] Backend FastAPI application operational on Railway
+- [ ] Successful API communication between frontend and backend
 - [ ] RAG functionality working as expected
 - [ ] Secure handling of API keys and sensitive data
 - [ ] Acceptable response times and performance metrics

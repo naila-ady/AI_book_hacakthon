@@ -27,9 +27,10 @@ const Chatbot = () => {
         backendUrl = 'http://127.0.0.1:8000'; // Local development
       } else {
         // For production deployment, use your Railway backend URL
-        // Use window object to safely access environment variables in browser
+        // Docusaurus-compatible environment variable access
         const envBackendUrl = typeof window !== 'undefined'
-          ? (process.env.REACT_APP_BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL)
+          ? (window as any).env?.REACT_APP_BACKEND_URL ||
+            (window as any).env?.NEXT_PUBLIC_BACKEND_URL
           : undefined;
         backendUrl = envBackendUrl || 'https://aibookhacakthon-production.up.railway.app';
       }
@@ -94,9 +95,10 @@ const Chatbot = () => {
         backendUrl = 'http://127.0.0.1:8000'; // Local development
       } else {
         // For production deployment, use your Railway backend URL
-        // Use window object to safely access environment variables in browser
+        // Docusaurus-compatible environment variable access
         const envBackendUrl = typeof window !== 'undefined'
-          ? (process.env.REACT_APP_BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL)
+          ? (window as any).env?.REACT_APP_BACKEND_URL ||
+            (window as any).env?.NEXT_PUBLIC_BACKEND_URL
           : undefined;
         backendUrl = envBackendUrl || 'https://aibookhacakthon-production.up.railway.app';
       }

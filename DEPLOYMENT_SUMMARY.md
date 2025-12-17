@@ -1,83 +1,50 @@
-# Deployment Summary
+# Deployment Summary: AI Robotics Book Chatbot
 
-This document summarizes all the files created and modifications made to enable deployment of the AI Chatbot application to Vercel (frontend) and Render (backend).
+## Overview
+Successfully deployed a FastAPI backend with Docusaurus frontend, resolving multiple deployment and connectivity issues. The project was initially configured for Render deployment but was successfully migrated to Railway for the backend and Vercel for the frontend.
 
-## Files Created
+## Issues Resolved
 
-### 1. Specification Files (in specs/vercel-deployment/)
-- `spec.md` - Detailed specification for Vercel deployment
-- `plan.md` - Implementation plan outlining the deployment approach
-- `tasks.md` - Step-by-step implementation tasks
+### 1. Railway Docker Deployment Issues
+- Fixed "pip: not found" error by creating proper Dockerfile
+- Fixed path issues in Dockerfile where backend directory wasn't found
+- Fixed system dependencies installation for psycopg2-binary
+- Resolved shell parsing errors with CMD instruction
 
-### 2. Backend Deployment Files (in backend/chatbot-backend/)
-- `Procfile` - Process configuration for Render deployment
-- `runtime.txt` - Specifies Python version for Render
+### 2. Backend Configuration
+- Created Dockerfile that properly installs system dependencies
+- Configured backend to run on Railway with correct port binding
+- Set up proper working directory structure
+- Fixed requirements.txt installation path
 
-### 3. Frontend Configuration (in frontend/)
-- `vercel.json` - Vercel deployment configuration
+### 3. Frontend Configuration
+- Updated Docusaurus configuration for Vercel deployment
+- Fixed baseUrl from '/AI_book_hacakthon/' to '/' for Vercel
+- Updated URL configuration from GitHub Pages to Vercel format
+- Fixed environment variable access to avoid "process is not defined" error
 
-### 4. Documentation
-- `docs/deployment.md` - Complete deployment guide
-- `DEPLOYMENT_SUMMARY.md` - This summary file
+### 4. Frontend-Backend Connection
+- Updated Chatbot component to connect to deployed backend
+- Fixed API endpoints to use Railway deployment URL
+- Implemented proper environment variable handling for browser compatibility
+- Configured both query and health check endpoints to use deployed backend
 
-## Files Modified
+## Key Files Modified
+- Dockerfile (root): Fixed for Railway deployment
+- frontend/docusaurus.config.ts: Updated for Vercel deployment
+- frontend/vercel.json: Fixed build configuration
+- frontend/src/components/Chatbot/index.tsx: Fixed backend connection and environment variables
+- frontend/.env: Added backend URL configuration
 
-### 1. Frontend Component (frontend/src/components/Chatbot/index.tsx)
-- Updated to use environment variable for WebSocket URL
-- Changed hardcoded URL to `process.env.NEXT_PUBLIC_WEBSOCKET_URL || 'ws://127.0.0.1:8001'`
+## Final Configuration
+- Backend: https://aibookhacakthon-production.up.railway.app
+- Frontend: Deployed via Vercel (URL available in Vercel dashboard)
+- API Communication: Frontend connects to backend via HTTPS
+- Environment Variables: Properly handled for browser environment
 
-### 2. Backend Server (backend/chatbot-backend/chat_server.py)
-- Updated to listen on `0.0.0.0` instead of `127.0.0.1` for external connections
-- Added support for `PORT` environment variable for Render deployment
-- Updated logging to show the actual port being used
-
-## Deployment Architecture
-
-### Frontend (Vercel)
-- Docusaurus-based static site
-- Environment variable: `NEXT_PUBLIC_WEBSOCKET_URL`
-- Build command: `npm run build`
-- Output directory: `build`
-
-### Backend (Render)
-- Python WebSocket server using websockets library
-- Environment variables:
-  - `PORT` (provided by Render)
-  - `QDRANT_URL`
-  - `QDRANT_API_KEY`
-  - `QDRANT_COLLECTION`
-  - `COHERE_API_KEY`
-- Start command: `python chat_server.py`
-
-## Deployment Steps
-
-### Frontend Deployment
-1. Connect Vercel to GitHub repository
-2. Configure build settings:
-   - Build command: `npm run build`
-   - Output directory: `build`
-3. Set environment variable: `NEXT_PUBLIC_WEBSOCKET_URL`
-4. Deploy
-
-### Backend Deployment
-1. Connect Render to GitHub repository
-2. Create new Web Service
-3. Configure:
-   - Root directory: `backend/chatbot-backend`
-   - Build command: `pip install -r requirements.txt`
-   - Start command: `python chat_server.py`
-4. Set environment variables
-5. Deploy
-
-## Important URLs and Protocols
-
-- Development: `ws://127.0.0.1:8001`
-- Production Frontend: Vercel-generated URL
-- Production Backend: Render-generated URL
-- Production WebSocket: `wss://render-app-url` (secure WebSocket)
-
-## Security Considerations
-
-- API keys (Qdrant, Cohere) are only stored in backend environment variables
-- Frontend only has access to WebSocket URL
-- Production uses secure WebSocket (wss://) protocol
+## Results
+- Backend successfully deployed on Railway with FastAPI
+- Frontend successfully deployed on Vercel with Docusaurus
+- Chatbot functionality working with backend API
+- No more "process is not defined" errors
+- Proper connectivity between frontend and backend
