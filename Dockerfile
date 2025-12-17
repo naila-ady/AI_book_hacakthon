@@ -19,15 +19,12 @@ RUN apt-get update \
         postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first to leverage Docker cache
-COPY backend/chatbot-backend/requirements.txt .
+# Copy the entire backend directory first
+COPY backend/chatbot-backend/ .
 
 # Upgrade pip and install dependencies
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the application
-COPY backend/chatbot-backend/ .
 
 # Expose port
 EXPOSE $PORT 8000 8001
