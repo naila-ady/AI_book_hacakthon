@@ -203,3 +203,8 @@
 [data-theme='dark'] .auth-status {
   background: rgba(255, 159, 13, 0.2);
 }
+
+/* Hide navbar on auth pages */
+.auth-layout .navbar {
+  display: none !important;
+}

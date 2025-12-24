@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-// Minimal layout without navbar for auth pages
+// Layout without navbar for auth pages
 const AuthLayout = ({ children, title, description }) => {
   return (
     <Layout
@@ -9,13 +9,16 @@ const AuthLayout = ({ children, title, description }) => {
       description={description}
       wrapperClassName="auth-layout"
     >
-      <div style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#0D0D0D'
-      }}>
+      <div
+        className="auth-page"
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#0D0D0D'
+        }}
+      >
         <div style={{
           width: '100%',
           maxWidth: '500px',
