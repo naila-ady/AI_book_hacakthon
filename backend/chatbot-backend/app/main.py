@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import Config
 from app.services.rag_service import RAGService
 from app.api import chatbot as chatbot_api
+from app.api import auth as auth_api
 from app.dependencies import get_rag_service
 
 # --- FastAPI App Initialization ---
@@ -24,6 +25,7 @@ app.add_middleware(
 
 # --- API Routers ---
 app.include_router(chatbot_api.router, prefix="/api/v1", tags=["chatbot"])
+app.include_router(auth_api.router, prefix="/api", tags=["auth"])
 
 # --- Core Routes ---
 @app.get("/", summary="Root endpoint", tags=["default"])

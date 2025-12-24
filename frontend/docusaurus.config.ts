@@ -212,6 +212,25 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    // Add proxy configuration
+    () => ({
+      name: 'api-proxy',
+      configureWebpack: () => ({
+        devServer: {
+          proxy: [
+            {
+              context: ['/api'],
+              target: 'http://localhost:8000',
+              changeOrigin: true,
+              secure: false,
+            },
+          ],
+        },
+      }),
+    }),
+  ],
+
   themeConfig: {
     image: 'img/logo.jpg',
     colorMode: {
@@ -235,13 +254,6 @@ const config: Config = {
           href: 'https://naila-ady.github.io/AI_book_hacakthon/',
           label: 'GitHub',
           position: 'right',
-        },
-
-        // ✅ FIXED (replaced invalid "custom" with valid "html")
-        {
-          type: 'html',
-          position: 'right',
-          value: '<input type="text" placeholder="Search..." style="padding:6px 10px;border-radius:6px;border:1px solid #ccc;" />',
         },
       ],
     },

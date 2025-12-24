@@ -150,7 +150,7 @@
 }
 
 [data-theme='dark'] .footer__link {
-  color: rgba(255, 255, 255, 0.7);
+  color: #ff9f0d;
 }
 
 [data-theme='dark'] .footer__link:hover {
@@ -159,4 +159,47 @@
 
 [data-theme='dark'] .footer__copyright {
   color: rgba(255, 255, 255, 0.5);
+}
+
+/* AUTH STATUS COMPONENT */
+.auth-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(255, 159, 13, 0.1); /* Light orange background */
+}
+
+.auth-status--authenticated {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.auth-status__greeting {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.auth-status__logout {
+  background: #dc3545 !important; /* Red for logout button */
+  color: white !important;
+  border: none !important;
+  padding: 0.375rem 0.75rem !important;
+  border-radius: 4px !important;
+  cursor: pointer;
+  font-size: 0.875rem !important;
+}
+
+.auth-status__login, .auth-status__signup {
+  margin-right: 0.5rem;
+}
+
+[data-theme='light'] .auth-status {
+  background: rgba(255, 159, 13, 0.1);
+}
+
+[data-theme='dark'] .auth-status {
+  background: rgba(255, 159, 13, 0.2);
 }
