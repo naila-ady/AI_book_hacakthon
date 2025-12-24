@@ -1,18 +1,70 @@
 // Auth configuration for Better Auth
-import { createAuthClient } from "better-auth/client";
+// Direct API calls to match backend implementation
+// Export authentication functions that call backend API
+export const signIn = {
+  email: async ({ email, password }) => {
+    const response = await fetch('http://localhost:8000/api/auth/sign-in/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
 
-// Create the auth client
-const authClientInstance = createAuthClient({
-  baseURL: typeof window !== 'undefined' ? (window.ENV?.NEXT_PUBLIC_BETTER_AUTH_URL || "http://localhost:8000") : "http://localhost:8000",
-});
+    const data = await response.json();
 
-// Export authentication functions
-export const signIn = authClientInstance.signIn;
-export const signUp = authClientInstance.signUp;
-export const signOut = authClientInstance.signOut;
+    if (response.ok) {
+      // Store the token from the response
+      if (data.session && data.session.token) {
+        localStorage.setItem('better_auth_token', data.session.token);
+      }
+      return data;
+    } else {
+      throw new Error(data.detail || 'Login failed');
+    }
+  }
+};
 
-// Export the client instance in case we need it
-export const authClient = authClientInstance;
+export const signUp = {
+  email: async ({ email, password, name }) => {
+    const response = await fetch('http://localhost:8000/api/auth/sign-up/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password, name: name || '' }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      // Store the token from the response
+      if (data.session && data.session.token) {
+        localStorage.setItem('better_auth_token', data.session.token);
+      }
+      return data;
+    } else {
+      throw new Error(data.detail || 'Registration failed');
+    }
+  }
+};
+
+export const signOut = async () => {
+  // Clear the stored token
+  localStorage.removeItem('better_auth_token');
+  // Call backend sign-out endpoint
+  try {
+    await fetch('http://localhost:8000/api/auth/sign-out', {
+      method: 'POST',
+    });
+  } catch (error) {
+    console.error('Sign out error:', error);
+  }
+  return { success: true };
+};
+
+// Export the client instance placeholder
+export const authClient = null;
 
 // Simple function to check session manually
 export const checkSession = async () => {
@@ -24,11 +76,8 @@ export const checkSession = async () => {
       return { data: null, isLoading: false };
     }
 
-    // Get the base URL consistently with the auth client
-    const baseURL = typeof window !== 'undefined' ? (window.ENV?.NEXT_PUBLIC_BETTER_AUTH_URL || "http://localhost:8000") : "http://localhost:8000";
-
-    // Use the Better Auth client to check the session
-    const response = await fetch(`${baseURL}/api/auth/session`, {
+    // Check session with backend
+    const response = await fetch('http://localhost:8000/api/auth/session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,4 +101,10 @@ export const checkSession = async () => {
     localStorage.removeItem('better_auth_token');
     return { data: null, isLoading: false };
   }
+};
+
+// Export a useSession hook that works with our implementation
+export const useSession = () => {
+  // This is just a placeholder since we're using AuthContext instead
+  return { session: null, loading: false };
 };

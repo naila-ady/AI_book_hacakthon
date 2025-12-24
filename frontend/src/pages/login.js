@@ -10,18 +10,8 @@ function LoginPage() {
     // Wait a moment to ensure token is properly stored
     await new Promise(resolve => setTimeout(resolve, 300));
 
-    // Check if token is available before redirecting
-    const token = localStorage.getItem('better_auth_token');
-
-    if (token) {
-      // Token is available, redirect immediately
-      window.location.href = '/';
-    } else {
-      // Token might not be stored yet, wait a bit more
-      setTimeout(() => {
-        window.location.href = '/';
-      }, 500);
-    }
+    // Redirect to the main application (book content)
+    window.location.href = '/';
   };
 
   const handleLoginError = (error) => {

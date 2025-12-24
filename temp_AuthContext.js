@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useSession } from '../config/auth.config';
 
 // Create Auth Context
 const AuthContext = createContext();
@@ -20,19 +21,6 @@ export const AuthProvider = ({ children }) => {
       setIsAuthenticated(false);
       setIsLoading(false);
     }
-
-    // Listen for storage events to handle authentication state changes from other tabs/windows
-    const handleStorageChange = (e) => {
-      if (e.key === 'better_auth_token') {
-        validateSession();
-      }
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
   }, []);
 
   // Function to validate the session with the backend
@@ -48,7 +36,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       // Check session with backend
-      const sessionResponse = await fetch('http://localhost:8000/api/auth/session', {
+      const sessionResponse = await fetch('/api/auth/session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
