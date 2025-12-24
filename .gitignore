@@ -21,3 +21,13 @@ yarn-error.log*
 
 .env
 node_modules
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
