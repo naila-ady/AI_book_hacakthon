@@ -45,14 +45,10 @@ const AuthStatus = () => {
     try {
       const { signOut } = await import('../../config/auth.config');
       await signOut();
-      // Redirect to home after logout
-      history.push('/');
-      // Update local state
-      setAuthState({
-        user: null,
-        isAuthenticated: false,
-        isLoading: false
-      });
+      // Clear any stored tokens
+      localStorage.removeItem('better_auth_token');
+      // Force redirect to home after logout to ensure page refresh
+      window.location.href = '/';
     } catch (error) {
       console.error('Logout failed:', error);
     }

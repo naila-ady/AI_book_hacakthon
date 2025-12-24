@@ -10,8 +10,10 @@ const UserProfile = () => {
   const handleLogout = async () => {
     try {
       await authService.logout();
-      // Redirect to home after logout
-      history.push('/');
+      // Clear any stored tokens
+      localStorage.removeItem('better_auth_token');
+      // Force redirect to home after logout to ensure page refresh
+      window.location.href = '/';
     } catch (error) {
       console.error('Logout failed:', error);
     }
