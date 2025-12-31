@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkai_book_hackathon=self.webpackChunkai_book_hackathon||[]).push([[3799],{3795:(a,e,h)=>{h.r(e),h.d(e,{default:()=>c});h(6540);var r=h(3689),n=h(4848);function c(a){var e=a.children;return(0,n.jsx)(r.AuthProvider,{children:e})}}}]);

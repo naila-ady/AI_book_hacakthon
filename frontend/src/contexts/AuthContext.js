@@ -7,9 +7,16 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(typeof window !== 'undefined'); // Only loading if in browser
 
   useEffect(() => {
+    // Check if we're in the browser environment
+    if (typeof window === 'undefined') {
+      // Not in browser (during build), set initial state and return
+      setIsLoading(false);
+      return;
+    }
+
     // Check if we have a stored token and try to validate it
     const storedToken = localStorage.getItem('better_auth_token');
     if (storedToken) {
@@ -37,6 +44,13 @@ export const AuthProvider = ({ children }) => {
 
   // Function to validate the session with the backend
   const validateSession = async () => {
+    // Check if we're in the browser environment
+    if (typeof window === 'undefined') {
+      // Not in browser, skip validation
+      setIsLoading(false);
+      return;
+    }
+
     setIsLoading(true);
     try {
       const storedToken = localStorage.getItem('better_auth_token');
@@ -69,7 +83,9 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       console.error('Session validation failed:', error);
       // Clear the token if there's an error
-      localStorage.removeItem('better_auth_token');
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('better_auth_token');
+      }
       setUser(null);
       setIsAuthenticated(false);
     } finally {

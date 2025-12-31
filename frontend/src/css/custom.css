@@ -204,7 +204,49 @@
   background: rgba(255, 159, 13, 0.2);
 }
 
-/* Hide navbar on auth pages */
-.auth-layout .navbar {
+/* Auth page specific styling */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0D0D0D;
+}
+
+.auth-page .container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Hide navbar and footer on auth pages with maximum specificity */
+body .auth-page-layout .navbar__inner,
+body .auth-page-layout .navbar,
+body .auth-page-layout footer,
+body .auth-page-layout .footer {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+}
+
+/* Ensure main content area fills the screen when navbar is hidden */
+body .auth-page-layout .main-wrapper {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Additional override for any potential layout issues */
+.auth-page-layout .navbar-sidebar,
+.auth-page-layout .navbar-sidebar--showable,
+.auth-page-layout .menu,
+.auth-page-layout .sidebar {
   display: none !important;
 }

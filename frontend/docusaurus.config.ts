@@ -11,13 +11,12 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://aibookhacakthon.vercel.app', // Replace with your actual Vercel deployment URL after deployment
+  url: 'https://book-hacakthon-ec4syqhp6-nailaadys-projects.vercel.app', // Your current Vercel deployment URL
   baseUrl: '/',
 
   organizationName: 'naila-ady',
   projectName: 'AI_book_hacakthon',
 
-  deploymentBranch: "gh-pages",
   trailingSlash: false,
 
   onBrokenLinks: 'ignore',
@@ -55,7 +54,24 @@ const config: Config = {
     ],
   ],
 
-  plugins: [],
+  plugins: [
+    // Add proxy configuration for development
+    () => ({
+      name: 'api-proxy',
+      configureWebpack: () => ({
+        devServer: {
+          proxy: [
+            {
+              context: ['/api'],
+              target: process.env.BACKEND_URL || 'http://localhost:8000',
+              changeOrigin: true,
+              secure: false,
+            },
+          ],
+        },
+      }),
+    }),
+  ],
 
   themeConfig: {
     image: 'img/logo.jpg',

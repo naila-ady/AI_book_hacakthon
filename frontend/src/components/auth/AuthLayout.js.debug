@@ -1,0 +1,34 @@
+import React from 'react';
+import BlankLayout from '../../theme/BlankLayout';
+
+// Layout without navbar and footer for auth pages
+const AuthLayout = ({ children, title, description }) => {
+  return (
+    <BlankLayout
+      title={title}
+      description={description}
+    >
+      <div
+        className="auth-page"
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#0D0D0D'
+        }}
+      >
+        <div style={{
+          width: '100%',
+          maxWidth: '500px',
+          margin: '0 auto',
+          padding: '2rem'
+        }}>
+          {children}
+        </div>
+      </div>
+    </BlankLayout>
+  );
+};
+
+export default AuthLayout;

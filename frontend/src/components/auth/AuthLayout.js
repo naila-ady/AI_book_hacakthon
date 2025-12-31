@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-// Layout without navbar for auth pages
+// Layout that hides navbar and footer for auth pages using CSS
 const AuthLayout = ({ children, title, description }) => {
   return (
     <Layout
       title={title}
       description={description}
-      wrapperClassName="auth-layout"
+      wrapperClassName="auth-page-layout"
     >
       <div
         className="auth-page"

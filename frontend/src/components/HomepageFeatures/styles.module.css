@@ -22,17 +22,19 @@
   gap: 2rem;
 }
 
-/* ===================== Feature SVGs ===================== */
+/* ===================== Feature Images ===================== */
 .featureSvg {
   height: 200px;
   width: 200px;
-  fill: #ff9f0d; /* apply orange accent color to SVGs */
-  transition: transform 0.3s ease, fill 0.3s ease;
+  object-fit: contain; /* maintain aspect ratio */
+  transition: transform 0.3s ease;
+  border-radius: 8px; /* add slight rounding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* add subtle shadow */
 }
 
 .featureSvg:hover {
-  transform: scale(1.1);
-  fill: #ffb733; /* slightly brighter on hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 159, 13, 0.3); /* orange-tinged shadow on hover */
 }
 
 /* ===================== Feature Titles & Text ===================== */
