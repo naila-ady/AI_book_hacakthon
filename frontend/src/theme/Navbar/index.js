@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import OriginalNavbar from '@theme-original/Navbar';
 import { useAuth } from '../../contexts/AuthContext';
+import CustomTranslationSelector from '../NavbarItem/CustomTranslationSelector';
 
 export default function Navbar(props) {
   const { isAuthenticated, isLoading } = useAuth();
@@ -27,10 +28,20 @@ export default function Navbar(props) {
         return item;
       });
 
+      // Add the translation selector to the items
+      const itemsWithTranslation = [
+        ...filteredItems,
+        {
+          type: 'custom',
+          position: 'right',
+          component: React.createElement(CustomTranslationSelector)
+        }
+      ];
+
       // Update the items
       modifiedProps.children = React.cloneElement(props.children, {
         ...props.children.props,
-        items: filteredItems
+        items: itemsWithTranslation
       });
     }
 

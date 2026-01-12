@@ -1,0 +1,65 @@
+.chapterTranslator {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.translationHeader {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.resetBtn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.resetBtn:hover {
+  background: #5a6268;
+}
+
+.chapterContent {
+  line-height: 1.6;
+}
+
+.urduLayout {
+  direction: ltr; /* Container remains LTR, but content will be RTL */
+}
+
+.urduContent {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Urdu Typesetting', serif;
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+.urduContent p {
+  text-align: right;
+  direction: rtl;
+}
+
+.urduContent h1,
+.urduContent h2,
+.urduContent h3,
+.urduContent h4 {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Ensure proper styling for RTL content */
+@media (max-width: 768px) {
+  .urduContent {
+    font-size: 1em;
+  }
+}

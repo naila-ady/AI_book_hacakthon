@@ -1,0 +1,93 @@
+.translateContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  justify-content: flex-end;
+}
+
+.translateBtn, .translateActionBtn {
+  background: var(--primary-color, #ff9f0d);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.translateActionBtn {
+  background: #28a745;
+}
+
+.translateBtn:hover, .translateActionBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.translateBtn:disabled, .translateActionBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.translating {
+  cursor: wait;
+}
+
+.translateDropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownContent {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.languageList {
+  display: flex;
+  flex-direction: column;
+}
+
+.languageOption {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.languageOption:hover {
+  background-color: #f8f9fa;
+}
+
+.languageOption.active {
+  background-color: #e7f3ff;
+  font-weight: bold;
+}
+
+.languageOption:last-child {
+  border-bottom: none;
+}
+
+/* RTL support for Urdu */
+.urdu-content {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Urdu Typesetting', serif;
+}
+
+/* Fallback for Urdu if special fonts aren't available */
+.urdu-content span {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
