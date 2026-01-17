@@ -1,7 +1,7 @@
-# Railway and Vercel Deployment Agent
+# Hugging Face Spaces and Vercel Deployment Agent
 
 ## Agent Purpose
-This agent guides users through the process of deploying a FastAPI backend on Railway and a Docusaurus frontend on Vercel, based on the successful deployment pattern used for the AI Robotics Book Chatbot.
+This agent guides users through the process of deploying a FastAPI backend on Hugging Face Spaces and a Docusaurus frontend on Vercel, based on the successful deployment pattern used for the AI Robotics Book Chatbot.
 
 ## Deployment Process Overview
 
@@ -11,7 +11,7 @@ This agent guides users through the process of deploying a FastAPI backend on Ra
 - Prepare environment variables for both frontend and backend
 - Test the application locally before deployment
 
-### 2. Backend Deployment to Railway
+### 2. Backend Deployment to Hugging Face Spaces
 
 #### Step 1: Create Dockerfile for Backend
 ```dockerfile
@@ -50,7 +50,7 @@ RUN chmod +x /start.sh
 CMD ["/start.sh"]
 ```
 
-#### Step 2: Configure Railway Settings
+#### Step 2: Configure Hugging Face Spaces Settings
 - Set Builder to "Dockerfile"
 - Set Root Directory to "."
 - Set Dockerfile Path to "Dockerfile"
@@ -63,7 +63,7 @@ CMD ["/start.sh"]
 
 #### Step 3: Deploy Backend
 1. Push your code to GitHub
-2. Connect Railway to your repository
+2. Connect Hugging Face Spaces to your repository
 3. Trigger a new deployment
 4. Wait for successful build and deployment
 
@@ -109,12 +109,12 @@ if (typeof window !== 'undefined' &&
     (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
   backendUrl = 'http://127.0.0.1:8000'; // Local development
 } else {
-  // For production deployment, use your Railway backend URL
+  // For production deployment, use your Hugging Face Spaces backend URL
   const envBackendUrl = typeof window !== 'undefined'
     ? (window as any).env?.REACT_APP_BACKEND_URL ||
       (window as any).env?.NEXT_PUBLIC_BACKEND_URL
     : undefined;
-  backendUrl = envBackendUrl || 'https://your-railway-app.up.railway.app';
+  backendUrl = envBackendUrl || 'https://your-hf-space-name.hf.space';
 }
 ```
 
@@ -122,12 +122,12 @@ if (typeof window !== 'undefined' &&
 - Set Build Command: `npm run build`
 - Set Output Directory: `build`
 - Add Environment Variables:
-  - NEXT_PUBLIC_BACKEND_URL (set to your Railway backend URL)
+  - NEXT_PUBLIC_BACKEND_URL (set to your Hugging Face Spaces backend URL)
 
 ### 4. Post-Deployment Verification
 
 #### Step 1: Test Backend API
-- Visit `https://your-railway-app.up.railway.app/health`
+- Visit `https://your-hf-space-name.hf.space/health`
 - Verify all API endpoints are accessible
 - Test API functionality
 
@@ -143,7 +143,7 @@ if (typeof window !== 'undefined' &&
 
 ## Common Issues and Solutions
 
-### Issue 1: "pip: not found" on Railway
+### Issue 1: "pip: not found" on Hugging Face Spaces
 **Solution**: Ensure your Dockerfile properly installs system dependencies before trying to install Python packages.
 
 ### Issue 2: "process is not defined" in Docusaurus
@@ -163,18 +163,18 @@ if (typeof window !== 'undefined' &&
 
 ## Environment Variables Reference
 
-### Backend (Railway)
+### Backend (Hugging Face Spaces)
 - `QDRANT_URL` - URL for Qdrant vector database
 - `QDRANT_API_KEY` - API key for Qdrant authentication
 - `COHERE_API_KEY` - API key for Cohere service
 - `QDRANT_COLLECTION` - Name of the Qdrant collection
-- `PORT` - Port number (provided by Railway)
+- `PORT` - Port number (provided by Hugging Face Spaces)
 
 ### Frontend (Vercel)
 - `NEXT_PUBLIC_BACKEND_URL` - URL of your deployed backend
 
 ## Success Checklist
-- [ ] Backend successfully deployed on Railway
+- [ ] Backend successfully deployed on Hugging Face Spaces
 - [ ] Frontend successfully deployed on Vercel
 - [ ] Health check endpoint accessible
 - [ ] API endpoints working properly

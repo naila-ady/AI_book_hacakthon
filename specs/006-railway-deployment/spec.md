@@ -1,16 +1,16 @@
-# Railway Deployment Specification for AI Chatbot Backend
+# Hugging Face Spaces Deployment Specification for AI Chatbot Backend
 
 ## Project Overview
-This document specifies the deployment requirements for the AI chatbot backend on Railway. The backend consists of a FastAPI application with WebSocket support, RAG (Retrieval Augmented Generation) capabilities, and integration with Qdrant vector database and Cohere AI services for a Physical AI and Humanoid Robotics book.
+This document specifies the deployment requirements for the AI chatbot backend on Hugging Face Spaces. The backend consists of a FastAPI application with WebSocket support, RAG (Retrieval Augmented Generation) capabilities, and integration with Qdrant vector database and Cohere AI services for a Physical AI and Humanoid Robotics book.
 
 ## Architecture Components
 - **Backend**: FastAPI application with WebSocket server capabilities
 - **Database**: Qdrant vector database for document embeddings
 - **AI Service**: Cohere API for natural language processing
-- **Deployment Platform**: Railway for hosting the Python backend
+- **Deployment Platform**: Hugging Face Spaces for hosting the Python backend
 
 ## Deployment Architecture
-### Backend Deployment on Railway
+### Backend Deployment on Hugging Face Spaces
 - Deployed as a containerized Python application using Docker
 - Runs FastAPI server with proper port binding
 - Handles WebSocket connections and REST API requests
@@ -19,7 +19,7 @@ This document specifies the deployment requirements for the AI chatbot backend o
 ## Deployment Strategy
 ### Container-Based Deployment (Recommended)
 - Use Dockerfile to containerize the Python application
-- Deploy container to Railway platform
+- Deploy container to Hugging Face Spaces platform
 - Configure environment variables for external services
 - Set up proper port binding and health checks
 
@@ -29,7 +29,7 @@ This document specifies the deployment requirements for the AI chatbot backend o
 - `QDRANT_API_KEY`: API key for Qdrant authentication
 - `QDRANT_COLLECTION`: Name of the Qdrant collection
 - `COHERE_API_KEY`: API key for Cohere service
-- `PORT`: Port number for the application (provided by Railway)
+- `PORT`: Port number for the application (provided by Hugging Face Spaces)
 
 ## Deployment Requirements
 ### Backend Requirements
@@ -39,7 +39,7 @@ This document specifies the deployment requirements for the AI chatbot backend o
 - System dependencies for psycopg2-binary and other packages
 - Port binding to environment-provided PORT variable
 
-### Railway Configuration
+### Hugging Face Spaces Configuration
 - Builder: Dockerfile
 - Root Directory: Project root
 - Dockerfile Path: Dockerfile
@@ -56,7 +56,7 @@ The deployment must install the following system dependencies:
 - postgresql-client
 
 ## Security Considerations
-- API keys should be configured as Railway environment variables
+- API keys should be configured as Hugging Face Spaces environment variables
 - Never expose API keys in source code
 - Use secure connections to external services
 - Proper error handling without exposing sensitive information
@@ -74,13 +74,13 @@ The deployment must install the following system dependencies:
 - CPU-intensive operations should be handled efficiently
 
 ## Monitoring and Logging
-- Application logs should be accessible through Railway dashboard
+- Application logs should be accessible through Hugging Face Spaces dashboard
 - Error logging to track issues
 - Performance metrics tracking
 - Health check endpoints for monitoring
 
 ## Rollback Strategy
-- Railway provides automatic rollback capabilities
+- Hugging Face Spaces provides automatic rollback capabilities
 - Git-based versioning for deployment history
 - Environment-specific configurations
 

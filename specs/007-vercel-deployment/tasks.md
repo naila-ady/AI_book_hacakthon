@@ -32,7 +32,7 @@
 - **Acceptance Criteria**: Frontend builds correctly for production
 - **Dependencies**: Task 1.2
 
-## Phase 2: Backend Preparation (on Railway)
+## Phase 2: Backend Preparation (on Hugging Face Spaces)
 
 ### Task 2.1: Create Dockerfile for Backend
 - **Objective**: Containerize the FastAPI application
@@ -67,21 +67,21 @@
 - **Acceptance Criteria**: Frontend is accessible via Vercel URL
 - **Dependencies**: Phase 1 tasks
 
-### Task 3.2: Deploy Backend to Railway
-- **Objective**: Deploy the FastAPI backend application to Railway
+### Task 3.2: Deploy Backend to Hugging Face Spaces
+- **Objective**: Deploy the FastAPI backend application to Hugging Face Spaces
 - **Steps**:
-  1. Set up Railway account and project
+  1. Set up Hugging Face Spaces account and project
   2. Deploy backend application using Docker
   3. Configure environment variables
   4. Verify FastAPI application is running
-- **Acceptance Criteria**: Backend FastAPI application is operational on Railway
+- **Acceptance Criteria**: Backend FastAPI application is operational on Hugging Face Spaces
 - **Dependencies**: Phase 2 tasks
 
 ### Task 3.3: Configure Production Environment Variables
 - **Objective**: Set up proper environment variables for production
 - **Steps**:
   1. Configure NEXT_PUBLIC_BACKEND_URL in Vercel
-  2. Configure QDRANT_URL, QDRANT_API_KEY, COHERE_API_KEY, DATABASE_URL in Railway
+  2. Configure QDRANT_URL, QDRANT_API_KEY, COHERE_API_KEY, DATABASE_URL in Hugging Face Spaces
   3. Verify all connections work properly
 - **Acceptance Criteria**: All environment variables properly configured
 - **Dependencies**: Task 3.1 and Task 3.2

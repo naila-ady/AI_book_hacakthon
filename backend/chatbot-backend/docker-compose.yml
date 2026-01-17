@@ -11,7 +11,7 @@ services:
       - QDRANT_API_KEY=${QDRANT_API_KEY}
       - COHERE_API_KEY=${COHERE_API_KEY}
       - DATABASE_URL=${DATABASE_URL}
-      - QDRANT_COLLECTION=${QDRANT_COLLECTION:-bookn}
+      - QDRANT_COLLECTION=${QDRANT_COLLECTION:-new_book}
     volumes:
       - ./backend/chatbot-backend:/app
     restart: unless-stopped

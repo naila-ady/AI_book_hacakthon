@@ -1,10 +1,10 @@
-# Railway and Vercel Deployment Guide - Complete Process
+# Hugging Face Spaces and Vercel Deployment Guide - Complete Process
 
 ## ID
-026-railway-vercel-deployment-guide.agent.prompt.md
+026-hugging face spaces-vercel-deployment-guide.agent.prompt.md
 
 ## TITLE
-Railway and Vercel Deployment Guide Complete Process
+Hugging Face Spaces and Vercel Deployment Guide Complete Process
 
 ## STAGE
 explainer
@@ -31,7 +31,7 @@ unknown
 manual creation
 
 ## LABELS
-["deployment", "railway", "vercel", "fastapi", "docusaurus", "docker", "backend", "frontend"]
+["deployment", "hugging face spaces", "vercel", "fastapi", "docusaurus", "docker", "backend", "frontend"]
 
 ## LINKS_SPEC
 null
@@ -50,19 +50,19 @@ null
  - frontend/docusaurus.config.ts
  - frontend/vercel.json
  - frontend/src/components/Chatbot/index.tsx
- - backend/agent/Railway and Vercel Deployment Agent/deployment_guide_agent.md
+ - backend/agent/Hugging Face Spaces and Vercel Deployment Agent/deployment_guide_agent.md
 
 ## TESTS_YAML
  - none
 
 ## YAML_PLACEHOLDER_PROMPT
-User needed comprehensive guidance on deploying a FastAPI backend to Railway and Docusaurus frontend to Vercel, including Dockerfile creation, environment variable handling, CORS configuration, and frontend-backend connectivity.
+User needed comprehensive guidance on deploying a FastAPI backend to Hugging Face Spaces and Docusaurus frontend to Vercel, including Dockerfile creation, environment variable handling, CORS configuration, and frontend-backend connectivity.
 
 ## YAML_PLACEHOLDER_RESPONSE
-Successfully created a comprehensive deployment guide agent that covers: 1) Dockerfile creation for Railway deployment with proper system dependencies, 2) Docusaurus configuration for Vercel deployment, 3) Environment variable handling for browser compatibility, 4) Frontend-backend connectivity patterns, 5) Common issue troubleshooting, 6) Complete step-by-step deployment process. The agent provides a reusable template for future deployments.
+Successfully created a comprehensive deployment guide agent that covers: 1) Dockerfile creation for Hugging Face Spaces deployment with proper system dependencies, 2) Docusaurus configuration for Vercel deployment, 3) Environment variable handling for browser compatibility, 4) Frontend-backend connectivity patterns, 5) Common issue troubleshooting, 6) Complete step-by-step deployment process. The agent provides a reusable template for future deployments.
 
 ## OUTCOME_IMPACT
-Created a reusable deployment agent that documents the complete process for deploying FastAPI backends to Railway and Docusaurus frontends to Vercel, including solutions to common issues encountered during deployment.
+Created a reusable deployment agent that documents the complete process for deploying FastAPI backends to Hugging Face Spaces and Docusaurus frontends to Vercel, including solutions to common issues encountered during deployment.
 
 ## TESTS_SUMMARY
 none

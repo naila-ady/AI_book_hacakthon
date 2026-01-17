@@ -3,7 +3,7 @@
 ## Architecture Decision: Hybrid Deployment Approach
 
 ### Decision
-Use a hybrid deployment approach where the Docusaurus frontend is deployed to Vercel while the FastAPI backend is deployed to Railway for API-based communication.
+Use a hybrid deployment approach where the Docusaurus frontend is deployed to Vercel while the FastAPI backend is deployed to Hugging Face Spaces for API-based communication.
 
 ### Rationale
 - Docusaurus frontend benefits from Vercel's CDN and static site optimization
@@ -18,7 +18,7 @@ Use a hybrid deployment approach where the Docusaurus frontend is deployed to Ve
 
 ### Chosen Approach: Hybrid Deployment
 - Deploy Docusaurus frontend to Vercel for optimal static asset delivery
-- Deploy FastAPI backend to Railway as containerized application
+- Deploy FastAPI backend to Hugging Face Spaces as containerized application
 - Communication via REST API calls instead of WebSocket
 
 ## Frontend Deployment Plan
@@ -41,7 +41,7 @@ Use a hybrid deployment approach where the Docusaurus frontend is deployed to Ve
 - [ ] Deploy frontend application
 - [ ] Verify deployment and functionality
 
-## Backend Deployment Plan (on Railway)
+## Backend Deployment Plan (on Hugging Face Spaces)
 
 ### 1. Backend Preparation
 - [ ] Containerize the FastAPI application (Dockerfile)
@@ -49,13 +49,13 @@ Use a hybrid deployment approach where the Docusaurus frontend is deployed to Ve
 - [ ] Update logging configuration for production
 - [ ] Optimize for production deployment
 
-### 2. Railway Platform Setup
-- [ ] Set up Railway account
+### 2. Hugging Face Spaces Platform Setup
+- [ ] Set up Hugging Face Spaces account
 - [ ] Prepare for containerized deployment
 - [ ] Configure build and runtime settings
 
 ### 3. Backend Deployment Process
-- [ ] Deploy FastAPI application to Railway
+- [ ] Deploy FastAPI application to Hugging Face Spaces
 - [ ] Configure environment variables for backend
 - [ ] Set up monitoring and logging
 - [ ] Ensure secure API communication
@@ -87,7 +87,7 @@ Use a hybrid deployment approach where the Docusaurus frontend is deployed to Ve
 
 ## Success Criteria
 - [ ] Frontend successfully deployed on Vercel
-- [ ] Backend FastAPI application operational on Railway
+- [ ] Backend FastAPI application operational on Hugging Face Spaces
 - [ ] Successful API communication between frontend and backend
 - [ ] RAG functionality working as expected
 - [ ] Secure handling of API keys and sensitive data

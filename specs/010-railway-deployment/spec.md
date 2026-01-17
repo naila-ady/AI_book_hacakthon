@@ -1,26 +1,26 @@
-# Backend Deployment to Railway Specification
+# Backend Deployment to Hugging Face Spaces Specification
 
 ## Overview
-This specification documents the process of deploying the backend API for the AI Robotics Book Chatbot to Railway, enabling the chatbot functionality to work independently of local development servers.
+This specification documents the process of deploying the backend API for the AI Robotics Book Chatbot to Hugging Face Spaces, enabling the chatbot functionality to work independently of local development servers.
 
 ## Problem Statement
-The chatbot functionality on the website was dependent on local backend servers running on port 8000, making it unavailable when the local servers were not running. The Vercel frontend was attempting to connect to a Railway URL that was not yet deployed.
+The chatbot functionality on the website was dependent on local backend servers running on port 8000, making it unavailable when the local servers were not running. The Vercel frontend was attempting to connect to a Hugging Face Spaces URL that was not yet deployed.
 
 ## Solution
-Deploy the FastAPI backend to Railway to provide a stable, publicly accessible API endpoint for the chatbot functionality.
+Deploy the FastAPI backend to Hugging Face Spaces to provide a stable, publicly accessible API endpoint for the chatbot functionality.
 
 ## Technical Requirements
 
 ### Backend Configuration
 - **Framework**: FastAPI
-- **Deployment Method**: Railway using Dockerfile and Procfile
+- **Deployment Method**: Hugging Face Spaces using Dockerfile and Procfile
 - **Environment Variables**:
   - QDRANT_URL: Cloud Qdrant instance
   - QDRANT_API_KEY: Authentication key for Qdrant
   - QDRANT_COLLECTION: "bookn" collection
   - COHERE_API_KEY: Cohere API key for NLP processing
   - GEMINI_API_KEY: Google Gemini API key
-  - DATABASE_URL: PostgreSQL connection string for Railway
+  - DATABASE_URL: PostgreSQL connection string for Hugging Face Spaces
 
 ### Deployment Files
 - **Procfile**: `web: uvicorn app.main:app --host=0.0.0.0 --port=${PORT:-8000}`
@@ -31,20 +31,20 @@ Deploy the FastAPI backend to Railway to provide a stable, publicly accessible A
 ## Deployment Process
 
 ### 1. Prerequisites
-- Railway CLI installed (`npm install -g @railway/cli`)
-- Valid Railway account with login (`railway login`)
+- Git client installed
+- Valid Hugging Face account
 
 ### 2. Project Setup
-- Navigate to `backend/chatbot-backend` directory
-- Run `railway link` to connect to existing project or `railway init` for new project
-- Ensure environment variables are properly configured in Railway dashboard
+- Navigate to the project directory
+- Clone the Hugging Face Space repository
+- Ensure environment variables are properly configured in Hugging Face Spaces dashboard
 
 ### 3. Deployment Command
-- Run `railway up` to build and deploy the application
-- Railway automatically handles Docker build and deployment process
+- Run `git push` to build and deploy the application
+- Hugging Face Spaces automatically handles Docker build and deployment process
 
 ### 4. Frontend Integration
-- Frontend already configured to connect to `https://aibookhacakthon-production.up.railway.app`
+- Frontend already configured to connect to `https://nkamdar-ai-book-hackathon.hf.space`
 - No additional frontend changes required after successful backend deployment
 
 ## Architecture
@@ -54,7 +54,7 @@ Deploy the FastAPI backend to Railway to provide a stable, publicly accessible A
 - **RAG Service**: Retrieval Augmented Generation for document-based Q&A
 - **Qdrant Integration**: Vector database for document embeddings
 - **Cohere Integration**: Natural language processing
-- **PostgreSQL**: Database hosted on Railway
+- **PostgreSQL**: Database hosted on Hugging Face Spaces
 
 ### API Endpoints
 - `GET /` - Root endpoint
@@ -63,7 +63,7 @@ Deploy the FastAPI backend to Railway to provide a stable, publicly accessible A
 - `POST /api/v1/query` - Main chatbot query endpoint
 
 ## Security Considerations
-- Environment variables stored securely in Railway
+- Environment variables stored securely in Hugging Face Spaces
 - CORS middleware configured to allow connections from frontend
 - API keys not exposed in client-side code
 
@@ -73,11 +73,11 @@ Deploy the FastAPI backend to Railway to provide a stable, publicly accessible A
 - `QDRANT_COLLECTION`: Collection name ("bookn")
 - `COHERE_API_KEY`: Cohere API key
 - `GEMINI_API_KEY`: Google Gemini API key
-- `DATABASE_URL`: PostgreSQL connection string (provided by Railway)
+- `DATABASE_URL`: PostgreSQL connection string (provided by Hugging Face Spaces)
 
 ## Verification Steps
-1. Deploy backend using `railway up`
-2. Verify deployment at Railway URL
+1. Deploy backend by pushing changes to repository
+2. Verify deployment at Hugging Face Spaces URL
 3. Test health endpoint (`/health`)
 4. Test Qdrant connection (`/qdrant-test`)
 5. Verify frontend can connect to backend API
@@ -87,9 +87,9 @@ Deploy the FastAPI backend to Railway to provide a stable, publicly accessible A
 - Chatbot functionality becomes available without local servers
 - Improved reliability and uptime
 - Better user experience with persistent backend service
-- Scalable infrastructure managed by Railway
+- Scalable infrastructure managed by Hugging Face Spaces
 
 ## Monitoring
-- Railway provides built-in monitoring and logging
+- Hugging Face Spaces provides built-in monitoring and logging
 - Health check endpoint available for status monitoring
-- Error logging through Railway dashboard
+- Error logging through Hugging Face Spaces dashboard

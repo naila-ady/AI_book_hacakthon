@@ -16,6 +16,7 @@ COHERE_API_KEY=your_cohere_api_key
 QDRANT_URL=your_qdrant_url
 QDRANT_API_KEY=your_qdrant_api_key
 QDRANT_COLLECTION=bookn
+DATABASE_URL=your_postgresql_database_url
 ```
 
 ### Running Locally
@@ -25,14 +26,14 @@ uvicorn app.main:app --reload
 ```
 
 ### Deployment
-This app can be deployed to platforms like Heroku, Railway, or Render.
+This app can be deployed to platforms like Heroku, Hugging Face Spaces, or Render.
 
 For Heroku:
 1. Create a Heroku app
 2. Set config vars for your environment variables
 3. Deploy using Git or Heroku CLI
 
-For Railway:
+For Hugging Face Spaces:
 1. Connect your GitHub repo
 2. Set environment variables in the dashboard
 3. Deploy automatically on push

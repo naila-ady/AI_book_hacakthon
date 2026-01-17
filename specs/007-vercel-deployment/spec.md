@@ -16,14 +16,14 @@ This document specifies the deployment requirements for the AI Robotics Book Cha
 - Serves the documentation and chatbot UI components
 
 ### Backend Considerations
-- FastAPI backend deployed separately on Railway
+- FastAPI backend deployed separately on Hugging Face Spaces
 - Communication via REST API calls instead of WebSocket
 - API keys securely managed on backend only
 
 ## Deployment Strategy
 ### Hybrid Deployment (Required)
 - Frontend: Deploy to Vercel as static site
-- Backend: Deploy to Railway as containerized application
+- Backend: Deploy to Hugging Face Spaces as containerized application
 - API communication will point to external backend
 
 ## Environment Variables Required
@@ -39,7 +39,7 @@ This document specifies the deployment requirements for the AI Robotics Book Cha
 - Install command: `npm install` or `yarn install`
 - Docusaurus version: 3.x
 
-### Backend Requirements (on Railway)
+### Backend Requirements (on Hugging Face Spaces)
 - Python version: 3.11
 - Dependencies specified in requirements.txt
 - Proper handling of environment variables
@@ -61,13 +61,13 @@ This document specifies the deployment requirements for the AI Robotics Book Cha
 
 ## Scalability Considerations
 - Frontend is naturally scalable through Vercel's CDN
-- Backend deployed on Railway with scaling capabilities
+- Backend deployed on Hugging Face Spaces with scaling capabilities
 - Database (Qdrant) should handle concurrent queries efficiently
 - API rate limiting considerations
 
 ## Monitoring and Logging
 - Frontend error tracking through Vercel Analytics
-- Backend logging through Railway dashboard
+- Backend logging through Hugging Face Spaces dashboard
 - API performance monitoring
 - Performance metrics tracking
 

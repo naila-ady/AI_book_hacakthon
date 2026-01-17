@@ -174,10 +174,10 @@ AI_book_hacakthon/
 
 ## 🚢 Deployment
 
-### Backend Deployment (Railway)
-The backend is configured for deployment on Railway:
-1. Connect your GitHub repository to Railway
-2. Set environment variables in the Railway dashboard
+### Backend Deployment (Hugging Face Spaces)
+The backend is configured for deployment on Hugging Face Spaces:
+1. Connect your GitHub repository to Hugging Face Spaces
+2. Set environment variables in the Hugging Face Spaces dashboard
 3. Deploy automatically on push
 
 ### Frontend Deployment (Vercel)
@@ -201,7 +201,7 @@ PORT=8000
 
 ### Frontend (.env.local)
 ```env
-REACT_APP_BACKEND_URL=https://your-backend-url.com
+REACT_APP_BACKEND_URL=https://nkamdar-ai-book-hackathon.hf.space
 ```
 
 ## 🤖 How It Works
