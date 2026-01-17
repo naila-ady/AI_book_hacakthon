@@ -26,13 +26,13 @@ const Chatbot = () => {
       if (isLocalhost) {
         backendUrl = 'http://127.0.0.1:8000'; // Local development
       } else {
-        // For production deployment, use your Railway backend URL
+        // For production deployment, use your Hugging Face Space backend URL
         // Docusaurus-compatible environment variable access
         const envBackendUrl = typeof window !== 'undefined'
           ? (window as any).env?.REACT_APP_BACKEND_URL ||
             (window as any).env?.NEXT_PUBLIC_BACKEND_URL
           : undefined;
-        backendUrl = envBackendUrl || 'https://aibookhacakthon-production.up.railway.app';
+        backendUrl = envBackendUrl || 'https://nkamdar-ai-book-hackathon.hf.space';
       }
 
       const apiUrl = `${backendUrl}/api/v1/query`;
@@ -94,13 +94,13 @@ const Chatbot = () => {
       if (isLocalhost) {
         backendUrl = 'http://127.0.0.1:8000'; // Local development
       } else {
-        // For production deployment, use your Railway backend URL
+        // For production deployment, use your Hugging Face Space backend URL
         // Docusaurus-compatible environment variable access
         const envBackendUrl = typeof window !== 'undefined'
           ? (window as any).env?.REACT_APP_BACKEND_URL ||
             (window as any).env?.NEXT_PUBLIC_BACKEND_URL
           : undefined;
-        backendUrl = envBackendUrl || 'https://aibookhacakthon-production.up.railway.app';
+        backendUrl = envBackendUrl || 'https://nkamdar-ai-book-hackathon.hf.space';
       }
 
       const healthUrl = `${backendUrl}/health`;
