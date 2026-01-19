@@ -62,11 +62,11 @@ export const AuthProvider = ({ children }) => {
       }
 
       // Check session with backend
-      const sessionResponse = await fetch('http://localhost:8000/api/auth/session', {
+      const sessionResponse = await fetch((process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000') + '/api/auth/session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${storedToken}`,
+          'Authorization': 'Bearer ' + storedToken,
         },
       });
 

@@ -16,11 +16,11 @@ function DashboardPage() {
           const token = localStorage.getItem('better_auth_token');
           if (token) {
             // Try to validate session
-            const response = await fetch('http://localhost:8000/api/auth/session', {
+            const response = await fetch((process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000') + '/api/auth/session', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
+                'Authorization': 'Bearer ' + token,
               },
             });
 
