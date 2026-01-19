@@ -241,13 +241,13 @@
   background: rgba(255, 159, 13, 0.2);
 }
 
-/* Auth page specific styling */
+/* Auth page specific styling - always use dark theme */
 .auth-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0D0D0D;
+  background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%) !important; /* Consistent dark gradient background */
 }
 
 .auth-page .container {
@@ -255,6 +255,37 @@
   max-width: 500px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: #1a1a1a !important; /* Dark container background */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: #ffffff !important; /* White text */
+}
+
+/* Auth page form elements - always dark theme */
+.auth-page input,
+.auth-page button,
+.auth-page select {
+  background-color: #2a2a2a !important; /* Dark input backgrounds */
+  color: #ffffff !important; /* White text in inputs */
+  border: 1px solid #444444 !important; /* Dark border */
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.auth-page input::placeholder {
+  color: #aaaaaa !important; /* Light gray placeholder text */
+}
+
+.auth-page button {
+  background-color: #ff9f0d !important; /* Orange button */
+  color: #0D0D0D !important; /* Dark text on button */
+  border: none !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: bold !important;
+}
+
+.auth-page button:hover {
+  background-color: #ffb733 !important; /* Lighter orange on hover */
 }
 
 /* Hide navbar and footer on auth pages with maximum specificity */
