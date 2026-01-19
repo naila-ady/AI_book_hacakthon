@@ -123,7 +123,7 @@ AI_book_hacakthon/
    yarn start
    ```
 
-## 🚀 Running the Application
+## 🚀 Running the Application Locally
 
 ### Development Mode
 
@@ -201,7 +201,52 @@ PORT=8000
 
 ### Frontend (.env.local)
 ```env
-REACT_APP_BACKEND_URL=https://nkamdar-ai-book-hackathon.hf.space
+REACT_APP_BACKEND_URL=https://your-hf-space-name.hf.space
+NEXT_PUBLIC_BETTER_AUTH_URL=https://your-hf-space-name.hf.space
+NEXT_PUBLIC_API_URL=https://your-hf-space-name.hf.space
+```
+
+## 🚀 Deployed URLs
+
+### Live Applications
+- **Frontend (Vercel)**: https://ai-book-hacakthon.vercel.app
+- **Backend (Hugging Face Spaces)**: https://nkamdar-ai-book-hackathon.hf.space
+
+### API Endpoints (Hugging Face Backend)
+- Health Check: `https://nkamdar-ai-book-hackathon.hf.space/health`
+- Query Endpoint: `https://nkamdar-ai-book-hackathon.hf.space/api/v1/query`
+- Auth Endpoints:
+  - Login: `https://nkamdar-ai-book-hackathon.hf.space/api/auth/sign-in/email`
+  - Register: `https://nkamdar-ai-book-hackathon.hf.space/api/auth/sign-up/email`
+  - Session: `https://nkamdar-ai-book-hackathon.hf.space/api/auth/session`
+
+## 🔑 Required Credentials
+
+To run this application, you need the following credentials:
+
+### Backend Services
+- **Cohere API Key**: Required for natural language processing
+  - Get from: https://dashboard.cohere.ai/
+- **Qdrant Database**: Required for vector storage and semantic search
+  - Get from: https://qdrant.tech/
+- **PostgreSQL Database**: Required for user authentication
+  - Recommended: NeonDB (https://neon.tech/)
+
+### Environment Variables for Backend
+```env
+COHERE_API_KEY=your_cohere_api_key_here
+QDRANT_URL=your_qdrant_instance_url
+QDRANT_API_KEY=your_qdrant_api_key
+QDRANT_COLLECTION=bookn
+DATABASE_URL=postgresql://username:password@host:port/database_name
+JWT_SECRET_KEY=a_strong_secret_key_for_jwt_tokens
+```
+
+### Environment Variables for Frontend
+```env
+NEXT_PUBLIC_API_URL=https://your-hf-space-name.hf.space
+NEXT_PUBLIC_BETTER_AUTH_URL=https://your-hf-space-name.hf.space
+REACT_APP_BACKEND_URL=https://your-hf-space-name.hf.space
 ```
 
 ## 🤖 How It Works
