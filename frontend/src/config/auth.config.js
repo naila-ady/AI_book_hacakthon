@@ -3,12 +3,8 @@
 // Export authentication functions that call backend API
 export const signIn = {
   email: async ({ email, password }) => {
-    // Browser-compatible environment variable access
-    const backendUrl = typeof window !== 'undefined'
-      ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
-      : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
-
-    const response = await fetch(backendUrl + '/api/auth/sign-in/email', {
+    const apiUrl = 'https://nkamdar-ai-book-hackathon.hf.space'; // Replace with your Hugging Face Space URL
+    const response = await fetch(`${apiUrl}/api/auth/sign-in/email`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,12 +28,8 @@ export const signIn = {
 
 export const signUp = {
   email: async ({ email, password, name }) => {
-    // Browser-compatible environment variable access
-    const backendUrl = typeof window !== 'undefined'
-      ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
-      : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
-
-    const response = await fetch(backendUrl + '/api/auth/sign-up/email', {
+    const apiUrl = 'https://nkamdar-ai-book-hackathon.hf.space'; // Replace with your Hugging Face Space URL
+    const response = await fetch(`${apiUrl}/api/auth/sign-up/email`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -64,12 +56,8 @@ export const signOut = async () => {
   localStorage.removeItem('better_auth_token');
   // Call backend sign-out endpoint
   try {
-    // Browser-compatible environment variable access
-    const backendUrl = typeof window !== 'undefined'
-      ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
-      : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
-
-    await fetch(backendUrl + '/api/auth/sign-out', {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+    await fetch(`${apiUrl}/api/auth/sign-out`, {
       method: 'POST',
     });
   } catch (error) {
@@ -92,12 +80,8 @@ export const checkSession = async () => {
     }
 
     // Check session with backend
-    // Browser-compatible environment variable access
-const backendUrl = typeof window !== 'undefined'
-  ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
-  : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
-
-const response = await fetch(backendUrl + '/api/auth/session', {
+const apiUrl = 'https://nkamdar-ai-book-hackathon.hf.space'; // Replace with your Hugging Face Space URL
+const response = await fetch(`${apiUrl}/api/auth/session`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

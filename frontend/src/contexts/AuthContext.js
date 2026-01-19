@@ -62,16 +62,14 @@ export const AuthProvider = ({ children }) => {
       }
 
       // Check session with backend
-      // Browser-compatible environment variable access
-const backendUrl = typeof window !== 'undefined'
-  ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
-  : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+      const apiUrl = 'https://nkamdar-ai-book-hackathon.hf.space'; // Replace with your Hugging Face Space URL
+      const sessionEndpoint = `${apiUrl}/api/auth/session`;
 
-const sessionResponse = await fetch(backendUrl + '/api/auth/session', {
+const sessionResponse = await fetch(sessionEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + storedToken,
+          'Authorization': storedToken ? 'Bearer ' + storedToken : '',
         },
       });
 

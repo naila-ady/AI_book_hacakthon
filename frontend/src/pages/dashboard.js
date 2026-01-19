@@ -16,16 +16,12 @@ function DashboardPage() {
           const token = localStorage.getItem('better_auth_token');
           if (token) {
             // Try to validate session
-            // Browser-compatible environment variable access
-const backendUrl = typeof window !== 'undefined'
-  ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
-  : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
-
-const response = await fetch(backendUrl + '/api/auth/session', {
+            const apiUrl = 'https://nkamdar-ai-book-hackathon.hf.space'; // Replace with your Hugging Face Space URL
+const response = await fetch(`${apiUrl}/api/auth/session`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token,
+                'Authorization': token ? 'Bearer ' + token : '',
               },
             });
 
