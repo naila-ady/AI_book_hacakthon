@@ -9,7 +9,7 @@
 
 /* NAVBAR */
 .navbar {
-  background: var(--primary-color);
+  background: #ff9f0d !important; /* Orange background */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   display: flex !important;
   position: sticky;
@@ -19,11 +19,32 @@
 
 .navbar__brand,
 .navbar__link {
-  color: #ffffff !important;
+  color: #ffffff !important; /* White text */
 }
 
 .navbar__link--active {
-  color: #0D0D0D !important; /* active link contrast */
+  color: #ffffff !important; /* White text for active link too */
+}
+
+/* Dark mode navbar - black background with orange text */
+[data-theme='dark'] .navbar {
+  background: #0D0D0D !important; /* Black background in dark mode */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme='dark'] .navbar__brand,
+[data-theme='dark'] .navbar__link,
+[data-theme='dark'] .navbar__item,
+[data-theme='dark'] .navbar__link--active {
+  color: #ff9f0d !important; /* Orange text in dark mode */
+}
+
+/* Extra specificity for navbar items */
+.navbar[data-theme='dark'] .navbar__brand,
+.navbar[data-theme='dark'] .navbar__link,
+.navbar[data-theme='dark'] .navbar__item,
+.navbar[data-theme='dark'] .navbar__link--active {
+  color: #ff9f0d !important; /* Orange text in dark mode */
 }
 
 /* HERO SECTION */
@@ -124,19 +145,19 @@
 }
 
 [data-theme='light'] .footer__title {
-  color: #ffffff;
+  color: #ffffff !important; /* Use white for better contrast against orange background */
 }
 
 [data-theme='light'] .footer__link {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.85) !important; /* Use white with transparency for better contrast */
 }
 
 [data-theme='light'] .footer__link:hover {
-  color: #ffffff;
+  color: #ffffff !important; /* Use white on hover for consistency */
 }
 
 [data-theme='light'] .footer__copyright {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7) !important; /* Use white with transparency for better contrast */
   background: rgba(200, 100, 0, 0.2) !important; /* Slightly darker orange for copyright */
 }
 
@@ -146,19 +167,35 @@
 }
 
 [data-theme='dark'] .footer__title {
-  color: var(--primary-color);
+  color: #ff9f0d !important; /* Use orange color instead of white */
+}
+
+[data-theme='dark'] .footer__item {
+  color: #ff9f0d !important; /* Use orange color for all footer items */
 }
 
 [data-theme='dark'] .footer__link {
-  color: #ff9f0d;
+  color: #ff9f0d !important; /* Use orange color instead of white */
 }
 
 [data-theme='dark'] .footer__link:hover {
-  color: var(--primary-color);
+  color: #ff9f0d !important; /* Use orange color instead of white */
+}
+
+[data-theme='dark'] .footer__link-item {
+  color: #ff9f0d !important; /* Use orange color for all link items */
 }
 
 [data-theme='dark'] .footer__copyright {
-  color: rgba(255, 255, 255, 0.5);
+  color: #ff9f0d !important; /* Use orange color instead of white */
+}
+
+[data-theme='dark'] .footer a {
+  color: #ff9f0d !important; /* Use orange color for all links in footer */
+}
+
+[data-theme='dark'] .footer a:hover {
+  color: #ffb733 !important; /* Use lighter orange on hover */
 }
 
 /* AUTH STATUS COMPONENT */

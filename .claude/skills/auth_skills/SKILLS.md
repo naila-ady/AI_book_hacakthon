@@ -1,7 +1,7 @@
 # Authentication Skill
 
 ## Purpose
-When a user requests authentication functionality (login, signup, registration, sign-in, sign-up), implement a complete authentication system with React Context, service layer, and protected routes.
+When a user requests authentication functionality (login, signup, registration, sign-in, sign-up), implement a complete authentication system with React Context, service layer, and protected routes. Additionally, fix authentication issues related to environment variables in browser environments.
 
 ## Implementation Steps
 
@@ -39,6 +39,18 @@ When a user requests authentication functionality (login, signup, registration, 
 - Sign-up: POST to `/api/auth/sign-up/email`
 - Sign-out: POST to `/api/auth/sign-out`
 - Session: POST to `/api/auth/session` with Authorization header
+
+## Browser Environment Variable Handling
+- Do NOT use `process.env` in browser JavaScript as it's not available
+- Instead, use hardcoded backend URL or window.APP_CONFIG if available
+- Example: `const apiUrl = 'https://your-hf-space-name.hf.space';`
+- For Vercel deployment, ensure environment variable is properly set as `NEXT_PUBLIC_API_URL`
+
+## Common Fixes Applied
+- Replace `process.env.NEXT_PUBLIC_API_URL` with hardcoded Hugging Face Space URL in browser code
+- Fix Authorization header to handle token properly: `'Authorization': token ? 'Bearer ' + token : ''`
+- Add error handling for undefined variables to prevent crashes
+- Ensure all API calls use the correct backend URL instead of localhost
 
 ## Security Features
 - Token storage in localStorage
