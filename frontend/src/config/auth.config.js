@@ -3,7 +3,12 @@
 // Export authentication functions that call backend API
 export const signIn = {
   email: async ({ email, password }) => {
-    const response = await fetch((process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000') + '/api/auth/sign-in/email', {
+    // Browser-compatible environment variable access
+    const backendUrl = typeof window !== 'undefined'
+      ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
+      : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+
+    const response = await fetch(backendUrl + '/api/auth/sign-in/email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -27,7 +32,12 @@ export const signIn = {
 
 export const signUp = {
   email: async ({ email, password, name }) => {
-    const response = await fetch((process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000') + '/api/auth/sign-up/email', {
+    // Browser-compatible environment variable access
+    const backendUrl = typeof window !== 'undefined'
+      ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
+      : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+
+    const response = await fetch(backendUrl + '/api/auth/sign-up/email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -54,7 +64,12 @@ export const signOut = async () => {
   localStorage.removeItem('better_auth_token');
   // Call backend sign-out endpoint
   try {
-    await fetch((process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000') + '/api/auth/sign-out', {
+    // Browser-compatible environment variable access
+    const backendUrl = typeof window !== 'undefined'
+      ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
+      : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+
+    await fetch(backendUrl + '/api/auth/sign-out', {
       method: 'POST',
     });
   } catch (error) {
@@ -77,7 +92,12 @@ export const checkSession = async () => {
     }
 
     // Check session with backend
-    const response = await fetch((process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000') + '/api/auth/session', {
+    // Browser-compatible environment variable access
+const backendUrl = typeof window !== 'undefined'
+  ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
+  : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+
+const response = await fetch(backendUrl + '/api/auth/session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -16,7 +16,12 @@ function DashboardPage() {
           const token = localStorage.getItem('better_auth_token');
           if (token) {
             // Try to validate session
-            const response = await fetch((process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000') + '/api/auth/session', {
+            // Browser-compatible environment variable access
+const backendUrl = typeof window !== 'undefined'
+  ? (window.env && window.env.NEXT_PUBLIC_BACKEND_URL) || 'http://localhost:8000'
+  : process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+
+const response = await fetch(backendUrl + '/api/auth/session', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
